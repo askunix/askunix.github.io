@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-19T17:28:44.204Z</updated>
+  <updated>2018-05-19T18:52:49.192Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="http://yoursite.com/2018/05/20/hello-world/"/>
     <id>http://yoursite.com/2018/05/20/hello-world/</id>
     <published>2018-05-19T17:14:30.000Z</published>
-    <updated>2018-05-19T17:28:44.204Z</updated>
+    <updated>2018-05-19T18:52:49.192Z</updated>
     
-    <content type="html"><![CDATA[<ul><li>这是我的一个简单测试博客，当然也是开通github博客后的第一篇博客</li></ul><a id="more"></a><ul><li>github博客优点：<br>无广告<br>自定义页面内容和布局<br>一键部署<br>支持Markdown语法<br>逼格高</li></ul>]]></content>
+    <content type="html"><![CDATA[<ul><li>这是我的一个简单测试博客，当然也是开通github博客后的第一篇博客<br><img src="/img/223.jpg" alt="图片无法正常显示的时候的说明文字"></li></ul><a id="more"></a><ul><li>github博客优点：<br>无广告<br>自定义页面内容和布局<br>一键部署<br>支持Markdown语法<br>免费站<br>无限流量<br>可以绑定个性化域名<br>逼格高</li></ul><ul><li><p>代码测试</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;<span class="string">"askunix.top&lt;&lt;endl;</span></span><br><span class="line"><span class="string">  return 0;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure></li><li><p>表格</p></li></ul><table><thead><tr><th>书籍名称</th><th>编号</th></tr></thead><tbody><tr><td>计算机网络</td><td>006</td></tr><tr><td>操作系统</td><td>008</td></tr><tr><td>剑指Offer</td><td>002</td></tr><tr><td>STL源码剖析</td><td>066</td></tr></tbody></table><ul><li>完成</li></ul>]]></content>
     
     <summary type="html">
     
       &lt;ul&gt;
-&lt;li&gt;这是我的一个简单测试博客，当然也是开通github博客后的第一篇博客&lt;/li&gt;
+&lt;li&gt;这是我的一个简单测试博客，当然也是开通github博客后的第一篇博客&lt;br&gt;&lt;img src=&quot;/img/223.jpg&quot; alt=&quot;图片无法正常显示的时候的说明文字&quot;&gt;&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
