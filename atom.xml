@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-20T08:36:54.974Z</updated>
+  <updated>2018-05-20T08:49:04.836Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,49 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>测试NO.3</title>
     <link href="http://yoursite.com/2018/05/20/%E6%B5%8B%E8%AF%95NO3/"/>
     <id>http://yoursite.com/2018/05/20/测试NO3/</id>
-    <published>2018-05-20T08:30:11.534Z</published>
-    <updated>2018-05-20T08:36:54.974Z</updated>
+    <published>2018-05-20T08:42:54.000Z</published>
+    <updated>2018-05-20T08:49:04.836Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul><li><p>利用周末时间搭建了Hexo + github + 个性化域名博客</p></li><li><p>通过不断地测试和完善，实现了常用功能以及基本的页面美化</p></li></ul><ul><li><p>在搭建过程中遇到了很多棘手的问题，在中途因为没有测试，还崩溃过，只能归零，从头再来。</p></li><li><p>非常感谢IT界众多大神的博客，给了我很多帮助，技术交流，请到知乎、简书、CSDN、github</p></li></ul><ul><li>第二次搭建，我曾想到用Coding建仓库，但是后来想到github的影响力等，毕竟github是全球同性社交平台，呵呵</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>测试博客NO.2</title>
-    <link href="http://yoursite.com/2018/05/20/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://yoursite.com/2018/05/20/测试博客/</id>
-    <published>2018-05-19T17:14:30.000Z</published>
-    <updated>2018-05-20T08:36:56.269Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/img/1.jpg" alt="图片加载失败"></p><a id="more"></a><ul><li>github博客优点：<br>无广告<br>自定义页面内容和布局<br>一键部署<br>支持Markdown语法<br>逼格高</li></ul>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr><ul><li><p>利用周末时间搭建了Hexo + github + 个性化域名博客</p></li><li><p>通过不断地测试和完善，实现了常用功能以及基本的页面美化</p></li></ul><ul><li>在搭建过程中遇到了很多棘手的问题，在中途因为没有测试，还崩溃过，只能归零，从头再来。</li></ul><a id="more"></a><ul><li>非常感谢IT界众多大神的博客，给了我很多帮助，技术交流，请到知乎、简书、CSDN、github</li></ul><ul><li>第二次搭建，我曾想到用Coding建仓库，但是后来想到github的影响力等，毕竟github是全球同性社交平台，呵呵</li></ul>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;/img/1.jpg&quot; alt=&quot;图片加载失败&quot;&gt;&lt;/p&gt;
+      &lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;利用周末时间搭建了Hexo + github + 个性化域名博客&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;通过不断地测试和完善，实现了常用功能以及基本的页面美化&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;在搭建过程中遇到了很多棘手的问题，在中途因为没有测试，还崩溃过，只能归零，从头再来。&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
       <category term="编程语言" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     
     
-      <category term="程序人生" scheme="http://yoursite.com/tags/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/"/>
+      <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
     
-      <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
-    
-      <category term="面试题" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+      <category term="其他" scheme="http://yoursite.com/tags/%E5%85%B6%E4%BB%96/"/>
     
   </entry>
   
@@ -86,6 +72,32 @@
       <category term="程序人生" scheme="http://yoursite.com/tags/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/"/>
     
       <category term="面试题" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>测试博客NO.2</title>
+    <link href="http://yoursite.com/2018/05/20/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/2018/05/20/测试博客/</id>
+    <published>2018-05-19T17:14:30.000Z</published>
+    <updated>2018-05-20T08:36:56.269Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/img/1.jpg" alt="图片加载失败"></p><a id="more"></a><ul><li>github博客优点：<br>无广告<br>自定义页面内容和布局<br>一键部署<br>支持Markdown语法<br>逼格高</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/img/1.jpg&quot; alt=&quot;图片加载失败&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程语言" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="程序人生" scheme="http://yoursite.com/tags/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/"/>
+    
+      <category term="面试题" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+      <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
     
   </entry>
   
