@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="测试,其他," />
+  <meta name="keywords" content="计算机网络,UDP协议,回显服务器," />
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="利用周末时间搭建了Hexo + github + 个性化域名博客  通过不断地测试和完善，实现了常用功能以及基本的页面美化">
-<meta name="keywords" content="测试,其他">
+<meta name="description" content="从认识UDP协议到UDP回显服务器的代码实现">
+<meta name="keywords" content="计算机网络,UDP协议,回显服务器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试NO.3">
-<meta property="og:url" content="http://yoursite.com/2018/05/20/测试博客NO3/index.html">
+<meta property="og:title" content="基于UDP协议的回显服务器">
+<meta property="og:url" content="http://yoursite.com/2018/05/22/基于UDP协议的回显服务器/index.html">
 <meta property="og:site_name" content="何进鸿的博客">
-<meta property="og:description" content="利用周末时间搭建了Hexo + github + 个性化域名博客  通过不断地测试和完善，实现了常用功能以及基本的页面美化">
+<meta property="og:description" content="从认识UDP协议到UDP回显服务器的代码实现">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-22T15:12:18.012Z">
+<meta property="og:image" content="http://yoursite.com/img/1122.jpg">
+<meta property="og:updated_time" content="2018-05-22T15:06:54.592Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="测试NO.3">
-<meta name="twitter:description" content="利用周末时间搭建了Hexo + github + 个性化域名博客  通过不断地测试和完善，实现了常用功能以及基本的页面美化">
+<meta name="twitter:title" content="基于UDP协议的回显服务器">
+<meta name="twitter:description" content="从认识UDP协议到UDP回显服务器的代码实现">
+<meta name="twitter:image" content="http://yoursite.com/img/1122.jpg">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/20/测试博客NO3/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/22/基于UDP协议的回显服务器/"/>
 
 
 
 
 
-  <title>测试NO.3 | 何进鸿的博客</title>
+  <title>基于UDP协议的回显服务器 | 何进鸿的博客</title>
   
 
 
@@ -307,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/20/测试博客NO3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/22/基于UDP协议的回显服务器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="何进鸿">
@@ -324,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">测试NO.3</h1>
+          <h1 class="post-title" itemprop="name headline">基于UDP协议的回显服务器</h1>
         
 
         <div class="post-meta">
@@ -336,8 +338,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T16:42:54+08:00">
-                2018-05-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-22T01:14:30+08:00">
+                2018-05-22
               </time>
             
 
@@ -359,8 +361,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程语言/" itemprop="url" rel="index">
-                    <span itemprop="name">编程语言</span>
+                  <a href="/categories/SO-Kernal/" itemprop="url" rel="index">
+                    <span itemprop="name">SO Kernal</span>
                   </a>
                 </span>
 
@@ -377,8 +379,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/20/测试博客NO3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/20/测试博客NO3/" itemprop="commentCount"></span>
+                <a href="/2018/05/22/基于UDP协议的回显服务器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/22/基于UDP协议的回显服务器/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -386,7 +388,7 @@
 
           
           
-             <span id="/2018/05/20/测试博客NO3/" class="leancloud_visitors" data-flag-title="测试NO.3">
+             <span id="/2018/05/22/基于UDP协议的回显服务器/" class="leancloud_visitors" data-flag-title="基于UDP协议的回显服务器">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -412,7 +414,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  153
+                  110
                 </span>
               
 
@@ -449,21 +451,45 @@
       
 
       
-        <hr>
-<ul>
-<li><p>利用周末时间搭建了Hexo + github + 个性化域名博客</p>
-</li>
-<li><p>通过不断地测试和完善，实现了常用功能以及基本的页面美化</p>
+        <ul>
+<li>从认识UDP协议到UDP回显服务器的代码实现<br><img src="/img/1122.jpg" alt="图片加载失败"></li>
+</ul>
 <a id="more"></a>
+<h4 id="无广告-哈"><a href="#无广告-哈" class="headerlink" title="无广告 哈"></a>无广告 哈</h4><h4 id="自定义页面内容和布局"><a href="#自定义页面内容和布局" class="headerlink" title="自定义页面内容和布局"></a>自定义页面内容和布局</h4><h4 id="一键部署"><a href="#一键部署" class="headerlink" title="一键部署"></a>一键部署</h4><h4 id="支持Markdown语法"><a href="#支持Markdown语法" class="headerlink" title="支持Markdown语法"></a>支持Markdown语法</h4><h4 id="免费站"><a href="#免费站" class="headerlink" title="免费站"></a>免费站</h4><h4 id="无限流量"><a href="#无限流量" class="headerlink" title="无限流量"></a>无限流量</h4><h4 id="可以绑定个性化域名"><a href="#可以绑定个性化域名" class="headerlink" title="可以绑定个性化域名"></a>可以绑定个性化域名</h4><h4 id="逼格高"><a href="#逼格高" class="headerlink" title="逼格高"></a>逼格高</h4><ul>
+<li><p>代码测试</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt;<span class="string">"askunix.top&lt;&lt;endl;</span></span><br><span class="line"><span class="string">  return 0;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>在搭建过程中遇到了很多棘手的问题，在中途因为没有测试，还崩溃过，只能归零，从头再来。</p>
+<li><p>表格</p>
 </li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>书籍名称</th>
+<th>编号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>计算机网络</td>
+<td>006</td>
+</tr>
+<tr>
+<td>操作系统</td>
+<td>008</td>
+</tr>
+<tr>
+<td>剑指Offer</td>
+<td>002</td>
+</tr>
+<tr>
+<td>STL源码剖析</td>
+<td>066</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li>非常感谢IT界众多大神的博客，给了我很多帮助，技术交流，请到知乎、简书、CSDN、github</li>
-</ul>
-<ul>
-<li>第二次搭建，我曾想到用Coding建仓库，但是后来想到github的影响力等，毕竟github是全球同性社交平台，呵呵</li>
+<li>完成</li>
 </ul>
 
       
@@ -498,9 +524,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/测试/" rel="tag"><i class="fa fa-tag"></i> 测试</a>
+            <a href="/tags/计算机网络/" rel="tag"><i class="fa fa-tag"></i> 计算机网络</a>
           
-            <a href="/tags/其他/" rel="tag"><i class="fa fa-tag"></i> 其他</a>
+            <a href="/tags/UDP协议/" rel="tag"><i class="fa fa-tag"></i> UDP协议</a>
+          
+            <a href="/tags/回显服务器/" rel="tag"><i class="fa fa-tag"></i> 回显服务器</a>
           
         </div>
       
@@ -513,8 +541,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/20/测试博客NO2/" rel="next" title="测试博客NO.2">
-                <i class="fa fa-chevron-left"></i> 测试博客NO.2
+              <a href="/2018/05/20/测试博客NO3/" rel="next" title="测试NO.3">
+                <i class="fa fa-chevron-left"></i> 测试NO.3
               </a>
             
           </div>
@@ -522,10 +550,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/22/基于UDP协议的回显服务器/" rel="prev" title="基于UDP协议的回显服务器">
-                基于UDP协议的回显服务器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -580,8 +604,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -687,6 +720,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#无广告-哈"><span class="nav-number">1.</span> <span class="nav-text">无广告 哈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义页面内容和布局"><span class="nav-number">2.</span> <span class="nav-text">自定义页面内容和布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一键部署"><span class="nav-number">3.</span> <span class="nav-text">一键部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#支持Markdown语法"><span class="nav-number">4.</span> <span class="nav-text">支持Markdown语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#免费站"><span class="nav-number">5.</span> <span class="nav-text">免费站</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#无限流量"><span class="nav-number">6.</span> <span class="nav-text">无限流量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可以绑定个性化域名"><span class="nav-number">7.</span> <span class="nav-text">可以绑定个性化域名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逼格高"><span class="nav-number">8.</span> <span class="nav-text">逼格高</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
