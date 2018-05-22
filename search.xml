@@ -13,15 +13,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[测试博客NO.1]]></title>
+    <title><![CDATA[基于UDP协议的回显服务器]]></title>
     <url>%2F2018%2F05%2F20%2F%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2NO.1%2F</url>
-    <content type="text"><![CDATA[这是我的一个简单测试博客，当然也是开通github博客后的第一篇博客 无广告 哈自定义页面内容和布局一键部署支持Markdown语法免费站无限流量可以绑定个性化域名逼格高 代码测试 12345678#include&lt;iostream&gt;using namespace std;int main()&#123; cout&lt;&lt;"askunix.top&lt;&lt;endl; return 0;&#125; 表格 书籍名称 编号 计算机网络 006 操作系统 008 剑指Offer 002 STL源码剖析 066 完成]]></content>
+    <content type="text"><![CDATA[从认识UDP协议到UDP回显服务器的实现 无广告 哈自定义页面内容和布局一键部署支持Markdown语法免费站无限流量可以绑定个性化域名逼格高 代码测试 12345678#include&lt;iostream&gt;using namespace std;int main()&#123; cout&lt;&lt;"askunix.top&lt;&lt;endl; return 0;&#125; 表格 书籍名称 编号 计算机网络 006 操作系统 008 剑指Offer 002 STL源码剖析 066 完成]]></content>
       <categories>
-        <category>经典面试</category>
+        <category>SO Kernal</category>
       </categories>
       <tags>
-        <tag>程序人生</tag>
-        <tag>面试题</tag>
+        <tag>计算机网络</tag>
+        <tag>UDP协议</tag>
       </tags>
   </entry>
   <entry>
@@ -33,8 +33,8 @@
       </categories>
       <tags>
         <tag>程序人生</tag>
-        <tag>面试题</tag>
         <tag>链表</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
 </search>
