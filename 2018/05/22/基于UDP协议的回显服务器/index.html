@@ -87,14 +87,14 @@
 <meta property="og:site_name" content="何进鸿的博客">
 <meta property="og:description" content="回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机网络理论知识。 实现环境：CentOS 7.0 操作系统         Vim编辑器、Gcc编译器">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdn.net/20180525124123343">
-<meta property="og:image" content="https://img-blog.csdn.net/20180525124158187">
-<meta property="og:image" content="https://img-blog.csdn.net/20180525130242822">
-<meta property="og:updated_time" content="2018-05-25T09:23:11.347Z">
+<meta property="og:image" content="http://yoursite.com/img/数据发送.jpg">
+<meta property="og:image" content="http://yoursite.com/img/规定.jpg">
+<meta property="og:image" content="http://yoursite.com/img/三种类型.jpg">
+<meta property="og:updated_time" content="2018-05-25T11:32:37.605Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于UDP协议的回显服务器实现">
 <meta name="twitter:description" content="回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机网络理论知识。 实现环境：CentOS 7.0 操作系统         Vim编辑器、Gcc编译器">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20180525124123343">
+<meta name="twitter:image" content="http://yoursite.com/img/数据发送.jpg">
 
 
 
@@ -488,9 +488,9 @@
 <li>（只想引入下面一句话）在网络数据流中同样有大小端之分，那么如何定义网络数据流的地址呢？</li>
 </ul>
 <p>【看图理解】</p>
-<p><img src="https://img-blog.csdn.net/20180525124123343" alt="这里写图片描述"></p>
+<p><img src="/img/数据发送.jpg" alt="图片加载失败"></p>
 <p>【看图说话】</p>
-<p><img src="https://img-blog.csdn.net/20180525124158187" alt="这里写图片描述"></p>
+<p><img src="/img/规定.jpg" alt="图片加载失败"></p>
 <ul>
 <li>如果发送主机是小端，就要准换成大端再发送，如果是大端，直接发送即可。</li>
 </ul>
@@ -507,7 +507,7 @@
 <h5 id="sockaddr结构："><a href="#sockaddr结构：" class="headerlink" title="sockaddr结构："></a>sockaddr结构：</h5><blockquote>
 <p>socket API是一 层抽象的网络编程接口 ,适用于各种底层网络协议,如IPv4、IPv6.然而, 各种网络协议的地址格式各不相同。</p>
 </blockquote>
-<p><img src="https://img-blog.csdn.net/20180525130242822" alt="这里写图片描述"></p>
+<p><img src="/img/三种类型.jpg" alt="图片加载失败"></p>
 <ul>
 <li><p>注意：socket API可以都用 struct sockaddr *类型表 , 在使用的时候需要强制转化成sockaddr_in; 这样的好处是程序的通用性, 可以接收IPv4, IPv6, 以及UNIX Domain Socket各种类型的sockaddr结构体指针做为参数。</p>
 <hr>
