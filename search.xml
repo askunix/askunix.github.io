@@ -14,15 +14,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[测试NO.3]]></title>
+    <title><![CDATA[博客搭建经历]]></title>
     <url>%2F2018%2F05%2F20%2F%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2NO3%2F</url>
     <content type="text"><![CDATA[利用周末时间搭建了Hexo + github + 个性化域名博客 通过不断地测试和完善，实现了常用功能以及基本的页面美化 在搭建过程中遇到了很多棘手的问题，在中途因为没有测试，还崩溃过，只能归零，从头再来。 非常感谢IT界众多大神的博客，给了我很多帮助，技术交流，请到知乎、简书、CSDN、github 第二次搭建，我曾想到用Coding建仓库，但是后来想到github的影响力等，毕竟github是全球同性社交平台，呵呵]]></content>
       <categories>
-        <category>编程语言</category>
+        <category>操作指南</category>
       </categories>
       <tags>
-        <tag>测试</tag>
-        <tag>其他</tag>
+        <tag>hexo</tag>
+        <tag>github page</tag>
       </tags>
   </entry>
 </search>

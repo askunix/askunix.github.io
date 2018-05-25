@@ -3,32 +3,9 @@
 
 
     
-    
-  <url>
-    <loc>http://yoursite.com/2018/05/20/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2NO3/</loc>
-    <lastmod>2018-05-25T11:32:40.489Z</lastmod>
-    <data>
-        <display>
-        <title>测试NO.3</title>
-        <pubTime>2018-05-20T08:42:54.000Z</pubTime>
-        
-        <tag>测试</tag>
-         
-        <tag>其他</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程语言" url="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
   <url>
     <loc>http://yoursite.com/2018/05/22/%E5%9F%BA%E4%BA%8EUDP%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%9B%9E%E6%98%BE%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    <lastmod>2018-05-25T11:32:37.605Z</lastmod>
+    <lastmod>2018-05-25T12:36:24.317Z</lastmod>
     <data>
         <display>
         <title>基于UDP协议的回显服务器实现</title>
@@ -49,6 +26,29 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://yoursite.com/2018/05/20/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2NO3/</loc>
+    <lastmod>2018-05-25T12:36:21.081Z</lastmod>
+    <data>
+        <display>
+        <title>博客搭建经历</title>
+        <pubTime>2018-05-20T08:42:54.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>github page</tag>
+         
+         
+           
+             
+              <breadCrumb title="操作指南" url="http://yoursite.com/categories/%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
     
 </urlset>
