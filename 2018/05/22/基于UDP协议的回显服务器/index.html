@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -79,22 +79,22 @@
 
 
 
-<meta name="description" content="回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机理论知识。 实现环境：CentOS 7.0 操作系统         Vim编辑器、Gcc编译器">
+<meta name="description" content="回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机网络理论知识。 实现环境：CentOS 7.0 操作系统         Vim编辑器、Gcc编译器">
 <meta name="keywords" content="计算机网络,UDP协议,回显服务器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于UDP协议的回显服务器实现">
 <meta property="og:url" content="http://yoursite.com/2018/05/22/基于UDP协议的回显服务器/index.html">
 <meta property="og:site_name" content="何进鸿的博客">
-<meta property="og:description" content="回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机理论知识。 实现环境：CentOS 7.0 操作系统         Vim编辑器、Gcc编译器">
+<meta property="og:description" content="回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机网络理论知识。 实现环境：CentOS 7.0 操作系统         Vim编辑器、Gcc编译器">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdn.net/20180525124123343?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3OTI1MjAy/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180525124158187?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3OTI1MjAy/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180525130242822?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3OTI1MjAy/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-05-25T08:52:17.288Z">
+<meta property="og:image" content="https://img-blog.csdn.net/20180525124123343">
+<meta property="og:image" content="https://img-blog.csdn.net/20180525124158187">
+<meta property="og:image" content="https://img-blog.csdn.net/20180525130242822">
+<meta property="og:updated_time" content="2018-05-25T09:23:11.347Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于UDP协议的回显服务器实现">
-<meta name="twitter:description" content="回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机理论知识。 实现环境：CentOS 7.0 操作系统         Vim编辑器、Gcc编译器">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20180525124123343?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3OTI1MjAy/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta name="twitter:description" content="回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机网络理论知识。 实现环境：CentOS 7.0 操作系统         Vim编辑器、Gcc编译器">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20180525124123343">
 
 
 
@@ -102,7 +102,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Muse',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -416,7 +416,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,870
+                  1,935
                 </span>
               
 
@@ -432,7 +432,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7
+                  8
                 </span>
               
             </div>
@@ -453,7 +453,7 @@
       
 
       
-        <p>回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机理论知识。</p>
+        <p>回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机网络理论知识。</p>
 <p>实现环境：CentOS 7.0 操作系统<br>         Vim编辑器、Gcc编译器</p>
 <a id="more"></a>
 <h4 id="预备知识："><a href="#预备知识：" class="headerlink" title="预备知识："></a>预备知识：</h4><ul>
@@ -488,9 +488,9 @@
 <li>（只想引入下面一句话）在网络数据流中同样有大小端之分，那么如何定义网络数据流的地址呢？</li>
 </ul>
 <p>【看图理解】</p>
-<p><img src="https://img-blog.csdn.net/20180525124123343?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3OTI1MjAy/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p><img src="https://img-blog.csdn.net/20180525124123343" alt="这里写图片描述"></p>
 <p>【看图说话】</p>
-<p><img src="https://img-blog.csdn.net/20180525124158187?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3OTI1MjAy/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p><img src="https://img-blog.csdn.net/20180525124158187" alt="这里写图片描述"></p>
 <ul>
 <li>如果发送主机是小端，就要准换成大端再发送，如果是大端，直接发送即可。</li>
 </ul>
@@ -507,7 +507,7 @@
 <h5 id="sockaddr结构："><a href="#sockaddr结构：" class="headerlink" title="sockaddr结构："></a>sockaddr结构：</h5><blockquote>
 <p>socket API是一 层抽象的网络编程接口 ,适用于各种底层网络协议,如IPv4、IPv6.然而, 各种网络协议的地址格式各不相同。</p>
 </blockquote>
-<p><img src="https://img-blog.csdn.net/20180525130242822?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3OTI1MjAy/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p><img src="https://img-blog.csdn.net/20180525130242822" alt="这里写图片描述"></p>
 <ul>
 <li><p>注意：socket API可以都用 struct sockaddr *类型表 , 在使用的时候需要强制转化成sockaddr_in; 这样的好处是程序的通用性, 可以接收IPv4, IPv6, 以及UNIX Domain Socket各种类型的sockaddr结构体指针做为参数。</p>
 <hr>
@@ -537,7 +537,9 @@
 <ul>
 <li>以上几点在代码中还能得到学习和理解。</li>
 </ul>
-<h5 id="服务器和客户端是怎么运行起来的？"><a href="#服务器和客户端是怎么运行起来的？" class="headerlink" title="服务器和客户端是怎么运行起来的？"></a>服务器和客户端是怎么运行起来的？</h5><ul>
+<h5 id="服务器和客户端是怎么运行起来的？"><a href="#服务器和客户端是怎么运行起来的？" class="headerlink" title="服务器和客户端是怎么运行起来的？"></a>服务器和客户端是怎么运行起来的？</h5><p>先说说什么是回显服务器：</p>
+<p>回显服务器是最简单的服务器，客户端发起请求，服务器收到请求，然后客户端发送什么内容，服务器就给客户端返回什么内容。</p>
+<ul>
 <li><strong>服务器：</strong></li>
 </ul>
 <blockquote>
@@ -877,7 +879,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 -->
 
@@ -890,7 +892,7 @@
 <div class="theme-info">
   <div class="powered-by"></div>
    <i class="fa fa-pencil"></i>
-  <span class="post-count">全站共2.0k字</span>
+  <span class="post-count">全站共2.1k字</span>
 </div>
 
 
@@ -938,7 +940,7 @@
     <!-- 博客字数统计 
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      全站共： <span class="post-count">2.0k</span> 字
+      全站共： <span class="post-count">2.1k</span> 字
     </span>
 </div>
 -->
@@ -1047,13 +1049,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
