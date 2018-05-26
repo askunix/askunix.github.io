@@ -90,7 +90,7 @@
 <meta property="og:image" content="http://yoursite.com/img/数据发送.jpg">
 <meta property="og:image" content="http://yoursite.com/img/规定.jpg">
 <meta property="og:image" content="http://yoursite.com/img/三种类型.jpg">
-<meta property="og:updated_time" content="2018-05-26T06:07:56.168Z">
+<meta property="og:updated_time" content="2018-05-26T06:20:37.561Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于UDP协议的回显服务器实现">
 <meta name="twitter:description" content="写在前面：回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机网络理论知识。实现环境：CentOS 7.0 操作系统、Vim编辑器、Gcc编译器。">
@@ -416,7 +416,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,944
+                  1,948
                 </span>
               
 
@@ -500,7 +500,7 @@
 <p>调用函数就能解决存储字节序不统一的问题</p>
 </blockquote>
 <h5 id="socket编程常见API："><a href="#socket编程常见API：" class="headerlink" title="socket编程常见API："></a>socket编程常见API：</h5><p>这部分只把函数列出来，详细介绍请戳作者下面博客：</p>
-<p><a href="https://blog.csdn.net/m0_37925202/article/details/80286946" target="_blank" rel="noopener">socket套接字</a></p>
+<p><strong> 请戳： </strong><a href="https://blog.csdn.net/m0_37925202/article/details/80286946" target="_blank" rel="noopener">socket套接字总结</a></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建socket文件描述符  (TCP/UDP,客户端+服务器)</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">socket</span><span class="params">(<span class="keyword">int</span> domain, <span class="keyword">int</span> type, <span class="keyword">int</span> protocol)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ssize_t</span> sendto(<span class="keyword">int</span> sockfd, <span class="keyword">const</span> <span class="keyword">void</span> *buf, <span class="keyword">size_t</span> len, <span class="keyword">int</span> flags, <span class="keyword">const</span> struct sockaddr *dest_addr, <span class="keyword">socklen_t</span> addrlen);</span><br><span class="line"></span><br><span class="line"><span class="keyword">ssize_t</span> recvfrom(<span class="keyword">int</span> sockfd, <span class="keyword">void</span> *buf, <span class="keyword">size_t</span> len, <span class="keyword">int</span> flags, struct sockaddr *src_addr, <span class="keyword">socklen_t</span> *addrlen);</span><br><span class="line"></span><br><span class="line"><span class="comment">//关闭套接字</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">close</span><span class="params">(<span class="keyword">int</span> fd)</span></span>;</span><br></pre></td></tr></table></figure>
 <h5 id="sockaddr结构："><a href="#sockaddr结构：" class="headerlink" title="sockaddr结构："></a>sockaddr结构：</h5><blockquote>
 <p>socket API是一 层抽象的网络编程接口 ,适用于各种底层网络协议,如IPv4、IPv6.然而, 各种网络协议的地址格式各不相同。</p>
@@ -945,7 +945,19 @@
 <!-- 新增访客统计代码 END-->
 
 
-
+window.onload = function() { 
+var show = document.getElementById("show"); 
+setInterval(function() { 
+var time = new Date(); 
+// 程序计时的月从0开始取值后+1 
+var m = time.getMonth() + 1; 
+//根据自己博客的创建时间更改数值 
+var t = "提示内容"+(time.getFullYear()-2017) + "年" + (m-3) + "月" 
++ time.getDate() + "天 " + time.getHours() + "时" 
++ time.getMinutes() + "分" + time.getSeconds() + "秒"; 
+show.innerHTML = t; 
+}, 1000); 
+}; 
         
 
 
