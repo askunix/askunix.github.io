@@ -94,15 +94,15 @@
 <meta property="og:site_name" content="何进鸿的博客">
 <meta property="og:description" content="写在前面：回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机网络理论知识。实现环境：CentOS 7.0 操作系统、Vim编辑器、Gcc编译器。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/img/网络.jpg">
-<meta property="og:image" content="http://yoursite.com/img/数据发送.jpg">
-<meta property="og:image" content="http://yoursite.com/img/规定.jpg">
-<meta property="og:image" content="http://yoursite.com/img/三种类型.jpg">
-<meta property="og:updated_time" content="2018-05-27T13:24:46.374Z">
+<meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E7%BD%91%E7%BB%9C.jpg">
+<meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E5%8F%91%E9%80%81.jpg">
+<meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E8%A7%84%E5%AE%9A.jpg">
+<meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E4%B8%89%E7%A7%8D%E7%B1%BB%E5%9E%8B.jpg">
+<meta property="og:updated_time" content="2018-05-28T07:02:22.046Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于UDP协议的回显服务器实现">
 <meta name="twitter:description" content="写在前面：回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机网络理论知识。实现环境：CentOS 7.0 操作系统、Vim编辑器、Gcc编译器。">
-<meta name="twitter:image" content="http://yoursite.com/img/网络.jpg">
+<meta name="twitter:image" content="http://p9ff104hp.bkt.clouddn.com/%E7%BD%91%E7%BB%9C.jpg">
 
 
 
@@ -248,15 +248,15 @@
 <meta property="og:site_name" content="何进鸿的博客">
 <meta property="og:description" content="写在前面：回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机网络理论知识。实现环境：CentOS 7.0 操作系统、Vim编辑器、Gcc编译器。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/img/网络.jpg">
-<meta property="og:image" content="http://yoursite.com/img/数据发送.jpg">
-<meta property="og:image" content="http://yoursite.com/img/规定.jpg">
-<meta property="og:image" content="http://yoursite.com/img/三种类型.jpg">
-<meta property="og:updated_time" content="2018-05-27T13:24:46.374Z">
+<meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E7%BD%91%E7%BB%9C.jpg">
+<meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E5%8F%91%E9%80%81.jpg">
+<meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E8%A7%84%E5%AE%9A.jpg">
+<meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E4%B8%89%E7%A7%8D%E7%B1%BB%E5%9E%8B.jpg">
+<meta property="og:updated_time" content="2018-05-28T07:02:22.046Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于UDP协议的回显服务器实现">
 <meta name="twitter:description" content="写在前面：回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机网络理论知识。实现环境：CentOS 7.0 操作系统、Vim编辑器、Gcc编译器。">
-<meta name="twitter:image" content="http://yoursite.com/img/网络.jpg">
+<meta name="twitter:image" content="http://p9ff104hp.bkt.clouddn.com/%E7%BD%91%E7%BB%9C.jpg">
 
 
 
@@ -654,7 +654,7 @@
       
 
       
-        <p><img src="/img/网络.jpg" alt="图片加载失败"></p>
+        <p><img src="http://p9ff104hp.bkt.clouddn.com/%E7%BD%91%E7%BB%9C.jpg" alt="图片加载失败"></p>
 <h4 id="写在前面："><a href="#写在前面：" class="headerlink" title="写在前面："></a>写在前面：</h4><p>回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机网络理论知识。<br>实现环境：CentOS 7.0 操作系统、Vim编辑器、Gcc编译器。<br><a id="more"></a></p>
 <h4 id="预备知识："><a href="#预备知识：" class="headerlink" title="预备知识："></a>预备知识：</h4><ul>
 <li>本文的目的是写回显服务器，在撸代码之前，先来个热身。</li>
@@ -688,16 +688,16 @@
 <li>（只想引入下面一句话）在网络数据流中同样有大小端之分，那么如何定义网络数据流的地址呢？</li>
 </ul>
 <p>【看图理解】</p>
-<p><img src="/img/数据发送.jpg" alt="图片加载失败"></p>
+<p><img src="http://p9ff104hp.bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E5%8F%91%E9%80%81.jpg" alt="图片加载失败"></p>
 <p>【看图说话】</p>
-<p><img src="/img/规定.jpg" alt="图片加载失败"></p>
+<p><img src="http://p9ff104hp.bkt.clouddn.com/%E8%A7%84%E5%AE%9A.jpg" alt="图片加载失败"></p>
 <ul>
 <li>如果发送主机是小端，就要准换成大端再发送，如果是大端，直接发送即可。</li>
 </ul>
 <blockquote>
 <p>为了使网络程序具有可移植性,使同样的C代码在大端和小端计算机上编译后都能正常运行,可以调用以下库函数做网络字节序和主机字节序的转换。</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;arpa/inet.h&gt;</span><br><span class="line">   uint32_t htonl(uint32_t hostlong);</span><br><span class="line">   uint16_t htons(uint16_t hostshort);</span><br><span class="line">   uint32_t ntohl(uint32_t netlong);</span><br><span class="line">   uint16_t ntohs(uint16_t netshort);</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line">   <span class="keyword">uint32_t</span> htonl(<span class="keyword">uint32_t</span> hostlong);</span><br><span class="line">   <span class="keyword">uint16_t</span> htons(<span class="keyword">uint16_t</span> hostshort);</span><br><span class="line">   <span class="keyword">uint32_t</span> ntohl(<span class="keyword">uint32_t</span> netlong);</span><br><span class="line">   <span class="keyword">uint16_t</span> ntohs(<span class="keyword">uint16_t</span> netshort);</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>调用函数就能解决存储字节序不统一的问题</p>
 </blockquote>
@@ -707,7 +707,7 @@
 <h5 id="sockaddr结构："><a href="#sockaddr结构：" class="headerlink" title="sockaddr结构："></a>sockaddr结构：</h5><blockquote>
 <p>socket API是一 层抽象的网络编程接口 ,适用于各种底层网络协议,如IPv4、IPv6.然而, 各种网络协议的地址格式各不相同。</p>
 </blockquote>
-<p><img src="/img/三种类型.jpg" alt="图片加载失败"></p>
+<p><img src="http://p9ff104hp.bkt.clouddn.com/%E4%B8%89%E7%A7%8D%E7%B1%BB%E5%9E%8B.jpg" alt="图片加载失败"></p>
 <ul>
 <li><p>注意：socket API可以都用 struct sockaddr *类型表 , 在使用的时候需要强制转化成sockaddr_in; 这样的好处是程序的通用性, 可以接收IPv4, IPv6, 以及UNIX Domain Socket各种类型的sockaddr结构体指针做为参数。</p>
 <hr>
@@ -962,7 +962,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
