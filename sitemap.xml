@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/music/index.html</loc>
+    
+    <lastmod>2018-06-01T01:09:46.117Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/05/31/TCp%E5%8D%8F%E8%AE%AE%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93-md/</loc>
     
     <lastmod>2018-06-01T00:48:15.908Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://yoursite.com/2018/05/20/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%BF%83%E5%BE%97/</loc>
     
     <lastmod>2018-05-31T16:03:02.202Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/music/index.html</loc>
-    
-    <lastmod>2018-05-28T15:44:09.275Z</lastmod>
     
   </url>
   
