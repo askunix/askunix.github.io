@@ -86,22 +86,22 @@
 
 
 
-<meta name="description" content="写在前面：回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机网络理论知识。实现环境：CentOS 7.0 操作系统、Vim编辑器、Gcc编译器。">
+<meta name="description" content="写在前面回显服务器的代码实现过程，文章加入了详细的设计过程以及其他的计算机网络理论知识。操作环境：CentOS 7.0 X64 操作系统、Vim编辑器、Gcc编译器。">
 <meta name="keywords" content="计算机网络,UDP协议,回显服务器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于UDP协议的回显服务器实现">
+<meta property="og:title" content="一场不散场的恋爱之UDP协议的回显服务器实现">
 <meta property="og:url" content="http://yoursite.com/2018/05/22/基于UDP协议的回显服务器/index.html">
 <meta property="og:site_name" content="何进鸿的博客">
-<meta property="og:description" content="写在前面：回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机网络理论知识。实现环境：CentOS 7.0 操作系统、Vim编辑器、Gcc编译器。">
+<meta property="og:description" content="写在前面回显服务器的代码实现过程，文章加入了详细的设计过程以及其他的计算机网络理论知识。操作环境：CentOS 7.0 X64 操作系统、Vim编辑器、Gcc编译器。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E7%BD%91%E7%BB%9C.jpg">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E5%8F%91%E9%80%81.jpg">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E8%A7%84%E5%AE%9A.jpg">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E4%B8%89%E7%A7%8D%E7%B1%BB%E5%9E%8B.jpg">
-<meta property="og:updated_time" content="2018-05-31T14:57:17.880Z">
+<meta property="og:updated_time" content="2018-05-31T16:03:04.882Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于UDP协议的回显服务器实现">
-<meta name="twitter:description" content="写在前面：回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机网络理论知识。实现环境：CentOS 7.0 操作系统、Vim编辑器、Gcc编译器。">
+<meta name="twitter:title" content="一场不散场的恋爱之UDP协议的回显服务器实现">
+<meta name="twitter:description" content="写在前面回显服务器的代码实现过程，文章加入了详细的设计过程以及其他的计算机网络理论知识。操作环境：CentOS 7.0 X64 操作系统、Vim编辑器、Gcc编译器。">
 <meta name="twitter:image" content="http://p9ff104hp.bkt.clouddn.com/%E7%BD%91%E7%BB%9C.jpg">
 
 
@@ -180,7 +180,7 @@
 
 
 
-  <title>基于UDP协议的回显服务器实现 | 何进鸿的博客</title>
+  <title>一场不散场的恋爱之UDP协议的回显服务器实现 | 何进鸿的博客</title>
   
   
   
@@ -264,22 +264,22 @@
 
 
 
-<meta name="description" content="写在前面：回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机网络理论知识。实现环境：CentOS 7.0 操作系统、Vim编辑器、Gcc编译器。">
+<meta name="description" content="写在前面回显服务器的代码实现过程，文章加入了详细的设计过程以及其他的计算机网络理论知识。操作环境：CentOS 7.0 X64 操作系统、Vim编辑器、Gcc编译器。">
 <meta name="keywords" content="计算机网络,UDP协议,回显服务器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于UDP协议的回显服务器实现">
+<meta property="og:title" content="一场不散场的恋爱之UDP协议的回显服务器实现">
 <meta property="og:url" content="http://yoursite.com/2018/05/22/基于UDP协议的回显服务器/index.html">
 <meta property="og:site_name" content="何进鸿的博客">
-<meta property="og:description" content="写在前面：回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机网络理论知识。实现环境：CentOS 7.0 操作系统、Vim编辑器、Gcc编译器。">
+<meta property="og:description" content="写在前面回显服务器的代码实现过程，文章加入了详细的设计过程以及其他的计算机网络理论知识。操作环境：CentOS 7.0 X64 操作系统、Vim编辑器、Gcc编译器。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E7%BD%91%E7%BB%9C.jpg">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E5%8F%91%E9%80%81.jpg">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E8%A7%84%E5%AE%9A.jpg">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E4%B8%89%E7%A7%8D%E7%B1%BB%E5%9E%8B.jpg">
-<meta property="og:updated_time" content="2018-05-31T14:57:17.880Z">
+<meta property="og:updated_time" content="2018-05-31T16:03:04.882Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于UDP协议的回显服务器实现">
-<meta name="twitter:description" content="写在前面：回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机网络理论知识。实现环境：CentOS 7.0 操作系统、Vim编辑器、Gcc编译器。">
+<meta name="twitter:title" content="一场不散场的恋爱之UDP协议的回显服务器实现">
+<meta name="twitter:description" content="写在前面回显服务器的代码实现过程，文章加入了详细的设计过程以及其他的计算机网络理论知识。操作环境：CentOS 7.0 X64 操作系统、Vim编辑器、Gcc编译器。">
 <meta name="twitter:image" content="http://p9ff104hp.bkt.clouddn.com/%E7%BD%91%E7%BB%9C.jpg">
 
 
@@ -358,7 +358,7 @@
 
 
 
-  <title>基于UDP协议的回显服务器实现 | 何进鸿的博客</title>
+  <title>一场不散场的恋爱之UDP协议的回显服务器实现 | 何进鸿的博客</title>
   <style>
   .forkme{
  display: none;
@@ -577,7 +577,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">基于UDP协议的回显服务器实现</h1>
+          <h1 class="post-title" itemprop="name headline">一场不散场的恋爱之UDP协议的回显服务器实现</h1>
         
 
         <div class="post-meta">
@@ -639,7 +639,7 @@
 
           
           
-             <span id="/2018/05/22/基于UDP协议的回显服务器/" class="leancloud_visitors" data-flag-title="基于UDP协议的回显服务器实现">
+             <span id="/2018/05/22/基于UDP协议的回显服务器/" class="leancloud_visitors" data-flag-title="一场不散场的恋爱之UDP协议的回显服务器实现">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -665,7 +665,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,948
+                  1,998
                 </span>
               
 
@@ -703,28 +703,28 @@
 
       
         <p><img src="http://p9ff104hp.bkt.clouddn.com/%E7%BD%91%E7%BB%9C.jpg" alt="图片加载失败"></p>
-<h4 id="写在前面："><a href="#写在前面：" class="headerlink" title="写在前面："></a>写在前面：</h4><p>回显服务器的代码实现，文章加入了详细的设计过程以及其他的计算机网络理论知识。<br>实现环境：CentOS 7.0 操作系统、Vim编辑器、Gcc编译器。<br><a id="more"></a></p>
-<h4 id="预备知识："><a href="#预备知识：" class="headerlink" title="预备知识："></a>预备知识：</h4><ul>
+<h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><p>回显服务器的代码实现过程，文章加入了详细的设计过程以及其他的计算机网络理论知识。<br>操作环境：CentOS 7.0 X64 操作系统、Vim编辑器、Gcc编译器。<br><a id="more"></a></p>
+<h4 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h4><ul>
 <li>本文的目的是写回显服务器，在撸代码之前，先来个热身。</li>
 </ul>
-<h5 id="IP地址是什么？"><a href="#IP地址是什么？" class="headerlink" title="IP地址是什么？"></a>IP地址是什么？</h5><p>IP地址有IPV4、IPV6之分，一般不特俗说明，默认就是IPV4。</p>
+<h5 id="IP地址是什么"><a href="#IP地址是什么" class="headerlink" title="IP地址是什么"></a>IP地址是什么</h5><p>IP地址有IPV4、IPV6之分，一般不特俗说明，默认就是IPV4。</p>
 <blockquote>
 <p>IP地址是用来标识不同的主机，每个主机都有唯一的IP地址；<br>对于IP4来说，IP地址是一个4字节，32位整数；<br>IP地址用“点分”制表示，如：192.168.1.11（用点分割的每个数范围0~255）。</p>
 </blockquote>
-<h5 id="源IP地址-amp-目的IP地址？"><a href="#源IP地址-amp-目的IP地址？" class="headerlink" title="源IP地址&amp;目的IP地址？"></a>源IP地址&amp;目的IP地址？</h5><blockquote>
+<h5 id="源IP地址-amp-目的IP地址"><a href="#源IP地址-amp-目的IP地址" class="headerlink" title="源IP地址&amp;目的IP地址"></a>源IP地址&amp;目的IP地址</h5><blockquote>
 <p>很容易理解，都是地址，和寄快递的收发地址一样，从上海发往西安的快递，源IP就是上海，目的IP就是西安。</p>
 </blockquote>
-<h5 id="端口号是什么？"><a href="#端口号是什么？" class="headerlink" title="端口号是什么？"></a>端口号是什么？</h5><ul>
+<h5 id="端口号是什么"><a href="#端口号是什么" class="headerlink" title="端口号是什么"></a>端口号是什么</h5><ul>
 <li>端口号是传输层协议内容</li>
 </ul>
 <blockquote>
 <p>端口号是2字节196位整数；<br>端口号用来标识一个进程，告诉操作系统，当前数据要交给哪一个进程来处理；<br><strong>一个进程可以绑定多个端口号，但是一个端口号不可以绑定多个进程。</strong></p>
 </blockquote>
-<h5 id="源端口号-amp-目的端口号？"><a href="#源端口号-amp-目的端口号？" class="headerlink" title="源端口号&amp;目的端口号？"></a>源端口号&amp;目的端口号？</h5><blockquote>
+<h5 id="源端口号-amp-目的端口号"><a href="#源端口号-amp-目的端口号" class="headerlink" title="源端口号&amp;目的端口号"></a>源端口号&amp;目的端口号</h5><blockquote>
 <p>在源IP&amp;目的IP中，我们用的寄快递的例子帮助理解，在这里，还是用发快递帮助理解。源IP与目的IP标识了发件人地址和收件人的地址，地址有了，那么包裹就会交给快递员运送每个，快递员都有一个工号，工号是唯一的。这就对应了数据传输过程中，由哪个进程来处理数据。再来到寄快递问题上，有的快递包裹比较大，这就要多个快递员来运输，那么一个包裹由多个快递员运输，记在物流信息上就是这样的格式：一个包裹的目的地 + 多个快递员工号；这家公司接的都是大包裹，一个快递员只能送一个包裹。对应到网络传输中，就是一个进程可以绑定多个端口号，但一个端口号不可以绑定多个进程。</p>
 </blockquote>
 <hr>
-<h4 id="函数介绍："><a href="#函数介绍：" class="headerlink" title="函数介绍："></a>函数介绍：</h4><ul>
+<h4 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h4><ul>
 <li>为后面撸代码介绍几个函数。</li>
 </ul>
 <h5 id="网络字节序："><a href="#网络字节序：" class="headerlink" title="网络字节序："></a>网络字节序：</h5><p>在C语言中我们知道，内存中的数据存储有大小端之分；数据在磁盘中存储也有大小端之分，在这里我还想啰嗦一个C语言问题，怎样判断自己的计算机内存是大端字节序还是小端字节序存储方式？[假装思索……]</p>
@@ -761,7 +761,7 @@
 <hr>
 </li>
 </ul>
-<h4 id="UDP协议："><a href="#UDP协议：" class="headerlink" title="UDP协议："></a>UDP协议：</h4><blockquote>
+<h4 id="UDP协议"><a href="#UDP协议" class="headerlink" title="UDP协议"></a>UDP协议</h4><blockquote>
 <p>通过上面的学习对UDP有个直观的认识，再详细讨论以下几点：</p>
 </blockquote>
 <ul>
@@ -820,8 +820,11 @@
 <ul>
 <li>有了步骤，实现起来就只需要把步骤翻译成Code了：</li>
 </ul>
-<h5 id="服务器实现："><a href="#服务器实现：" class="headerlink" title="服务器实现："></a>服务器实现：</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;netinet/in.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//创建一个套接字，并检测是否创建成功</span></span><br><span class="line">    <span class="keyword">int</span> sockSer = socket(AF_INET, SOCK_DGRAM, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span>(sockSer == <span class="number">-1</span>)</span><br><span class="line">        perror(<span class="string">"socket"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_in</span> <span class="title">addrSer</span>;</span>  <span class="comment">//创建一个记录地址信息的结构体</span></span><br><span class="line">    addrSer.sin_family = AF_INET;    <span class="comment">//使用AF_INET协议族</span></span><br><span class="line">    addrSer.sin_port = htons(<span class="number">5050</span>);     <span class="comment">//设置地址结构体中的端口号</span></span><br><span class="line">    addrSer.sin_addr.s_addr = inet_addr(<span class="string">"192.168.3.169"</span>);  <span class="comment">//设置通信ip</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//将套接字地址与所创建的套接字号联系起来，并检测是否绑定成功</span></span><br><span class="line">    <span class="keyword">socklen_t</span> addrlen = <span class="keyword">sizeof</span>(struct sockaddr);</span><br><span class="line">    <span class="keyword">int</span> res = bind(sockSer,(struct sockaddr*)&amp;addrSer, addrlen);</span><br><span class="line">    <span class="keyword">if</span>(res == <span class="number">-1</span>)</span><br><span class="line">        perror(<span class="string">"bind"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> sendbuf[<span class="number">256</span>];    <span class="comment">//申请一个发送数据缓存区</span></span><br><span class="line">    <span class="keyword">char</span> recvbuf[<span class="number">256</span>];    <span class="comment">//申请一个接收数据缓存区</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_in</span> <span class="title">addrCli</span>;</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)  <span class="comment">//服务器一直循环接受客户端的请求</span></span><br><span class="line">    &#123;</span><br><span class="line">        recvfrom(sockSer,recvbuf,<span class="number">256</span>,<span class="number">0</span>,(struct  sockaddr*)&amp;addrCli, &amp;addrlen);     <span class="comment">//从指定地址接收客户端数据</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Cli:&gt;%s\n"</span>,recvbuf);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Ser:&gt;"</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s"</span>,sendbuf);</span><br><span class="line">        sendto(sockSer,sendbuf,<span class="built_in">strlen</span>(sendbuf)+<span class="number">1</span>,<span class="number">0</span>,(struct sockaddr*)&amp;addrCli, addrlen);    <span class="comment">//向客户端发送数据</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="客户端实现："><a href="#客户端实现：" class="headerlink" title="客户端实现："></a>客户端实现：</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;netinet/in.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//创建一个套接字，并检测是否创建成功</span></span><br><span class="line">    <span class="keyword">int</span> sockCli = socket(AF_INET, SOCK_DGRAM, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span>(sockCli == <span class="number">-1</span>)&#123;</span><br><span class="line">        perror(<span class="string">"socket"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    addrSer.sin_family = AF_INET;    <span class="comment">//使用AF_INET协议族</span></span><br><span class="line">    addrSer.sin_port = htons(<span class="number">5050</span>);     <span class="comment">//设置地址结构体中的端口号</span></span><br><span class="line">    addrSer.sin_addr.s_addr = inet_addr(<span class="string">"192.168.3.169"</span>);  <span class="comment">//设置通信ip</span></span><br><span class="line">    <span class="keyword">socklen_t</span> addrlen = <span class="keyword">sizeof</span>(struct sockaddr);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> sendbuf[<span class="number">256</span>];    <span class="comment">//申请一个发送数据缓存区</span></span><br><span class="line">    <span class="keyword">char</span> recvbuf[<span class="number">256</span>];    <span class="comment">//申请一个接收数据缓存区</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="comment">//向客户端发送数据</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Cli:&gt;"</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s"</span>,sendbuf);</span><br><span class="line">        sendto(sockCli, sendbuf, <span class="built_in">strlen</span>(sendbuf)+<span class="number">1</span>, <span class="number">0</span>, (struct sockaddr*)&amp;addrSer, addrlen);</span><br><span class="line">        接收来自客户端的数据</span><br><span class="line">        recvfrom(sockCli, recvbuf, BUFFER_SIZE, <span class="number">0</span>, (struct sockaddr*)&amp;addrSer, &amp;addrlen);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Ser:&gt;%s\n"</span>, recvbuf);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="服务器实现"><a href="#服务器实现" class="headerlink" title="服务器实现"></a>服务器实现</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;netinet/in.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//创建一个套接字，并检测是否创建成功</span></span><br><span class="line">    <span class="keyword">int</span> sockSer = socket(AF_INET, SOCK_DGRAM, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span>(sockSer == <span class="number">-1</span>)</span><br><span class="line">        perror(<span class="string">"socket"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_in</span> <span class="title">addrSer</span>;</span>  <span class="comment">//创建一个记录地址信息的结构体</span></span><br><span class="line">    addrSer.sin_family = AF_INET;    <span class="comment">//使用AF_INET协议族</span></span><br><span class="line">    addrSer.sin_port = htons(<span class="number">5050</span>);     <span class="comment">//设置地址结构体中的端口号</span></span><br><span class="line">    addrSer.sin_addr.s_addr = inet_addr(<span class="string">"192.168.3.169"</span>);  <span class="comment">//设置通信ip</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//将套接字地址与所创建的套接字号联系起来，并检测是否绑定成功</span></span><br><span class="line">    <span class="keyword">socklen_t</span> addrlen = <span class="keyword">sizeof</span>(struct sockaddr);</span><br><span class="line">    <span class="keyword">int</span> res = bind(sockSer,(struct sockaddr*)&amp;addrSer, addrlen);</span><br><span class="line">    <span class="keyword">if</span>(res == <span class="number">-1</span>)</span><br><span class="line">        perror(<span class="string">"bind"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> sendbuf[<span class="number">256</span>];    <span class="comment">//申请一个发送数据缓存区</span></span><br><span class="line">    <span class="keyword">char</span> recvbuf[<span class="number">256</span>];    <span class="comment">//申请一个接收数据缓存区</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_in</span> <span class="title">addrCli</span>;</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)  <span class="comment">//服务器一直循环接受客户端的请求</span></span><br><span class="line">    &#123;</span><br><span class="line">        recvfrom(sockSer,recvbuf,<span class="number">256</span>,<span class="number">0</span>,(struct  sockaddr*)&amp;addrCli, &amp;addrlen);     <span class="comment">//从指定地址接收客户端数据</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Cli:&gt;%s\n"</span>,recvbuf);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Ser:&gt;"</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s"</span>,sendbuf);</span><br><span class="line">        sendto(sockSer,sendbuf,<span class="built_in">strlen</span>(sendbuf)+<span class="number">1</span>,<span class="number">0</span>,(struct sockaddr*)&amp;addrCli, addrlen);    <span class="comment">//向客户端发送数据</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="客户端实现"><a href="#客户端实现" class="headerlink" title="客户端实现"></a>客户端实现</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;netinet/in.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//创建一个套接字，并检测是否创建成功</span></span><br><span class="line">    <span class="keyword">int</span> sockCli = socket(AF_INET, SOCK_DGRAM, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span>(sockCli == <span class="number">-1</span>)&#123;</span><br><span class="line">        perror(<span class="string">"socket"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    addrSer.sin_family = AF_INET;    <span class="comment">//使用AF_INET协议族</span></span><br><span class="line">    addrSer.sin_port = htons(<span class="number">5050</span>);     <span class="comment">//设置地址结构体中的端口号</span></span><br><span class="line">    addrSer.sin_addr.s_addr = inet_addr(<span class="string">"192.168.3.169"</span>);  <span class="comment">//设置通信ip</span></span><br><span class="line">    <span class="keyword">socklen_t</span> addrlen = <span class="keyword">sizeof</span>(struct sockaddr);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> sendbuf[<span class="number">256</span>];    <span class="comment">//申请一个发送数据缓存区</span></span><br><span class="line">    <span class="keyword">char</span> recvbuf[<span class="number">256</span>];    <span class="comment">//申请一个接收数据缓存区</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="comment">//向客户端发送数据</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Cli:&gt;"</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s"</span>,sendbuf);</span><br><span class="line">        sendto(sockCli, sendbuf, <span class="built_in">strlen</span>(sendbuf)+<span class="number">1</span>, <span class="number">0</span>, (struct sockaddr*)&amp;addrSer, addrlen);</span><br><span class="line">        接收来自客户端的数据</span><br><span class="line">        recvfrom(sockCli, recvbuf, BUFFER_SIZE, <span class="number">0</span>, (struct sockaddr*)&amp;addrSer, &amp;addrlen);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Ser:&gt;%s\n"</span>, recvbuf);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="问题思考"><a href="#问题思考" class="headerlink" title="问题思考"></a>问题思考</h4><p>1、UDP协议的特点以及和TCP协议的区别？</p>
+<p>2、UDP连接建立过程分析、TCP呢？</p>
+<p>3、UDP协议是不可靠的，为什么还要使用？</p>
 
       
     </div>
@@ -906,8 +909,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/31/TCp协议可靠传输-md/" rel="prev" title="放弃一切保证TCP协议可靠传输.md">
-                放弃一切保证TCP协议可靠传输.md <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/31/TCp协议可靠传输-md/" rel="prev" title="放弃一切只为保证TCP协议的可靠传输">
+                放弃一切只为保证TCP协议的可靠传输 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1014,7 +1017,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1089,7 +1092,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#写在前面："><span class="nav-number">1.</span> <span class="nav-text">写在前面：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预备知识："><span class="nav-number">2.</span> <span class="nav-text">预备知识：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#IP地址是什么？"><span class="nav-number">2.1.</span> <span class="nav-text">IP地址是什么？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#源IP地址-amp-目的IP地址？"><span class="nav-number">2.2.</span> <span class="nav-text">源IP地址&amp;目的IP地址？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#端口号是什么？"><span class="nav-number">2.3.</span> <span class="nav-text">端口号是什么？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#源端口号-amp-目的端口号？"><span class="nav-number">2.4.</span> <span class="nav-text">源端口号&amp;目的端口号？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数介绍："><span class="nav-number">3.</span> <span class="nav-text">函数介绍：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#网络字节序："><span class="nav-number">3.1.</span> <span class="nav-text">网络字节序：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#socket编程常见API："><span class="nav-number">3.2.</span> <span class="nav-text">socket编程常见API：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sockaddr结构："><span class="nav-number">3.3.</span> <span class="nav-text">sockaddr结构：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UDP协议："><span class="nav-number">4.</span> <span class="nav-text">UDP协议：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#服务器和客户端是怎么运行起来的？"><span class="nav-number">4.1.</span> <span class="nav-text">服务器和客户端是怎么运行起来的？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#服务器实现："><span class="nav-number">4.2.</span> <span class="nav-text">服务器实现：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#客户端实现："><span class="nav-number">4.3.</span> <span class="nav-text">客户端实现：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预备知识"><span class="nav-number">2.</span> <span class="nav-text">预备知识</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#IP地址是什么"><span class="nav-number">2.1.</span> <span class="nav-text">IP地址是什么</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#源IP地址-amp-目的IP地址"><span class="nav-number">2.2.</span> <span class="nav-text">源IP地址&amp;目的IP地址</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#端口号是什么"><span class="nav-number">2.3.</span> <span class="nav-text">端口号是什么</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#源端口号-amp-目的端口号"><span class="nav-number">2.4.</span> <span class="nav-text">源端口号&amp;目的端口号</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数介绍"><span class="nav-number">3.</span> <span class="nav-text">函数介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#网络字节序："><span class="nav-number">3.1.</span> <span class="nav-text">网络字节序：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#socket编程常见API："><span class="nav-number">3.2.</span> <span class="nav-text">socket编程常见API：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sockaddr结构："><span class="nav-number">3.3.</span> <span class="nav-text">sockaddr结构：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UDP协议"><span class="nav-number">4.</span> <span class="nav-text">UDP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#服务器和客户端是怎么运行起来的？"><span class="nav-number">4.1.</span> <span class="nav-text">服务器和客户端是怎么运行起来的？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#服务器实现"><span class="nav-number">4.2.</span> <span class="nav-text">服务器实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#客户端实现"><span class="nav-number">4.3.</span> <span class="nav-text">客户端实现</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题思考"><span class="nav-number">5.</span> <span class="nav-text">问题思考</span></a></li></ol></div>
             
 
           </div>
@@ -1144,7 +1147,7 @@
 <div class="theme-info">
   <div class="powered-by"></div>
    <i class="fa fa-pencil"></i>
-  <span class="post-count">全站共4.8k字</span>
+  <span class="post-count">全站共4.9k字</span>
 </div>
 
 
@@ -1217,7 +1220,7 @@
 <!-- 博客字数统计 
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      全站共： <span class="post-count">4.8k</span> 字
+      全站共： <span class="post-count">4.9k</span> 字
     </span>
 </div>
 -->
