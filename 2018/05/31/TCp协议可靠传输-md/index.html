@@ -98,7 +98,7 @@
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E5%A4%9A%E6%95%B0%E6%8D%AE%E5%8F%91%E9%80%81%E5%BA%94%E7%AD%94.png">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F.png">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6%E4%B8%BE%E4%BE%8B.png">
-<meta property="og:updated_time" content="2018-06-01T00:48:15.908Z">
+<meta property="og:updated_time" content="2018-06-01T01:14:49.966Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="放弃一切保证TCP协议的可靠传输">
 <meta name="twitter:description" content="写在前面TCP协议在网络传输中保证了其可靠性，本篇文章对TCP协议可靠传输机制做了详细介绍（ACK机制&amp;amp;滑动窗口&amp;amp;拥塞控制&amp;amp;流量控制）。">
@@ -276,7 +276,7 @@
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E5%A4%9A%E6%95%B0%E6%8D%AE%E5%8F%91%E9%80%81%E5%BA%94%E7%AD%94.png">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F.png">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6%E4%B8%BE%E4%BE%8B.png">
-<meta property="og:updated_time" content="2018-06-01T00:48:15.908Z">
+<meta property="og:updated_time" content="2018-06-01T01:14:49.966Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="放弃一切保证TCP协议的可靠传输">
 <meta name="twitter:description" content="写在前面TCP协议在网络传输中保证了其可靠性，本篇文章对TCP协议可靠传输机制做了详细介绍（ACK机制&amp;amp;滑动窗口&amp;amp;拥塞控制&amp;amp;流量控制）。">
@@ -665,7 +665,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,718
+                  2,749
                 </span>
               
 
@@ -811,6 +811,10 @@
 <p>　　2、由于发送方现在认为网络很很可能没有发生特别严重的阻塞（如果发生了严重阻塞的话，就不会一连有好几个报文段到达接收方，就不会导致接收方连续发送重复确认），因此与慢开始不同之处是现在不执行慢开始算法（即拥塞窗口的值不设为1个MSSS），而是把拥塞窗口的值设为慢开始门限减半后的值，而后开始执行拥塞避免算法，线性地增大拥塞窗口。</p>
 <h4 id="问题思考"><a href="#问题思考" class="headerlink" title="问题思考"></a>问题思考</h4><p>1、网络拥堵是怎么来的？</p>
 <p>2、RFC 定义的 4 种拥塞控制算法是什么？分别讲述流程以及原理？</p>
+<p>3、为什么TCP传输这么复杂？</p>
+<blockquote>
+<p>因为要保证可靠传输，同时又要尽可能提高性能。</p>
+</blockquote>
 
       
     </div>
