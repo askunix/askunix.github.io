@@ -5,10 +5,10 @@
     
   <url>
     <loc>http://yoursite.com/2018/05/31/TCp%E5%8D%8F%E8%AE%AE%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93-md/</loc>
-    <lastmod>2018-05-31T16:03:06.774Z</lastmod>
+    <lastmod>2018-06-01T00:48:15.908Z</lastmod>
     <data>
         <display>
-        <title>放弃一切只为保证TCP协议的可靠传输</title>
+        <title>放弃一切保证TCP协议的可靠传输</title>
         <pubTime>2018-05-31T14:34:00.000Z</pubTime>
         
         <tag>TCP协议</tag>
@@ -33,10 +33,10 @@
     
   <url>
     <loc>http://yoursite.com/2018/05/22/%E5%9F%BA%E4%BA%8EUDP%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%9B%9E%E6%98%BE%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    <lastmod>2018-05-31T16:03:04.882Z</lastmod>
+    <lastmod>2018-06-01T00:47:58.117Z</lastmod>
     <data>
         <display>
-        <title>一场不散场的恋爱之UDP协议的回显服务器实现</title>
+        <title>UDP协议实现回显服务器</title>
         <pubTime>2018-05-21T17:14:30.000Z</pubTime>
         
         <tag>计算机网络</tag>
