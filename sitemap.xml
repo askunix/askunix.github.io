@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2018-06-03T14:51:07.290Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/05/22/%E5%9F%BA%E4%BA%8EUDP%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%9B%9E%E6%98%BE%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     
     <lastmod>2018-06-03T14:47:02.158Z</lastmod>
@@ -16,6 +23,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/2018/05/31/TCp%E5%8D%8F%E8%AE%AE%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93-md/</loc>
+    
+    <lastmod>2018-06-03T14:46:59.177Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/photo/index.html</loc>
     
     <lastmod>2018-06-03T14:46:24.904Z</lastmod>
@@ -23,23 +37,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/about/index.html</loc>
-    
-    <lastmod>2018-06-03T14:44:40.525Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/music/index.html</loc>
     
     <lastmod>2018-06-01T01:20:31.733Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/05/31/TCp%E5%8D%8F%E8%AE%AE%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93-md/</loc>
-    
-    <lastmod>2018-06-01T01:14:49.966Z</lastmod>
     
   </url>
   
