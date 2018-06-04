@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/photo/index.html</loc>
+    
+    <lastmod>2018-06-04T14:42:19.572Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/about/index.html</loc>
     
-    <lastmod>2018-06-03T14:58:24.970Z</lastmod>
+    <lastmod>2018-06-04T14:42:08.555Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>http://yoursite.com/2018/05/31/TCp%E5%8D%8F%E8%AE%AE%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93-md/</loc>
     
     <lastmod>2018-06-03T14:46:59.177Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/photo/index.html</loc>
-    
-    <lastmod>2018-06-03T14:46:24.904Z</lastmod>
     
   </url>
   
