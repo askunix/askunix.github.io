@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="TCP协议,ACK机制,滑动窗口,拥塞控制,流量控制," />
 
 
 
@@ -86,16 +86,23 @@
 
 
 
-<meta name="description" content="技术汇总、趣事速记">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Askunix&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="写在前面TCP协议在网络传输中保证了其可靠性，本篇文章对TCP协议可靠传输机制做了详细介绍（ACK机制&amp;amp;滑动窗口&amp;amp;拥塞控制&amp;amp;流量控制）。">
+<meta name="keywords" content="TCP协议,ACK机制,滑动窗口,拥塞控制,流量控制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="放弃一切保证TCP协议的可靠传输">
+<meta property="og:url" content="http://yoursite.com/2018/05/31/TCp协议可靠传输/index.html">
 <meta property="og:site_name" content="Askunix&#39;s Blog">
-<meta property="og:description" content="技术汇总、趣事速记">
+<meta property="og:description" content="写在前面TCP协议在网络传输中保证了其可靠性，本篇文章对TCP协议可靠传输机制做了详细介绍（ACK机制&amp;amp;滑动窗口&amp;amp;拥塞控制&amp;amp;流量控制）。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/ACK%E7%A1%AE%E8%AE%A4%E6%9C%BA%E5%88%B6.png">
+<meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E5%A4%9A%E6%95%B0%E6%8D%AE%E5%8F%91%E9%80%81%E5%BA%94%E7%AD%94.png">
+<meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F.png">
+<meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6%E4%B8%BE%E4%BE%8B.png">
+<meta property="og:updated_time" content="2018-06-03T14:46:59.177Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Askunix&#39;s Blog">
-<meta name="twitter:description" content="技术汇总、趣事速记">
+<meta name="twitter:title" content="放弃一切保证TCP协议的可靠传输">
+<meta name="twitter:description" content="写在前面TCP协议在网络传输中保证了其可靠性，本篇文章对TCP协议可靠传输机制做了详细介绍（ACK机制&amp;amp;滑动窗口&amp;amp;拥塞控制&amp;amp;流量控制）。">
+<meta name="twitter:image" content="http://p9ff104hp.bkt.clouddn.com/ACK%E7%A1%AE%E8%AE%A4%E6%9C%BA%E5%88%B6.png">
 
 
 
@@ -125,7 +132,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/31/TCp协议可靠传输/"/>
 
 
 
@@ -173,7 +180,7 @@
 
 
 
-  <title>Askunix's Blog</title>
+  <title>放弃一切保证TCP协议的可靠传输 | Askunix's Blog</title>
   
   
   
@@ -246,7 +253,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="TCP协议,ACK机制,滑动窗口,拥塞控制,流量控制," />
 
 
 
@@ -257,16 +264,23 @@
 
 
 
-<meta name="description" content="技术汇总、趣事速记">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Askunix&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="写在前面TCP协议在网络传输中保证了其可靠性，本篇文章对TCP协议可靠传输机制做了详细介绍（ACK机制&amp;amp;滑动窗口&amp;amp;拥塞控制&amp;amp;流量控制）。">
+<meta name="keywords" content="TCP协议,ACK机制,滑动窗口,拥塞控制,流量控制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="放弃一切保证TCP协议的可靠传输">
+<meta property="og:url" content="http://yoursite.com/2018/05/31/TCp协议可靠传输/index.html">
 <meta property="og:site_name" content="Askunix&#39;s Blog">
-<meta property="og:description" content="技术汇总、趣事速记">
+<meta property="og:description" content="写在前面TCP协议在网络传输中保证了其可靠性，本篇文章对TCP协议可靠传输机制做了详细介绍（ACK机制&amp;amp;滑动窗口&amp;amp;拥塞控制&amp;amp;流量控制）。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/ACK%E7%A1%AE%E8%AE%A4%E6%9C%BA%E5%88%B6.png">
+<meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E5%A4%9A%E6%95%B0%E6%8D%AE%E5%8F%91%E9%80%81%E5%BA%94%E7%AD%94.png">
+<meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F.png">
+<meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6%E4%B8%BE%E4%BE%8B.png">
+<meta property="og:updated_time" content="2018-06-03T14:46:59.177Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Askunix&#39;s Blog">
-<meta name="twitter:description" content="技术汇总、趣事速记">
+<meta name="twitter:title" content="放弃一切保证TCP协议的可靠传输">
+<meta name="twitter:description" content="写在前面TCP协议在网络传输中保证了其可靠性，本篇文章对TCP协议可靠传输机制做了详细介绍（ACK机制&amp;amp;滑动窗口&amp;amp;拥塞控制&amp;amp;流量控制）。">
+<meta name="twitter:image" content="http://p9ff104hp.bkt.clouddn.com/ACK%E7%A1%AE%E8%AE%A4%E6%9C%BA%E5%88%B6.png">
 
 
 
@@ -296,7 +310,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/31/TCp协议可靠传输/"/>
 
 
 
@@ -344,7 +358,7 @@
 
 
 
-  <title>Askunix's Blog</title>
+  <title>放弃一切保证TCP协议的可靠传输 | Askunix's Blog</title>
   <style>
   .forkme{
  display: none;
@@ -389,8 +403,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
 	
@@ -532,419 +545,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/17/C语言实现一般通讯录/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="何进鸿">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://7xrvas.com1.z0.glb.clouddn.com/16-4-6/38502140.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Askunix's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/17/C语言实现一般通讯录/" itemprop="url">通讯录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-17T15:09:27+08:00">
-                2018-06-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/小项目/" itemprop="url" rel="index">
-                    <span itemprop="name">小项目</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/06/17/C语言实现一般通讯录/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/17/C语言实现一般通讯录/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/06/17/C语言实现一般通讯录/" class="leancloud_visitors" data-flag-title="通讯录">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读量&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             <span></span>
-			 </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,600
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  8
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><blockquote>
-<p>C语言通讯录可以用来存储1000个人的信息，<br>每个人的信息包括姓名、年龄、性别、电话、住址,<br>实现基本的增、删、查、改、排序、打印、清空基本功能。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/17/C语言实现一般通讯录/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-	
-	
-	
-	<div>
-  
-</div>
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/15/TCP建立和断开连接过程（三次握手&四次挥手）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="何进鸿">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://7xrvas.com1.z0.glb.clouddn.com/16-4-6/38502140.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Askunix's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/15/TCP建立和断开连接过程（三次握手&四次挥手）/" itemprop="url">TCP建立和断开连接过程（三次握手&四次挥手）.md</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-15T08:25:40+08:00">
-                2018-06-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SO-Kernal/" itemprop="url" rel="index">
-                    <span itemprop="name">SO Kernal</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/06/15/TCP建立和断开连接过程（三次握手&四次挥手）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/15/TCP建立和断开连接过程（三次握手&四次挥手）/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/06/15/TCP建立和断开连接过程（三次握手&四次挥手）/" class="leancloud_visitors" data-flag-title="TCP建立和断开连接过程（三次握手&四次挥手）.md">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读量&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             <span></span>
-			 </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  0
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-	
-	<div>
-  
-</div>
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -974,9 +577,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/31/TCp协议可靠传输/" itemprop="url">放弃一切保证TCP协议的可靠传输</a></h1>
+          <h1 class="post-title" itemprop="name headline">放弃一切保证TCP协议的可靠传输</h1>
         
 
         <div class="post-meta">
@@ -1101,434 +702,120 @@
       
 
       
-        
-          <h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><p>TCP协议在网络传输中保证了其可靠性，本篇文章对TCP协议可靠传输机制做了详细介绍（ACK机制&amp;滑动窗口&amp;拥塞控制&amp;流量控制）。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/31/TCp协议可靠传输/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-	
-	
-	
-	<div>
-  
-</div>
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/22/基于UDP协议的回显服务器/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="何进鸿">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://7xrvas.com1.z0.glb.clouddn.com/16-4-6/38502140.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Askunix's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/22/基于UDP协议的回显服务器/" itemprop="url">UDP协议实现回显服务器</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-22T01:14:30+08:00">
-                2018-05-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SO-Kernal/" itemprop="url" rel="index">
-                    <span itemprop="name">SO Kernal</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/22/基于UDP协议的回显服务器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/22/基于UDP协议的回显服务器/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/05/22/基于UDP协议的回显服务器/" class="leancloud_visitors" data-flag-title="UDP协议实现回显服务器">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读量&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             <span></span>
-			 </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,998
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  8
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="http://p9ff104hp.bkt.clouddn.com/%E7%BD%91%E7%BB%9C.jpg" alt="图片加载失败"></p>
-<h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><p>回显服务器的代码实现过程，文章加入了详细的设计过程以及其他的计算机网络理论知识。<br>操作环境：CentOS 7.0 X64 操作系统、Vim编辑器、Gcc编译器。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/22/基于UDP协议的回显服务器/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-	
-	
-	
-	<div>
-  
-</div>
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/20/博客搭建心得/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="何进鸿">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://7xrvas.com1.z0.glb.clouddn.com/16-4-6/38502140.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Askunix's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/20/博客搭建心得/" itemprop="url">Hexo+GitHub Blog</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T16:42:54+08:00">
-                2018-05-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工具操作/" itemprop="url" rel="index">
-                    <span itemprop="name">工具操作</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/20/博客搭建心得/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/20/博客搭建心得/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/05/20/博客搭建心得/" class="leancloud_visitors" data-flag-title="Hexo+GitHub Blog">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读量&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             <span></span>
-			 </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  159
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://p9ff104hp.bkt.clouddn.com/13.jpg" alt="图片加载失败"></h2><h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><ul>
-<li>利用周末时间搭建了Hexo + github + 个性化域名博客</li>
-<li>通过不断地测试和完善，实现了常用功能以及基本的页面美化</li>
+        <h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><p>TCP协议在网络传输中保证了其可靠性，本篇文章对TCP协议可靠传输机制做了详细介绍（ACK机制&amp;滑动窗口&amp;拥塞控制&amp;流量控制）。</p>
+<a id="more"></a>
+<h4 id="回顾内容"><a href="#回顾内容" class="headerlink" title="回顾内容"></a>回顾内容</h4><blockquote>
+<p>传输层使用的两个主要协议：TCP和UDP</p>
+</blockquote>
+<ul>
+<li><strong>TCP 主要特性有特性有以下几点：</strong></li>
 </ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/20/博客搭建心得/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<p>　　(1)面向连接，在数据传送前必须建立连接，在数据传送结束后必须释放连接。在一个TCP连接中，仅有两方进行彼此通信。广播和多播不能用于TCP。</p>
+<p>　　(2)点对点，每一条TCP连接只能有两个端点。从socket角度来说，通信双方需要建立套接字，套接字由IP地址和端口号组成，数据到达传输层之后会被送到端口对应的应用程序。</p>
+<p>　　(3)提供可靠交付服务。</p>
+<p>　　(4)支持全双工通信。</p>
+<p>　　(5)面向字节流。面向报文的传输方式是应用层交给UDP多长的报文，UDP就照样发送，即一次发送一个报文。因此，应用程序必须选择合适大小的报文。若报文太长，则IP层需要分片，降低效率。若太短，会是IP太小。UDP对应用层交下来的报文，既不合并，也不拆分，而是保留这些报文的边界。这也就是说，应用层交给UDP多长的报文，UDP就照样发送，即一次发送一个报文。面向字节流的话，虽然应用程序和TCP的交互是一次一个数据块(大小不等)，但TCP把应用程序数据看成是一连串的无结构的字节流。TCP有一个缓冲，当应用程序传送的数据块太长，TCP就可以把它划分短一些再传送。如果应用程序一次只发送一个字节，TCP也可以等待积累有足够多的字节后再构成报文段发送出去。</p>
+<hr>
+<h4 id="总述"><a href="#总述" class="headerlink" title="总述"></a>总述</h4><p>1、确认应答（ACK）机制：</p>
+<p>2、超时重传机制：<br>　　接收方收到报文就会确认，发送方发送一段时间后没有收到确认就重传。</p>
+<p>3、滑动窗口机制：</p>
+<p>4、数据校验：</p>
+<p>　　TCP将保持它首部和数据的检验和。这是一个端到端的检验和，目的是检测数据在传输过程中的任何变化。如果收到段的检验和有差错，TCP将丢弃这个报文段和不确认收到此报文段。</p>
+<p>5、数据合理分片和排序：</p>
+<p>　　UDP：IP数据报大于1500字节,大于MTU.这个时候发送方IP层就需要分片.把数据报分成若干片,使每一片都小于MTU.而接收方IP层则需要进行数据报的重组.这样就会多做许多事情,而更严重的是,由于UDP的特性,当某一片数据传送中丢失时,接收方便无法重组数据报.将导致丢弃整个UDP数据报.</p>
+<p>　　TCP会按MTU合理分片，接收方会缓存未按序到达的数据，重新排序后再交给应用层。</p>
+<p>5、流量控制：<br>　　当接收方来不及处理发送方的数据，就提示发送方降低发送的速率，防止包丢失。</p>
+<p>7、拥塞控制：<br>　　当网络拥塞时，减少数据的发送。</p>
+<blockquote>
+<p>上面简单的讲了TCP保证可靠传输的几个机制，下面对较难理解的面深入探究。</p>
+</blockquote>
+<hr>
+<h4 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h4><h5 id="滑动窗口是干什么的？"><a href="#滑动窗口是干什么的？" class="headerlink" title="滑动窗口是干什么的？"></a>滑动窗口是干什么的？</h5><p>有一种机制叫做ACK确认应答【过程如图】，收到数据段，给发送一个ACK确认应答，收到ACK应答后，再发送数据段，明显会降低效率，如果数据往返时间较长时，会影响到性能。</p>
+<p><img src="http://p9ff104hp.bkt.clouddn.com/ACK%E7%A1%AE%E8%AE%A4%E6%9C%BA%E5%88%B6.png" alt="这里写图片描述"></p>
+<p>上面这种方式浪费效率，如果换种方式发送呢  ^_^</p>
+<ul>
+<li>一次发送多个数据段，统一确认后，再发送多个数据段。</li>
+</ul>
+<p><img src="http://p9ff104hp.bkt.clouddn.com/%E5%A4%9A%E6%95%B0%E6%8D%AE%E5%8F%91%E9%80%81%E5%BA%94%E7%AD%94.png" alt="这里写图片描述"></p>
+<blockquote>
+<p>上面这种传送机制就是窗口机制。</p>
+</blockquote>
+<ul>
+<li>窗口是什么？</li>
+</ul>
+<p><img src="http://p9ff104hp.bkt.clouddn.com/%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F.png" alt="这里写图片描述"></p>
+<p>窗口大小：就是无需等到确认应答而可以继续发送数据的最大值。（上图窗口就是4000字节，也就是四个段）</p>
+<ul>
+<li>传输过程：</li>
+</ul>
+<p>1、客户端和服务器端各自建立套接字，通过彼此的套接字进行通信；</p>
+<p>2、服务器端绑定监听端口，然后监听，循环等待来自客户端的连接；</p>
+<p>3、一旦收到来自客户端的连接，进行三次握手，一旦连成功就fork()一个子进程来处理和当前客户端的连接，然后父进程继续监听客户端的连接；</p>
+<p>4、发送前面四个段，无需ACK确认应答，直接发送；</p>
+<p>5、收到第一个ACK后，滑动窗口向后移动，发送第五个数据段，以此类推；</p>
+<p>6、操作系统为了维护这个滑动窗口，需要开辟发送缓冲区来记录当前还有那些数据没有应答，只有确认应答过的数据，才能从缓冲区删掉；</p>
+<p>7、一旦数据传输完毕就是放连接。</p>
+<blockquote>
+<p>就是说随着时间推移，滑动窗口也在推移，滑动窗口的会变化，内部缓存数据不停的更新，根据网络的拥塞情况，发送端可以调控滑动窗口的大小来控制流量 ，滑动窗口就是一个滑的过程啊~     ^<em>*  ~ ^</em>*   可能解释的有点啰嗦了</p>
+</blockquote>
+<p>4、窗口越大，网络吞吐量就越高。</p>
+<blockquote>
+<p>吞吐量就是单位时间内通过某个网络（信道、接口）的数据量。</p>
+</blockquote>
+<ul>
+<li>接收窗口大小取决于应用（比如说tomcat：8080端口的监听进程）、系统、硬件的限制。</li>
+</ul>
+<hr>
+<h5 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h5><p>简单来说就是接收方处理不过来的时候，就把窗口缩小，并把窗口值告诉发送端。</p>
+<p><img src="http://p9ff104hp.bkt.clouddn.com/%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6%E4%B8%BE%E4%BE%8B.png" alt="这里写图片描述"></p>
+<p>　　当窗口值为0，而接受方把窗口值恢复（比如ACK=1，ack=601，rwnd=200），但确认丢失，进入相互等待的死锁局面。所以如果窗口值为0，发送端就会开启一个持续计数器，每个一段时间询问一下接收方。</p>
+<hr>
+<h5 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h5><ul>
+<li>什么是拥塞？</li>
+</ul>
+<p>　　是指计算机网络中，某一个时段，某一资源的需求量超过了该资源可提供的可用部分，网络性能变差。</p>
+<ul>
+<li>什么是拥塞控制？</li>
+</ul>
+<p>　　所谓的拥塞控制就是防止过多的数据注入到网络中，这样可以使网络中的路由器或者节点不至于过载，拥塞控制是一个全局的过程。</p>
+<ul>
+<li>几种拥塞控制的方法：因特网建议标准RFC定义了几种拥塞控制的算法；</li>
+</ul>
+<blockquote>
+<ul>
+<li>满开始，拥塞避免，</li>
+<li>快重传，快恢复。</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>拥塞控制描述：</strong></li>
+</ul>
+<p>　　唯一的方法就是尝试各种不同的发送速度。比如一开始以 100kb/s 的速率发送数据，如果没问题，再将速率提高到 200kb/s，再没问题继续提升发送速率。一旦达到某个上限后，便开始出现丢包现象，发送方就可以认为，网络已经拥塞了，于是降低发送速率，减轻网络负担。</p>
+<ul>
+<li><strong>控制流程简述：</strong></li>
+</ul>
+<blockquote>
+<p><strong>慢开始、拥塞避免</strong></p>
+</blockquote>
+<p>　　发送方维持一个拥塞窗口的状态变量，其大小取决于网络的拥塞程度，动态地变化，而发送窗口一般取拥塞窗口和对方给出的接收窗口的最小值（为了便于描述，后面的分析中假定对方给出的接收窗口足够大，这样将发送窗口等于拥塞窗口就可以了）。</p>
+<p>　　慢开始算法的核心是从小到大逐渐增大发送窗口，也就是说，从小到大逐渐增大拥塞窗口的数值。通常在刚开始发送报文段时，先把拥塞窗口设置为一个最大报文段MSS的数值，而在每收到对上一轮报文段（，每次加倍后的报文段的个数，可能不止一个报文段）的确认后，就把拥塞窗口的数值加倍。</p>
+<p>　　为了防止拥塞窗口增长过大引起网络拥塞，还需要维护一个慢开始门限的状态变量，当拥塞窗口的值小于慢开始门限时，使用慢开始算法，一旦拥塞窗口的值大于慢开始门限的值，就改用拥塞避免算法。</p>
+<p>　　拥塞避免算法的思路是让拥塞窗口缓慢地增大，收到每一轮的确认后，将拥塞窗口的值加1，而不是加倍，这样拥塞窗口的值按照线性规律缓慢增长。</p>
+<p>　　无论是在慢开始阶段还是在拥塞避免阶段，只要发送方判断网络出现拥塞（没有按时收到确认），就把慢开始门限设置为出现拥塞时发送窗口值的一般，但最小不能小于2个MSS值，而后把拥塞窗口的值重新设置为1个MSS，执行慢开始算法。</p>
+<blockquote>
+<p><strong>快重传，快恢复</strong></p>
+</blockquote>
+<p>　　快重传算法首先要求接收方每收到一个失序的报文段后就立即发出重复确认（重复发送对前面有序部分的确认），而不是等待自己发送数据时才进行稍待确认，也不是累积收到的报文发送累积确认，如果发送方连续收到三个重复确认，就应该立即重传对方未收到的报文段（有收到重复确认，说明后面的报文段都送达了，只有中间丢失的报文段没送达）。</p>
+<p>快恢复算法与快重传算法配合使用，其过程有如下两个要点：</p>
+<p>　　1、当发送方连续收到三个重复确认时，就把慢开始门限减半，这是为了预防网络发生拥塞。注意，接下来不执行慢开始算法。</p>
+<p>　　2、由于发送方现在认为网络很很可能没有发生特别严重的阻塞（如果发生了严重阻塞的话，就不会一连有好几个报文段到达接收方，就不会导致接收方连续发送重复确认），因此与慢开始不同之处是现在不执行慢开始算法（即拥塞窗口的值不设为1个MSSS），而是把拥塞窗口的值设为慢开始门限减半后的值，而后开始执行拥塞避免算法，线性地增大拥塞窗口。</p>
+<h4 id="问题思考"><a href="#问题思考" class="headerlink" title="问题思考"></a>问题思考</h4><p>1、网络拥堵是怎么来的？</p>
+<p>2、RFC 定义的 4 种拥塞控制算法是什么？分别讲述流程以及原理？</p>
+<p>3、为什么TCP传输这么复杂？</p>
+<blockquote>
+<p>因为要保证可靠传输，同时又要尽可能提高性能。</p>
+</blockquote>
+
       
     </div>
     
@@ -1539,6 +826,14 @@
 	
 	<div>
   
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+
+  
 </div>
 	
 	
@@ -1546,19 +841,77 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/img/money.png" alt="何进鸿 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/TCP协议/" rel="tag"><i class="fa fa-tag"></i> TCP协议</a>
+          
+            <a href="/tags/ACK机制/" rel="tag"><i class="fa fa-tag"></i> ACK机制</a>
+          
+            <a href="/tags/滑动窗口/" rel="tag"><i class="fa fa-tag"></i> 滑动窗口</a>
+          
+            <a href="/tags/拥塞控制/" rel="tag"><i class="fa fa-tag"></i> 拥塞控制</a>
+          
+            <a href="/tags/流量控制/" rel="tag"><i class="fa fa-tag"></i> 流量控制</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/22/基于UDP协议的回显服务器/" rel="next" title="UDP协议实现回显服务器">
+                <i class="fa fa-chevron-left"></i> UDP协议实现回显服务器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/15/TCP建立和断开连接过程（三次握手&四次挥手）/" rel="prev" title="TCP建立和断开连接过程（三次握手&四次挥手）.md">
+                TCP建立和断开连接过程（三次握手&四次挥手）.md <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -1568,10 +921,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -1579,6 +933,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -1599,8 +960,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1706,6 +1076,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回顾内容"><span class="nav-number">2.</span> <span class="nav-text">回顾内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总述"><span class="nav-number">3.</span> <span class="nav-text">总述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#滑动窗口"><span class="nav-number">4.</span> <span class="nav-text">滑动窗口</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#滑动窗口是干什么的？"><span class="nav-number">4.1.</span> <span class="nav-text">滑动窗口是干什么的？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#流量控制"><span class="nav-number">4.2.</span> <span class="nav-text">流量控制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#拥塞控制"><span class="nav-number">4.3.</span> <span class="nav-text">拥塞控制</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题思考"><span class="nav-number">5.</span> <span class="nav-text">问题思考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1946,6 +1332,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
