@@ -63,9 +63,9 @@
         <title>保证TCP协议的可靠传输</title>
         <pubTime>2018-05-31T14:34:00.000Z</pubTime>
         
-        <tag>TCP协议</tag>
-         
         <tag>ACK机制</tag>
+         
+        <tag>TCP协议</tag>
          
         <tag>滑动窗口</tag>
          
