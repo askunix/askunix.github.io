@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/06/21/%E3%80%90%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E%E3%80%91%E9%93%BE%E8%A1%A8%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB%E7%89%88/</loc>
-    <lastmod>2018-06-21T10:17:51.376Z</lastmod>
+    <lastmod>2018-06-23T07:31:37.703Z</lastmod>
     <data>
         <display>
         <title>【编程之美】链表面试题汇总版</title>
@@ -85,9 +85,9 @@
         <title>保证TCP协议的可靠传输</title>
         <pubTime>2018-05-31T14:34:00.000Z</pubTime>
         
-        <tag>ACK机制</tag>
-         
         <tag>TCP协议</tag>
+         
+        <tag>ACK机制</tag>
          
         <tag>滑动窗口</tag>
          
