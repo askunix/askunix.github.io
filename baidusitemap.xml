@@ -3,6 +3,8 @@
 
 
     
+    
+    
   <url>
     <loc>http://yoursite.com/2018/06/15/TCP%E5%BB%BA%E7%AB%8B%E5%92%8C%E6%96%AD%E5%BC%80%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%A8%8B%EF%BC%88%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B&%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%EF%BC%89/</loc>
     <lastmod>2018-07-09T06:13:38.320Z</lastmod>
@@ -137,9 +139,9 @@
         <title>保证TCP协议的可靠传输</title>
         <pubTime>2018-05-31T14:34:00.000Z</pubTime>
         
-        <tag>ACK机制</tag>
-         
         <tag>TCP协议</tag>
+         
+        <tag>ACK机制</tag>
          
         <tag>滑动窗口</tag>
          
@@ -156,8 +158,6 @@
     </data>
     </url>
 
-    
-    
     
     
     
