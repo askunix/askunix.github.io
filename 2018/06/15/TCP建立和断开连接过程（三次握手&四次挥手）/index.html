@@ -86,20 +86,20 @@
 
 
 
-<meta name="description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解   三次握手： 三次握手是就是TCP在建立连接时的过程。 TCP是主机对主机层的传输控制协议，提供可靠的连接服务，采用三次握手确认建">
+<meta name="description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解">
 <meta name="keywords" content="ACK机制,TCP连接过程,TCP断开连接,三次握手,四次挥手">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TCP连接的建立和关闭过程及相关面试问题详解（三次握手&amp;四次挥手&amp;面试问题）">
 <meta property="og:url" content="http://yoursite.com/2018/06/15/TCP建立和断开连接过程（三次握手&四次挥手）/index.html">
 <meta property="og:site_name" content="Askunix&#39;s Blog">
-<meta property="og:description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解   三次握手： 三次握手是就是TCP在建立连接时的过程。 TCP是主机对主机层的传输控制协议，提供可靠的连接服务，采用三次握手确认建">
+<meta property="og:description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://img-blog.csdn.net/2018070317043637?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3OTI1MjAy/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20180703184755649?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3OTI1MjAy/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-07-09T05:47:08.634Z">
+<meta property="og:updated_time" content="2018-07-09T05:52:18.895Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP连接的建立和关闭过程及相关面试问题详解（三次握手&amp;四次挥手&amp;面试问题）">
-<meta name="twitter:description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解   三次握手： 三次握手是就是TCP在建立连接时的过程。 TCP是主机对主机层的传输控制协议，提供可靠的连接服务，采用三次握手确认建">
+<meta name="twitter:description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解">
 <meta name="twitter:image" content="https://img-blog.csdn.net/2018070317043637?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3OTI1MjAy/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 
 
@@ -262,20 +262,20 @@
 
 
 
-<meta name="description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解   三次握手： 三次握手是就是TCP在建立连接时的过程。 TCP是主机对主机层的传输控制协议，提供可靠的连接服务，采用三次握手确认建">
+<meta name="description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解">
 <meta name="keywords" content="ACK机制,TCP连接过程,TCP断开连接,三次握手,四次挥手">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TCP连接的建立和关闭过程及相关面试问题详解（三次握手&amp;四次挥手&amp;面试问题）">
 <meta property="og:url" content="http://yoursite.com/2018/06/15/TCP建立和断开连接过程（三次握手&四次挥手）/index.html">
 <meta property="og:site_name" content="Askunix&#39;s Blog">
-<meta property="og:description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解   三次握手： 三次握手是就是TCP在建立连接时的过程。 TCP是主机对主机层的传输控制协议，提供可靠的连接服务，采用三次握手确认建">
+<meta property="og:description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://img-blog.csdn.net/2018070317043637?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3OTI1MjAy/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20180703184755649?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3OTI1MjAy/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-07-09T05:47:08.634Z">
+<meta property="og:updated_time" content="2018-07-09T05:52:18.895Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP连接的建立和关闭过程及相关面试问题详解（三次握手&amp;四次挥手&amp;面试问题）">
-<meta name="twitter:description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解   三次握手： 三次握手是就是TCP在建立连接时的过程。 TCP是主机对主机层的传输控制协议，提供可靠的连接服务，采用三次握手确认建">
+<meta name="twitter:description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解">
 <meta name="twitter:image" content="https://img-blog.csdn.net/2018070317043637?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3OTI1MjAy/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 
 
@@ -692,6 +692,7 @@
 <p>三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。<br>如果对TCP还不了解，可以先阅读这篇文章：      <a href="https://blog.csdn.net/m0_37925202/article/details/80899012" target="_blank" rel="noopener">TCP固定头部结构详解</a></p>
 </blockquote>
 <hr>
+<a id="more"></a>
 <h4 id="三次握手："><a href="#三次握手：" class="headerlink" title="三次握手："></a>三次握手：</h4><blockquote>
 <p>三次握手是就是TCP在建立连接时的过程。 TCP是主机对主机层的传输控制协议，提供可靠的连接服务，采用三次握手确认建立一个连接。</p>
 </blockquote>
