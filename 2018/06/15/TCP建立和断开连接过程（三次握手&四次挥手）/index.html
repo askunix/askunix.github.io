@@ -5,28 +5,25 @@
   <meta charset="utf-8">
   
   
-   <span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-  
-  
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://askunix.github.io">
   <title>TCP连接的建立和关闭过程及相关面试问题详解（三次握手&amp;四次挥手&amp;面试问题） | Askunix&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解">
-<meta name="keywords" content="ACK机制,TCP连接过程,TCP断开连接,三次握手,四次挥手">
+  <meta name="description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。 如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解">
+<meta name="keywords" content="ACK机制,TCP连接过程,三次握手四次挥手">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TCP连接的建立和关闭过程及相关面试问题详解（三次握手&amp;四次挥手&amp;面试问题）">
 <meta property="og:url" content="http://askunix.github.io/2018/06/15/TCP建立和断开连接过程（三次握手&四次挥手）/index.html">
 <meta property="og:site_name" content="Askunix&#39;s Blog">
-<meta property="og:description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解">
+<meta property="og:description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。 如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/001.png">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/002.png">
-<meta property="og:updated_time" content="2018-07-09T06:13:38.320Z">
+<meta property="og:updated_time" content="2018-07-31T11:01:36.475Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP连接的建立和关闭过程及相关面试问题详解（三次握手&amp;四次挥手&amp;面试问题）">
-<meta name="twitter:description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解">
+<meta name="twitter:description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。 如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解">
 <meta name="twitter:image" content="http://p9ff104hp.bkt.clouddn.com/001.png">
   
     <link rel="alternative" href="/atom.xml" title="Askunix&#39;s Blog" type="application/atom+xml">
@@ -193,11 +190,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><blockquote>
-<p>三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。<br>如果对TCP还不了解，可以先阅读这篇文章：      <a href="https://blog.csdn.net/m0_37925202/article/details/80899012" target="_blank" rel="noopener">TCP固定头部结构详解</a></p>
-</blockquote>
-<hr>
-<a id="more"></a>
+        <h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><ul>
+<li>三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。</li>
+<li>如果对TCP还不了解，可以先阅读这篇文章：      <a href="https://blog.csdn.net/m0_37925202/article/details/80899012" target="_blank" rel="noopener">TCP固定头部结构详解</a><a id="more"></a>
+</li>
+</ul>
 <h4 id="三次握手："><a href="#三次握手：" class="headerlink" title="三次握手："></a>三次握手：</h4><blockquote>
 <p>三次握手是就是TCP在建立连接时的过程。 TCP是主机对主机层的传输控制协议，提供可靠的连接服务，采用三次握手确认建立一个连接。</p>
 </blockquote>
@@ -274,7 +271,7 @@
                     
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://p9ff104hp.bkt.clouddn.com/%E6%94%B6%E6%AC%BE111.jpg">
+                      <img class="reward-img" src="/img/money.png">
                       <span class="reward-type">微信</span>
                     </div>
                     
@@ -303,15 +300,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">TCP断开连接</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">三次握手</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">四次挥手</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">三次握手四次挥手</a>
         		</li>
       		
 		</ul>
@@ -554,46 +543,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Githubpage</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随想</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">程序员常用工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ACK机制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TCP连接过程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TCP断开连接</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">三次握手</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">四次挥手</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">C语言版通讯录</a>
               </li>
              
@@ -602,7 +551,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随想</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">TCP协议</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ACK机制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,15 +579,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">链表面试题</a>
+                <a href="javascript:void(0)" class="js-tag color3">TCP连接过程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">编程之美</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">无头单链表</a>
+                <a href="javascript:void(0)" class="js-tag color4">三次握手四次挥手</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -638,19 +595,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">回显服务器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -663,6 +612,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">短连接</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">链表面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程之美</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">无头单链表</a>
               </li>
             
             <div class="clearfix"></div>

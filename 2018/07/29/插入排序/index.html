@@ -5,28 +5,25 @@
   <meta charset="utf-8">
   
   
-   <span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-  
-  
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://askunix.github.io">
   <title>【排序算法】直接插入排序 &amp; 折半插入排序（二分法插入排序） | Askunix&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是插排的可视化动态图描述：  排序：就是将一组杂乱无章的数据按照一定的规律(升序或降序)组织起来。数据表：待排序数据元素的有限集合。排序码：通常数据元素有多个属性域，其中有一个属性域可用来区分元素，作为排序依据，该域即为排序码。">
-<meta name="keywords" content="数据结构,排序算法,插入排序">
+  <meta name="description" content="写在前面 排序：就是将一组杂乱无章的数据按照一定的规律(升序或降序)组织起来。 数据表：待排序数据元素的有限集合。 排序码：通常数据元素有多个属性域，其中有一个属性域可用来区分元素，作为排序依据，该域即为排序码。">
+<meta name="keywords" content="数据结构,插入排序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【排序算法】直接插入排序 &amp; 折半插入排序（二分法插入排序）">
 <meta property="og:url" content="http://askunix.github.io/2018/07/29/插入排序/index.html">
 <meta property="og:site_name" content="Askunix&#39;s Blog">
-<meta property="og:description" content="这是插排的可视化动态图描述：  排序：就是将一组杂乱无章的数据按照一定的规律(升序或降序)组织起来。数据表：待排序数据元素的有限集合。排序码：通常数据元素有多个属性域，其中有一个属性域可用来区分元素，作为排序依据，该域即为排序码。">
+<meta property="og:description" content="写在前面 排序：就是将一组杂乱无章的数据按照一定的规律(升序或降序)组织起来。 数据表：待排序数据元素的有限集合。 排序码：通常数据元素有多个属性域，其中有一个属性域可用来区分元素，作为排序依据，该域即为排序码。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E5%93%88%E5%93%88%E5%93%88%E5%93%88.gif">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/333333.jpg">
-<meta property="og:updated_time" content="2018-07-29T16:57:37.922Z">
+<meta property="og:updated_time" content="2018-07-31T11:00:41.754Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【排序算法】直接插入排序 &amp; 折半插入排序（二分法插入排序）">
-<meta name="twitter:description" content="这是插排的可视化动态图描述：  排序：就是将一组杂乱无章的数据按照一定的规律(升序或降序)组织起来。数据表：待排序数据元素的有限集合。排序码：通常数据元素有多个属性域，其中有一个属性域可用来区分元素，作为排序依据，该域即为排序码。">
+<meta name="twitter:description" content="写在前面 排序：就是将一组杂乱无章的数据按照一定的规律(升序或降序)组织起来。 数据表：待排序数据元素的有限集合。 排序码：通常数据元素有多个属性域，其中有一个属性域可用来区分元素，作为排序依据，该域即为排序码。">
 <meta name="twitter:image" content="http://p9ff104hp.bkt.clouddn.com/%E5%93%88%E5%93%88%E5%93%88%E5%93%88.gif">
   
     <link rel="alternative" href="/atom.xml" title="Askunix&#39;s Blog" type="application/atom+xml">
@@ -193,11 +190,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这是插排的可视化动态图描述：</p>
+        <h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><ul>
+<li>排序：就是将一组杂乱无章的数据按照一定的规律(升序或降序)组织起来。</li>
+<li>数据表：待排序数据元素的有限集合。</li>
+<li>排序码：通常数据元素有多个属性域，其中有一个属性域可用来区分元素，作为排序依据，该域即为排序码。<a id="more"></a>
+</li>
+</ul>
 <p><img src="http://p9ff104hp.bkt.clouddn.com/%E5%93%88%E5%93%88%E5%93%88%E5%93%88.gif" alt=""></p>
-<p>排序：就是将一组杂乱无章的数据按照一定的规律(升序或降序)组织起来。<br>数据表：待排序数据元素的有限集合。<br>排序码：通常数据元素有多个属性域，其中有一个属性域可用来区分元素，作为排序依据，该域即为排序码。</p>
-<hr>
-<a id="more"></a>
 <h5 id="排序算法的性能评估："><a href="#排序算法的性能评估：" class="headerlink" title="排序算法的性能评估："></a>排序算法的性能评估：</h5><p>一个算法执行时间是衡量算法好坏的重要参数。排序算法的时间开销可用算法中的数据交换次数，和数据移动次数来衡量。</p>
 <hr>
 <h2><center>直接插入排序算法</center></h2>
@@ -241,7 +240,7 @@
                     
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://p9ff104hp.bkt.clouddn.com/%E6%94%B6%E6%AC%BE111.jpg">
+                      <img class="reward-img" src="/img/money.png">
                       <span class="reward-type">微信</span>
                     </div>
                     
@@ -263,10 +262,6 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -389,7 +384,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#排序算法的性能评估："><span class="toc-number">1.</span> <span class="toc-text">排序算法的性能评估：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">直接插入排序算法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#算法思想："><span class="toc-number">1.</span> <span class="toc-text">算法思想：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#代码实现："><span class="toc-number">2.</span> <span class="toc-text">代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">折半插入排序算法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#算法思想：-1"><span class="toc-number">1.</span> <span class="toc-text">算法思想：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#算法分析："><span class="toc-number">2.</span> <span class="toc-text">算法分析：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#代码实现：-1"><span class="toc-number">3.</span> <span class="toc-text">代码实现：</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#写在前面"><span class="toc-number">1.</span> <span class="toc-text">写在前面</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#排序算法的性能评估："><span class="toc-number">1.1.</span> <span class="toc-text">排序算法的性能评估：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">直接插入排序算法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#算法思想："><span class="toc-number">0.1.</span> <span class="toc-text">算法思想：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#代码实现："><span class="toc-number">0.2.</span> <span class="toc-text">代码实现：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">折半插入排序算法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#算法思想：-1"><span class="toc-number">0.1.</span> <span class="toc-text">算法思想：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#算法分析："><span class="toc-number">0.2.</span> <span class="toc-text">算法分析：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#代码实现：-1"><span class="toc-number">0.3.</span> <span class="toc-text">代码实现：</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -513,46 +508,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Githubpage</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随想</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">程序员常用工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ACK机制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TCP连接过程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TCP断开连接</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">三次握手</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">四次挥手</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">C语言版通讯录</a>
               </li>
              
@@ -561,7 +516,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随想</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">TCP协议</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ACK机制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -577,15 +544,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">链表面试题</a>
+                <a href="javascript:void(0)" class="js-tag color3">TCP连接过程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">编程之美</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">无头单链表</a>
+                <a href="javascript:void(0)" class="js-tag color4">三次握手四次挥手</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -597,19 +560,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">回显服务器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -622,6 +577,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">短连接</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">链表面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程之美</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">无头单链表</a>
               </li>
             
             <div class="clearfix"></div>

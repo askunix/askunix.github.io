@@ -5,30 +5,27 @@
   <meta charset="utf-8">
   
   
-   <span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-  
-  
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://askunix.github.io">
   <title>【排序算法】快速排序（可视化描述，三种方法实现，四种方法优化） | Askunix&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是快排的可视化动态图描述：">
-<meta name="keywords" content="数据结构,快速排序,排序算法">
+  <meta name="description" content="写在前面 这篇文章通过动态图的描述详细介绍了快速排序的原理与过程。 代码实现用三种思想完成（分治思想）。 文章中包含了四种优化方式以及实现原理（包括多线程优化）。">
+<meta name="keywords" content="数据结构,快速排序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【排序算法】快速排序（可视化描述，三种方法实现，四种方法优化）">
 <meta property="og:url" content="http://askunix.github.io/2018/07/29/快速排序/index.html">
 <meta property="og:site_name" content="Askunix&#39;s Blog">
-<meta property="og:description" content="这是快排的可视化动态图描述：">
+<meta property="og:description" content="写在前面 这篇文章通过动态图的描述详细介绍了快速排序的原理与过程。 代码实现用三种思想完成（分治思想）。 文章中包含了四种优化方式以及实现原理（包括多线程优化）。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E5%BF%AB%E6%8B%8D%E7%AE%97%E6%B3%95.gif">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/4444444444.jpg">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/333333333.jpg">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/555555555.jpg">
-<meta property="og:updated_time" content="2018-07-29T16:36:58.980Z">
+<meta property="og:updated_time" content="2018-07-31T11:01:12.424Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【排序算法】快速排序（可视化描述，三种方法实现，四种方法优化）">
-<meta name="twitter:description" content="这是快排的可视化动态图描述：">
+<meta name="twitter:description" content="写在前面 这篇文章通过动态图的描述详细介绍了快速排序的原理与过程。 代码实现用三种思想完成（分治思想）。 文章中包含了四种优化方式以及实现原理（包括多线程优化）。">
 <meta name="twitter:image" content="http://p9ff104hp.bkt.clouddn.com/%E5%BF%AB%E6%8B%8D%E7%AE%97%E6%B3%95.gif">
   
     <link rel="alternative" href="/atom.xml" title="Askunix&#39;s Blog" type="application/atom+xml">
@@ -195,10 +192,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这是快排的可视化动态图描述：</p>
+        <h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><ul>
+<li>这篇文章通过动态图的描述详细介绍了快速排序的原理与过程。</li>
+<li>代码实现用三种思想完成（分治思想）。</li>
+<li>文章中包含了四种优化方式以及实现原理（包括多线程优化）。<a id="more"></a>
+</li>
+</ul>
 <p><img src="http://p9ff104hp.bkt.clouddn.com/%E5%BF%AB%E6%8B%8D%E7%AE%97%E6%B3%95.gif" alt="这里写图片描述"></p>
-<hr>
-<a id="more"></a>
 <p>该方法的基本思想是：</p>
 <p>(1)选择基准：在待排序列中，按照某种方式挑出一个元素，作为 “基准”；</p>
 <p>(2)分割操作：以该基准在序列中的实际位置，把序列分成两个子序列。此时，在基准左边的元素都比该基准小，在基准右边的元素都比基准大；</p>
@@ -286,7 +286,7 @@
                     
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://p9ff104hp.bkt.clouddn.com/%E6%94%B6%E6%AC%BE111.jpg">
+                      <img class="reward-img" src="/img/money.png">
                       <span class="reward-type">微信</span>
                     </div>
                     
@@ -312,10 +312,6 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">快速排序</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
         		</li>
       		
 		</ul>
@@ -425,7 +421,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法一："><span class="toc-number">1.</span> <span class="toc-text">方法一：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法二："><span class="toc-number">2.</span> <span class="toc-text">方法二：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法三："><span class="toc-number">3.</span> <span class="toc-text">方法三：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化一："><span class="toc-number">4.</span> <span class="toc-text">优化一：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化二："><span class="toc-number">5.</span> <span class="toc-text">优化二：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化三："><span class="toc-number">6.</span> <span class="toc-text">优化三：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化四："><span class="toc-number">7.</span> <span class="toc-text">优化四：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度问题："><span class="toc-number">8.</span> <span class="toc-text">复杂度问题：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#快排为什么这么快："><span class="toc-number">9.</span> <span class="toc-text">快排为什么这么快：</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#写在前面"><span class="toc-number">1.</span> <span class="toc-text">写在前面</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法一："><span class="toc-number"></span> <span class="toc-text">方法一：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法二："><span class="toc-number"></span> <span class="toc-text">方法二：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法三："><span class="toc-number"></span> <span class="toc-text">方法三：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化一："><span class="toc-number"></span> <span class="toc-text">优化一：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化二："><span class="toc-number"></span> <span class="toc-text">优化二：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化三："><span class="toc-number"></span> <span class="toc-text">优化三：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化四："><span class="toc-number"></span> <span class="toc-text">优化四：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂度问题："><span class="toc-number"></span> <span class="toc-text">复杂度问题：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#快排为什么这么快："><span class="toc-number"></span> <span class="toc-text">快排为什么这么快：</span></a>
                     </div>
                 </span>
             </div>
@@ -549,46 +545,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Githubpage</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随想</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">程序员常用工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ACK机制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TCP连接过程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TCP断开连接</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">三次握手</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">四次挥手</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">C语言版通讯录</a>
               </li>
              
@@ -597,7 +553,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随想</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">TCP协议</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ACK机制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -613,15 +581,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">链表面试题</a>
+                <a href="javascript:void(0)" class="js-tag color3">TCP连接过程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">编程之美</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">无头单链表</a>
+                <a href="javascript:void(0)" class="js-tag color4">三次握手四次挥手</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -633,19 +597,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">回显服务器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -658,6 +614,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">短连接</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">链表面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程之美</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">无头单链表</a>
               </li>
             
             <div class="clearfix"></div>
