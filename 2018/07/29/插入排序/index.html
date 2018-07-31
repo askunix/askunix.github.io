@@ -20,7 +20,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/%E5%93%88%E5%93%88%E5%93%88%E5%93%88.gif">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/333333.jpg">
-<meta property="og:updated_time" content="2018-07-31T11:00:41.754Z">
+<meta property="og:updated_time" content="2018-07-31T11:14:32.593Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【排序算法】直接插入排序 &amp; 折半插入排序（二分法插入排序）">
 <meta name="twitter:description" content="写在前面 排序：就是将一组杂乱无章的数据按照一定的规律(升序或降序)组织起来。 数据表：待排序数据元素的有限集合。 排序码：通常数据元素有多个属性域，其中有一个属性域可用来区分元素，作为排序依据，该域即为排序码。">
@@ -59,15 +59,13 @@
 		  <h1 class="header-author"><a href="/">何进鸿</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">不积跬步无以至千里</p>
+		<p class="header-subtitle">思维改变生活</p>
 		
 
 		<nav class="header-menu">
 			<ul>
 			
 				<li><a href="/">主页</a></li>
-	        
-				<li><a href="/tags/随笔/">随笔</a></li>
 	        
 				<li><a href="/archives/index.html">归档</a></li>
 	        
@@ -121,11 +119,9 @@
 			  <h1 class="header-author js-header-author">何进鸿</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>不积跬步无以至千里<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>思维改变生活<i class="icon icon-quo-right"></i></p>
 			
 			
-			
-				
 			
 				
 			
@@ -148,14 +144,12 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 70%">
+				<ul style="width: 50%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
-		        
-					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -210,7 +204,7 @@
 <li>算法的时间复杂度为O(n^2)，</li>
 <li>最好是用于量小、接近有序的数据。</li>
 </ul>
-<h5 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">void INsert_Sort(T *array, int len)</span><br><span class="line">&#123;</span><br><span class="line">	int key = 0;</span><br><span class="line">	int end = 0;</span><br><span class="line"></span><br><span class="line">	for (int i = 1; i &lt; len; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		key = array[i];</span><br><span class="line">		for (end = i - 1; (end &gt;= 0) &amp;&amp; array[end] &gt; key; end--)</span><br><span class="line">		&#123;</span><br><span class="line">			array[end + 1] = array[end];</span><br><span class="line">		&#125;</span><br><span class="line">		array[end + 1] = key;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">INsert_Sort</span><span class="params">(T *<span class="built_in">array</span>, <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> key = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> end = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		key = <span class="built_in">array</span>[i];</span><br><span class="line">		<span class="keyword">for</span> (end = i - <span class="number">1</span>; (end &gt;= <span class="number">0</span>) &amp;&amp; <span class="built_in">array</span>[end] &gt; key; end--)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">array</span>[end + <span class="number">1</span>] = <span class="built_in">array</span>[end];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">array</span>[end + <span class="number">1</span>] = key;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <p>刚在前面直接插入排序算法性质中说最好用于数据量小且基本有序的的情况。当数据量比较大时，时间会大量的耗费在移动和比较元素上，导致性能降低。因此可以从元素比较和移动上来优化算法。</p>
 <h2><center>折半插入排序算法</center></h2>
@@ -221,7 +215,7 @@
 <li>时间复杂度：折半插入排序仅仅是减少了比较元素的次数，约为O(nlogn)，而且该比较次数与待排序表的初始状态无关，仅取决于表中的元素个数n；而元素的移动次数没有改变，它依赖于待排序表的初始状态。因此，折半插入排序的时间复杂度仍然为O(n²)，但它的效果还是比直接插入排序要好。</li>
 <li>空间复杂度：排序只需要一个位置来暂存元素，因此空间复杂度为O（1）。</li>
 </ul>
-<h5 id="代码实现：-1"><a href="#代码实现：-1" class="headerlink" title="代码实现："></a>代码实现：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">void Bin_Insert_Sort(int* a, int n)</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	int Low;</span><br><span class="line">	int High;</span><br><span class="line">	int Middle;</span><br><span class="line">	for (int i = 1; i &lt; n; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		Low = 0;</span><br><span class="line">		High = i - 1;</span><br><span class="line">		// 求取插入位置</span><br><span class="line">		while (Low &lt;= High)</span><br><span class="line">		&#123;</span><br><span class="line">			Middle = (Low + High) / 2;</span><br><span class="line">			if (a[Middle] &gt; a[i])</span><br><span class="line">				High = Middle - 1;</span><br><span class="line">			else</span><br><span class="line">				Low = Middle + 1;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		// 插入</span><br><span class="line">		for (int j = i - 1; j &gt; High; --j)</span><br><span class="line">		&#123;</span><br><span class="line">			swap(a[j], a[j + 1]);     //这里也可以挨个移动元素后插入</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="代码实现：-1"><a href="#代码实现：-1" class="headerlink" title="代码实现："></a>代码实现：</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Bin_Insert_Sort</span><span class="params">(<span class="keyword">int</span>* a, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> Low;</span><br><span class="line">	<span class="keyword">int</span> High;</span><br><span class="line">	<span class="keyword">int</span> Middle;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		Low = <span class="number">0</span>;</span><br><span class="line">		High = i - <span class="number">1</span>;</span><br><span class="line">		<span class="comment">// 求取插入位置</span></span><br><span class="line">		<span class="keyword">while</span> (Low &lt;= High)</span><br><span class="line">		&#123;</span><br><span class="line">			Middle = (Low + High) / <span class="number">2</span>;</span><br><span class="line">			<span class="keyword">if</span> (a[Middle] &gt; a[i])</span><br><span class="line">				High = Middle - <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				Low = Middle + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 插入</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = i - <span class="number">1</span>; j &gt; High; --j)</span><br><span class="line">		&#123;</span><br><span class="line">			swap(a[j], a[j + <span class="number">1</span>]);     <span class="comment">//这里也可以挨个移动元素后插入</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -422,7 +416,12 @@
   </div>
   
   
- <span id="busuanzi_container_site_pv">    本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+ <span id="busuanzi_container_site_pv">    本站总访问量：<span id="busuanzi_value_site_pv"></span>次  </span>
+ <span id="busuanzi_container_site_uv">
+总访客数：<span id="busuanzi_value_site_uv"></span>人
+</span>
+ 
+ 
 </footer>
 
 
@@ -516,6 +515,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ACK机制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">TCP连接过程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">三次握手四次挥手</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -525,10 +536,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">TCP协议</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ACK机制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -544,11 +551,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TCP连接过程</a>
+                <a href="javascript:void(0)" class="js-tag color1">链表面试题</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">三次握手四次挥手</a>
+                <a href="javascript:void(0)" class="js-tag color5">编程之美</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">无头单链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -577,18 +588,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">短连接</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">链表面试题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">编程之美</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">无头单链表</a>
               </li>
             
             <div class="clearfix"></div>

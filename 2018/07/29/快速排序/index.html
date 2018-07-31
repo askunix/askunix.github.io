@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/4444444444.jpg">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/333333333.jpg">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/555555555.jpg">
-<meta property="og:updated_time" content="2018-07-31T11:01:12.424Z">
+<meta property="og:updated_time" content="2018-07-31T11:06:30.900Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【排序算法】快速排序（可视化描述，三种方法实现，四种方法优化）">
 <meta name="twitter:description" content="写在前面 这篇文章通过动态图的描述详细介绍了快速排序的原理与过程。 代码实现用三种思想完成（分治思想）。 文章中包含了四种优化方式以及实现原理（包括多线程优化）。">
@@ -61,15 +61,13 @@
 		  <h1 class="header-author"><a href="/">何进鸿</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">不积跬步无以至千里</p>
+		<p class="header-subtitle">思维改变生活</p>
 		
 
 		<nav class="header-menu">
 			<ul>
 			
 				<li><a href="/">主页</a></li>
-	        
-				<li><a href="/tags/随笔/">随笔</a></li>
 	        
 				<li><a href="/archives/index.html">归档</a></li>
 	        
@@ -123,11 +121,9 @@
 			  <h1 class="header-author js-header-author">何进鸿</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>不积跬步无以至千里<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>思维改变生活<i class="icon icon-quo-right"></i></p>
 			
 			
-			
-				
 			
 				
 			
@@ -150,14 +146,12 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 70%">
+				<ul style="width: 50%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
-		        
-					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -223,14 +217,14 @@
 <p>三个数排序后，中间那个数作为基准，则基准为6。</p>
 </blockquote>
 <p>具体思想：对待排序序列中low、mid、high三个位置上数据进行排序，取他们中间的那个数据作为基准，并用0下标元素存储该基准。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/*函数作用：取待排序序列中low、mid、high三个位置上数据，选取他们中间的那个数据作为枢轴*/</span><br><span class="line">int SelectPivotMedianOfThree(int arr[],int low,int high)</span><br><span class="line">     //三数取中</span><br><span class="line">&#123;</span><br><span class="line">	int mid = low + ((high - low) &gt;&gt; 1);//计算数组中间的元素的下标</span><br><span class="line"></span><br><span class="line">	//使用三数取中法选择枢轴</span><br><span class="line">	if (arr[mid] &gt; arr[high]) //目标: arr[mid] &lt;= arr[high]</span><br><span class="line">	&#123;</span><br><span class="line">		swap(arr[mid],arr[high]);</span><br><span class="line">	&#125;</span><br><span class="line">	if (arr[low] &gt; arr[high]) //目标: arr[low] &lt;= arr[high]</span><br><span class="line">	&#123;</span><br><span class="line">		swap(arr[low],arr[high]);</span><br><span class="line">	&#125;</span><br><span class="line">	if (arr[mid] &gt; arr[low]) //目标: arr[low] &gt;= arr[mid]</span><br><span class="line">	&#123;</span><br><span class="line">		swap(arr[mid],arr[low]);</span><br><span class="line">	&#125;</span><br><span class="line">	//此时，arr[mid] &lt;= arr[low] &lt;= arr[high]</span><br><span class="line">	return arr[low];</span><br><span class="line">	//low的位置上保存这三个位置中间的值</span><br><span class="line">	//分割时可以直接使用low位置的元素作为基准，而不用改变分割函数了</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*函数作用：取待排序序列中low、mid、high三个位置上数据，选取他们中间的那个数据作为枢轴*/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">SelectPivotMedianOfThree</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> low,<span class="keyword">int</span> high)</span></span></span><br><span class="line"><span class="function">     <span class="comment">//三数取中</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> mid = low + ((high - low) &gt;&gt; <span class="number">1</span>);<span class="comment">//计算数组中间的元素的下标</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//使用三数取中法选择枢轴</span></span><br><span class="line">	<span class="keyword">if</span> (arr[mid] &gt; arr[high]) <span class="comment">//目标: arr[mid] &lt;= arr[high]</span></span><br><span class="line">	&#123;</span><br><span class="line">		swap(arr[mid],arr[high]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (arr[low] &gt; arr[high]) <span class="comment">//目标: arr[low] &lt;= arr[high]</span></span><br><span class="line">	&#123;</span><br><span class="line">		swap(arr[low],arr[high]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (arr[mid] &gt; arr[low]) <span class="comment">//目标: arr[low] &gt;= arr[mid]</span></span><br><span class="line">	&#123;</span><br><span class="line">		swap(arr[mid],arr[low]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//此时，arr[mid] &lt;= arr[low] &lt;= arr[high]</span></span><br><span class="line">	<span class="keyword">return</span> arr[low];</span><br><span class="line">	<span class="comment">//low的位置上保存这三个位置中间的值</span></span><br><span class="line">	<span class="comment">//分割时可以直接使用low位置的元素作为基准，而不用改变分割函数了</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>性能测试方法：</p>
 <p>1、随机生成100万个数据对函数进行性能测试；</p>
 <p>2、生成100万个相等数据，测试函数性能；</p>
 <p>3、生成100万个有序数据，测试函数性能。</p>
 <h3 id="优化一："><a href="#优化一：" class="headerlink" title="优化一："></a>优化一：</h3><p>对于很小或者部分有序的数组，快排不如插排好。当待排序序列的长度分割到一定大小后，继续分割的效率比插入排序要差，此时可以使用插排而不是快排。</p>
 <p>截止范围：待排序序列长度N = 10，（在5 - 20之间可能都会存在这样的效率问题）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (high - low + 1 &lt; 10)</span><br><span class="line">&#123;</span><br><span class="line">	InsertSort(arr,low,high);</span><br><span class="line">	return;</span><br><span class="line">&#125;//else时，正常执行快排</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (high - low + <span class="number">1</span> &lt; <span class="number">10</span>)</span><br><span class="line">&#123;</span><br><span class="line">	InsertSort(arr,low,high);</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;<span class="comment">//else时，正常执行快排</span></span><br></pre></td></tr></table></figure>
 <h3 id="优化二："><a href="#优化二：" class="headerlink" title="优化二："></a>优化二：</h3><p>在一次分割结束后，可以把与Key相等的元素聚在一起，继续下次分割时，不用再对与key相等元素分割。</p>
 <blockquote>
 <p>待排序序列 1 4 6 7 6 6 7 6 8 6</p>
@@ -246,13 +240,13 @@
 </ul>
 <p>第一步，在划分过程中，把与key相等元素放入数组的两端</p>
 <p>第二步，划分结束后，把与key相等的元素移到枢轴周围</p>
-<p>变态代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">void QSort(int arr[],int low,int high)</span><br><span class="line">&#123;</span><br><span class="line">	int first = low;</span><br><span class="line">	int last = high;</span><br><span class="line"></span><br><span class="line">	int left = low;</span><br><span class="line">	int right = high;</span><br><span class="line"></span><br><span class="line">	int leftLen = 0;</span><br><span class="line">	int rightLen = 0;</span><br><span class="line"></span><br><span class="line">	if (high - low + 1 &lt; 10)</span><br><span class="line">	&#123;</span><br><span class="line">		InsertSort(arr,low,high);</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//一次分割</span><br><span class="line">	int key = SelectPivotMedianOfThree(arr,low,high);//使用三数取中法选择基准</span><br><span class="line"></span><br><span class="line">	while(low &lt; high)</span><br><span class="line">	&#123;</span><br><span class="line">		while(high &gt; low &amp;&amp; arr[high] &gt;= key)</span><br><span class="line">		&#123;</span><br><span class="line">			if (arr[high] == key)//处理相等元素</span><br><span class="line">			&#123;</span><br><span class="line">				swap(arr[right],arr[high]);</span><br><span class="line">				right--;</span><br><span class="line">				rightLen++;</span><br><span class="line">			&#125;</span><br><span class="line">			high--;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		arr[low] = arr[high];</span><br><span class="line">		while(high &gt; low &amp;&amp; arr[low] &lt;= key)</span><br><span class="line">		&#123;</span><br><span class="line">			if (arr[low] == key)</span><br><span class="line">			&#123;</span><br><span class="line">				swap(arr[left],arr[low]);</span><br><span class="line">				left++;</span><br><span class="line">				leftLen++;</span><br><span class="line">			&#125;</span><br><span class="line">			low++;</span><br><span class="line">		&#125;</span><br><span class="line">		arr[high] = arr[low];</span><br><span class="line">	&#125;</span><br><span class="line">	arr[low] = key;</span><br><span class="line"></span><br><span class="line">	//一次快排结束</span><br><span class="line">	//把与枢轴key相同的元素移到枢轴最终位置周围</span><br><span class="line">	int i = low - 1;</span><br><span class="line">	int j = first;</span><br><span class="line">	while(j &lt; left &amp;&amp; arr[i] != key)</span><br><span class="line">	&#123;</span><br><span class="line">		swap(arr[i],arr[j]);</span><br><span class="line">		i--;</span><br><span class="line">		j++;</span><br><span class="line">	&#125;</span><br><span class="line">	i = low + 1;</span><br><span class="line">	j = last;</span><br><span class="line">	while(j &gt; right &amp;&amp; arr[i] != key)</span><br><span class="line">	&#123;</span><br><span class="line">		swap(arr[i],arr[j]);</span><br><span class="line">		i++;</span><br><span class="line">		j--;</span><br><span class="line">	&#125;</span><br><span class="line">	QSort(arr,first,low - 1 - leftLen);</span><br><span class="line">	QSort(arr,low + 1 + rightLen,last);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>变态代码：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QSort</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> low,<span class="keyword">int</span> high)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> first = low;</span><br><span class="line">	<span class="keyword">int</span> last = high;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> left = low;</span><br><span class="line">	<span class="keyword">int</span> right = high;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> leftLen = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> rightLen = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (high - low + <span class="number">1</span> &lt; <span class="number">10</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		InsertSort(arr,low,high);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//一次分割</span></span><br><span class="line">	<span class="keyword">int</span> key = SelectPivotMedianOfThree(arr,low,high);<span class="comment">//使用三数取中法选择基准</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(low &lt; high)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span>(high &gt; low &amp;&amp; arr[high] &gt;= key)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (arr[high] == key)<span class="comment">//处理相等元素</span></span><br><span class="line">			&#123;</span><br><span class="line">				swap(arr[right],arr[high]);</span><br><span class="line">				right--;</span><br><span class="line">				rightLen++;</span><br><span class="line">			&#125;</span><br><span class="line">			high--;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		arr[low] = arr[high];</span><br><span class="line">		<span class="keyword">while</span>(high &gt; low &amp;&amp; arr[low] &lt;= key)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (arr[low] == key)</span><br><span class="line">			&#123;</span><br><span class="line">				swap(arr[left],arr[low]);</span><br><span class="line">				left++;</span><br><span class="line">				leftLen++;</span><br><span class="line">			&#125;</span><br><span class="line">			low++;</span><br><span class="line">		&#125;</span><br><span class="line">		arr[high] = arr[low];</span><br><span class="line">	&#125;</span><br><span class="line">	arr[low] = key;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//一次快排结束</span></span><br><span class="line">	<span class="comment">//把与枢轴key相同的元素移到枢轴最终位置周围</span></span><br><span class="line">	<span class="keyword">int</span> i = low - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> j = first;</span><br><span class="line">	<span class="keyword">while</span>(j &lt; left &amp;&amp; arr[i] != key)</span><br><span class="line">	&#123;</span><br><span class="line">		swap(arr[i],arr[j]);</span><br><span class="line">		i--;</span><br><span class="line">		j++;</span><br><span class="line">	&#125;</span><br><span class="line">	i = low + <span class="number">1</span>;</span><br><span class="line">	j = last;</span><br><span class="line">	<span class="keyword">while</span>(j &gt; right &amp;&amp; arr[i] != key)</span><br><span class="line">	&#123;</span><br><span class="line">		swap(arr[i],arr[j]);</span><br><span class="line">		i++;</span><br><span class="line">		j--;</span><br><span class="line">	&#125;</span><br><span class="line">	QSort(arr,first,low - <span class="number">1</span> - leftLen);</span><br><span class="line">	QSort(arr,low + <span class="number">1</span> + rightLen,last);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这是一个性能测试分析图：（大神的）</p>
 <p><img src="http://p9ff104hp.bkt.clouddn.com/4444444444.jpg" alt=""></p>
 <p> 测试数据分析：三数取中选择枢轴+插排+聚集相等元素的组合，效果竟然好的出奇。其实这里，插排的作用还是不怎么大的。</p>
 <h3 id="优化三："><a href="#优化三：" class="headerlink" title="优化三："></a>优化三：</h3><p>快排函数在函数尾部有两次递归操作，我们可以对其使用尾递归优化。</p>
 <p>优点：如果待排序的序列划分极端不平衡，递归的深度将趋近于n，而栈的大小是很有限的，每次递归调用都会耗费一定的栈空间，函数的参数越多，每次递归耗费的空间也越多。优化后，可以缩减堆栈深度，由原来的O(n)缩减为O(logn)，将会提高性能。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">void QSort(int arr[],int low,int high)</span><br><span class="line">&#123;</span><br><span class="line">	int pivotPos = -1;</span><br><span class="line">	if (high - low + 1 &lt; 10)</span><br><span class="line">	&#123;</span><br><span class="line">		InsertSort(arr,low,high);</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	while(low &lt; high)</span><br><span class="line">	&#123;</span><br><span class="line">		pivotPos = Partition(arr,low,high);</span><br><span class="line">		QSort(arr,low,pivotPos-1);</span><br><span class="line">		low = pivotPos + 1;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/////注意：在第一次递归后，low就没用了，此时第二次递归可以使用循环代替/////</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QSort</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> low,<span class="keyword">int</span> high)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> pivotPos = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">if</span> (high - low + <span class="number">1</span> &lt; <span class="number">10</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		InsertSort(arr,low,high);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(low &lt; high)</span><br><span class="line">	&#123;</span><br><span class="line">		pivotPos = Partition(arr,low,high);</span><br><span class="line">		QSort(arr,low,pivotPos<span class="number">-1</span>);</span><br><span class="line">		low = pivotPos + <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/////注意：在第一次递归后，low就没用了，此时第二次递归可以使用循环代替/////</span></span><br></pre></td></tr></table></figure>
 <p>测试数据分析：</p>
 <p><img src="http://p9ff104hp.bkt.clouddn.com/333333333.jpg" alt=""></p>
 <p>测试数据分析：其实这种优化编译器会自己优化，相比不使用优化的方法，时间几乎没有减少.</p>
@@ -459,7 +453,12 @@
   </div>
   
   
- <span id="busuanzi_container_site_pv">    本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+ <span id="busuanzi_container_site_pv">    本站总访问量：<span id="busuanzi_value_site_pv"></span>次  </span>
+ <span id="busuanzi_container_site_uv">
+总访客数：<span id="busuanzi_value_site_uv"></span>人
+</span>
+ 
+ 
 </footer>
 
 
@@ -553,6 +552,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ACK机制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">TCP连接过程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">三次握手四次挥手</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -562,10 +573,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">TCP协议</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ACK机制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -581,11 +588,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TCP连接过程</a>
+                <a href="javascript:void(0)" class="js-tag color1">链表面试题</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">三次握手四次挥手</a>
+                <a href="javascript:void(0)" class="js-tag color5">编程之美</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">无头单链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -614,18 +625,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">短连接</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">链表面试题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">编程之美</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">无头单链表</a>
               </li>
             
             <div class="clearfix"></div>
