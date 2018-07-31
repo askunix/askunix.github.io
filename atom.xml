@@ -3,11 +3,11 @@
   <title>Askunix&#39;s Blog</title>
   
   <subtitle>不积跬步无以至千里</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://yoursite.com/blog/"/>
   <updated>2018-07-29T16:36:58.980Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://yoursite.com/blog/</id>
   
   <author>
     <name>何进鸿</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>【排序算法】快速排序（可视化描述，三种方法实现，四种方法优化）</title>
-    <link href="http://yoursite.com/2018/07/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
-    <id>http://yoursite.com/2018/07/29/快速排序/</id>
+    <link href="http://yoursite.com/blog/2018/07/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
+    <id>http://yoursite.com/blog/2018/07/29/快速排序/</id>
     <published>2018-07-29T15:39:09.000Z</published>
     <updated>2018-07-29T16:36:58.980Z</updated>
     
@@ -33,21 +33,21 @@
     
     </summary>
     
-      <category term="编程之美" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
+      <category term="编程之美" scheme="http://yoursite.com/blog/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
     
     
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="http://yoursite.com/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="快速排序" scheme="http://yoursite.com/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
+      <category term="快速排序" scheme="http://yoursite.com/blog/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
     
-      <category term="排序算法" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+      <category term="排序算法" scheme="http://yoursite.com/blog/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>【排序算法】直接插入排序 &amp; 折半插入排序（二分法插入排序）</title>
-    <link href="http://yoursite.com/2018/07/29/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"/>
-    <id>http://yoursite.com/2018/07/29/插入排序/</id>
+    <link href="http://yoursite.com/blog/2018/07/29/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"/>
+    <id>http://yoursite.com/blog/2018/07/29/插入排序/</id>
     <published>2018-07-29T15:38:51.000Z</published>
     <updated>2018-07-29T16:57:37.922Z</updated>
     
@@ -62,21 +62,21 @@
     
     </summary>
     
-      <category term="编程之美" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
+      <category term="编程之美" scheme="http://yoursite.com/blog/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
     
     
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="数据结构" scheme="http://yoursite.com/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="排序算法" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+      <category term="排序算法" scheme="http://yoursite.com/blog/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
     
-      <category term="插入排序" scheme="http://yoursite.com/tags/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"/>
+      <category term="插入排序" scheme="http://yoursite.com/blog/tags/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   
   <entry>
     <title>长连接与短连接</title>
-    <link href="http://yoursite.com/2018/07/14/%E9%95%BF%E8%BF%9E%E6%8E%A5%E4%B8%8E%E7%9F%AD%E8%BF%9E%E6%8E%A5/"/>
-    <id>http://yoursite.com/2018/07/14/长连接与短连接/</id>
+    <link href="http://yoursite.com/blog/2018/07/14/%E9%95%BF%E8%BF%9E%E6%8E%A5%E4%B8%8E%E7%9F%AD%E8%BF%9E%E6%8E%A5/"/>
+    <id>http://yoursite.com/blog/2018/07/14/长连接与短连接/</id>
     <published>2018-07-14T03:52:32.000Z</published>
     <updated>2018-07-14T04:00:15.020Z</updated>
     
@@ -90,19 +90,19 @@
     
     </summary>
     
-      <category term="SO Kernal" scheme="http://yoursite.com/categories/SO-Kernal/"/>
+      <category term="SO Kernal" scheme="http://yoursite.com/blog/categories/SO-Kernal/"/>
     
     
-      <category term="长连接" scheme="http://yoursite.com/tags/%E9%95%BF%E8%BF%9E%E6%8E%A5/"/>
+      <category term="长连接" scheme="http://yoursite.com/blog/tags/%E9%95%BF%E8%BF%9E%E6%8E%A5/"/>
     
-      <category term="短连接" scheme="http://yoursite.com/tags/%E7%9F%AD%E8%BF%9E%E6%8E%A5/"/>
+      <category term="短连接" scheme="http://yoursite.com/blog/tags/%E7%9F%AD%E8%BF%9E%E6%8E%A5/"/>
     
   </entry>
   
   <entry>
     <title>【编程之美】链表面试题汇总版</title>
-    <link href="http://yoursite.com/2018/06/21/%E3%80%90%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E%E3%80%91%E9%93%BE%E8%A1%A8%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB%E7%89%88/"/>
-    <id>http://yoursite.com/2018/06/21/【编程之美】链表面试题汇总版/</id>
+    <link href="http://yoursite.com/blog/2018/06/21/%E3%80%90%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E%E3%80%91%E9%93%BE%E8%A1%A8%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB%E7%89%88/"/>
+    <id>http://yoursite.com/blog/2018/06/21/【编程之美】链表面试题汇总版/</id>
     <published>2018-06-21T09:49:33.000Z</published>
     <updated>2018-06-23T07:31:37.703Z</updated>
     
@@ -117,21 +117,21 @@
     
     </summary>
     
-      <category term="编程之美" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
+      <category term="编程之美" scheme="http://yoursite.com/blog/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
     
     
-      <category term="链表面试题" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+      <category term="链表面试题" scheme="http://yoursite.com/blog/tags/%E9%93%BE%E8%A1%A8%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     
-      <category term="编程之美" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
+      <category term="编程之美" scheme="http://yoursite.com/blog/tags/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
     
-      <category term="无头单链表" scheme="http://yoursite.com/tags/%E6%97%A0%E5%A4%B4%E5%8D%95%E9%93%BE%E8%A1%A8/"/>
+      <category term="无头单链表" scheme="http://yoursite.com/blog/tags/%E6%97%A0%E5%A4%B4%E5%8D%95%E9%93%BE%E8%A1%A8/"/>
     
   </entry>
   
   <entry>
     <title>C语言版通讯录</title>
-    <link href="http://yoursite.com/2018/06/17/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E4%B8%80%E8%88%AC%E9%80%9A%E8%AE%AF%E5%BD%95/"/>
-    <id>http://yoursite.com/2018/06/17/C语言实现一般通讯录/</id>
+    <link href="http://yoursite.com/blog/2018/06/17/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E4%B8%80%E8%88%AC%E9%80%9A%E8%AE%AF%E5%BD%95/"/>
+    <id>http://yoursite.com/blog/2018/06/17/C语言实现一般通讯录/</id>
     <published>2018-06-17T07:09:27.000Z</published>
     <updated>2018-06-21T10:17:50.593Z</updated>
     
@@ -146,19 +146,19 @@
     
     </summary>
     
-      <category term="小项目" scheme="http://yoursite.com/categories/%E5%B0%8F%E9%A1%B9%E7%9B%AE/"/>
+      <category term="小项目" scheme="http://yoursite.com/blog/categories/%E5%B0%8F%E9%A1%B9%E7%9B%AE/"/>
     
     
-      <category term="C语言版通讯录" scheme="http://yoursite.com/tags/C%E8%AF%AD%E8%A8%80%E7%89%88%E9%80%9A%E8%AE%AF%E5%BD%95/"/>
+      <category term="C语言版通讯录" scheme="http://yoursite.com/blog/tags/C%E8%AF%AD%E8%A8%80%E7%89%88%E9%80%9A%E8%AE%AF%E5%BD%95/"/>
     
-      <category term="结构体存储通讯录" scheme="http://yoursite.com/tags/%E7%BB%93%E6%9E%84%E4%BD%93%E5%AD%98%E5%82%A8%E9%80%9A%E8%AE%AF%E5%BD%95/"/>
+      <category term="结构体存储通讯录" scheme="http://yoursite.com/blog/tags/%E7%BB%93%E6%9E%84%E4%BD%93%E5%AD%98%E5%82%A8%E9%80%9A%E8%AE%AF%E5%BD%95/"/>
     
   </entry>
   
   <entry>
     <title>TCP连接的建立和关闭过程及相关面试问题详解（三次握手&amp;四次挥手&amp;面试问题）</title>
-    <link href="http://yoursite.com/2018/06/15/TCP%E5%BB%BA%E7%AB%8B%E5%92%8C%E6%96%AD%E5%BC%80%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%A8%8B%EF%BC%88%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B&amp;%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%EF%BC%89/"/>
-    <id>http://yoursite.com/2018/06/15/TCP建立和断开连接过程（三次握手&amp;四次挥手）/</id>
+    <link href="http://yoursite.com/blog/2018/06/15/TCP%E5%BB%BA%E7%AB%8B%E5%92%8C%E6%96%AD%E5%BC%80%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%A8%8B%EF%BC%88%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B&amp;%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%EF%BC%89/"/>
+    <id>http://yoursite.com/blog/2018/06/15/TCP建立和断开连接过程（三次握手&amp;四次挥手）/</id>
     <published>2018-06-15T00:25:40.000Z</published>
     <updated>2018-07-09T06:13:38.320Z</updated>
     
@@ -173,25 +173,25 @@
     
     </summary>
     
-      <category term="SO Kernals" scheme="http://yoursite.com/categories/SO-Kernals/"/>
+      <category term="SO Kernals" scheme="http://yoursite.com/blog/categories/SO-Kernals/"/>
     
     
-      <category term="ACK机制" scheme="http://yoursite.com/tags/ACK%E6%9C%BA%E5%88%B6/"/>
+      <category term="ACK机制" scheme="http://yoursite.com/blog/tags/ACK%E6%9C%BA%E5%88%B6/"/>
     
-      <category term="TCP连接过程" scheme="http://yoursite.com/tags/TCP%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%A8%8B/"/>
+      <category term="TCP连接过程" scheme="http://yoursite.com/blog/tags/TCP%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%A8%8B/"/>
     
-      <category term="TCP断开连接" scheme="http://yoursite.com/tags/TCP%E6%96%AD%E5%BC%80%E8%BF%9E%E6%8E%A5/"/>
+      <category term="TCP断开连接" scheme="http://yoursite.com/blog/tags/TCP%E6%96%AD%E5%BC%80%E8%BF%9E%E6%8E%A5/"/>
     
-      <category term="三次握手" scheme="http://yoursite.com/tags/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B/"/>
+      <category term="三次握手" scheme="http://yoursite.com/blog/tags/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B/"/>
     
-      <category term="四次挥手" scheme="http://yoursite.com/tags/%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/"/>
+      <category term="四次挥手" scheme="http://yoursite.com/blog/tags/%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/"/>
     
   </entry>
   
   <entry>
     <title>保证TCP协议的可靠传输</title>
-    <link href="http://yoursite.com/2018/05/31/TCp%E5%8D%8F%E8%AE%AE%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93/"/>
-    <id>http://yoursite.com/2018/05/31/TCp协议可靠传输/</id>
+    <link href="http://yoursite.com/blog/2018/05/31/TCp%E5%8D%8F%E8%AE%AE%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93/"/>
+    <id>http://yoursite.com/blog/2018/05/31/TCp协议可靠传输/</id>
     <published>2018-05-31T14:34:00.000Z</published>
     <updated>2018-06-21T10:17:49.076Z</updated>
     
@@ -206,25 +206,25 @@
     
     </summary>
     
-      <category term="SO Kernal" scheme="http://yoursite.com/categories/SO-Kernal/"/>
+      <category term="SO Kernal" scheme="http://yoursite.com/blog/categories/SO-Kernal/"/>
     
     
-      <category term="ACK机制" scheme="http://yoursite.com/tags/ACK%E6%9C%BA%E5%88%B6/"/>
+      <category term="ACK机制" scheme="http://yoursite.com/blog/tags/ACK%E6%9C%BA%E5%88%B6/"/>
     
-      <category term="TCP协议" scheme="http://yoursite.com/tags/TCP%E5%8D%8F%E8%AE%AE/"/>
+      <category term="TCP协议" scheme="http://yoursite.com/blog/tags/TCP%E5%8D%8F%E8%AE%AE/"/>
     
-      <category term="滑动窗口" scheme="http://yoursite.com/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
+      <category term="滑动窗口" scheme="http://yoursite.com/blog/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
     
-      <category term="拥塞控制" scheme="http://yoursite.com/tags/%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6/"/>
+      <category term="拥塞控制" scheme="http://yoursite.com/blog/tags/%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6/"/>
     
-      <category term="流量控制" scheme="http://yoursite.com/tags/%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6/"/>
+      <category term="流量控制" scheme="http://yoursite.com/blog/tags/%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6/"/>
     
   </entry>
   
   <entry>
     <title>UDP协议实现回显服务器</title>
-    <link href="http://yoursite.com/2018/05/22/%E5%9F%BA%E4%BA%8EUDP%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%9B%9E%E6%98%BE%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    <id>http://yoursite.com/2018/05/22/基于UDP协议的回显服务器/</id>
+    <link href="http://yoursite.com/blog/2018/05/22/%E5%9F%BA%E4%BA%8EUDP%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%9B%9E%E6%98%BE%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>http://yoursite.com/blog/2018/05/22/基于UDP协议的回显服务器/</id>
     <published>2018-05-21T17:14:30.000Z</published>
     <updated>2018-06-23T14:38:15.466Z</updated>
     
@@ -239,21 +239,21 @@
     
     </summary>
     
-      <category term="SO Kernal" scheme="http://yoursite.com/categories/SO-Kernal/"/>
+      <category term="SO Kernal" scheme="http://yoursite.com/blog/categories/SO-Kernal/"/>
     
     
-      <category term="计算机网络" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+      <category term="计算机网络" scheme="http://yoursite.com/blog/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
-      <category term="UDP协议" scheme="http://yoursite.com/tags/UDP%E5%8D%8F%E8%AE%AE/"/>
+      <category term="UDP协议" scheme="http://yoursite.com/blog/tags/UDP%E5%8D%8F%E8%AE%AE/"/>
     
-      <category term="回显服务器" scheme="http://yoursite.com/tags/%E5%9B%9E%E6%98%BE%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="回显服务器" scheme="http://yoursite.com/blog/tags/%E5%9B%9E%E6%98%BE%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
   <entry>
     <title>Hexo + GitHub + Blog【版本：小猪佩奇】</title>
-    <link href="http://yoursite.com/2018/05/20/Hexo+GitHub%20Blog/"/>
-    <id>http://yoursite.com/2018/05/20/Hexo+GitHub Blog/</id>
+    <link href="http://yoursite.com/blog/2018/05/20/Hexo+GitHub%20Blog/"/>
+    <id>http://yoursite.com/blog/2018/05/20/Hexo+GitHub Blog/</id>
     <published>2018-05-20T08:30:11.534Z</published>
     <updated>2018-06-21T10:17:49.835Z</updated>
     
@@ -269,18 +269,18 @@
     
     </summary>
     
-      <category term="工具操作" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7%E6%93%8D%E4%BD%9C/"/>
+      <category term="工具操作" scheme="http://yoursite.com/blog/categories/%E5%B7%A5%E5%85%B7%E6%93%8D%E4%BD%9C/"/>
     
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://yoursite.com/blog/tags/Hexo/"/>
     
-      <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
+      <category term="Git" scheme="http://yoursite.com/blog/tags/Git/"/>
     
-      <category term="Githubpage" scheme="http://yoursite.com/tags/Githubpage/"/>
+      <category term="Githubpage" scheme="http://yoursite.com/blog/tags/Githubpage/"/>
     
-      <category term="随想" scheme="http://yoursite.com/tags/%E9%9A%8F%E6%83%B3/"/>
+      <category term="随想" scheme="http://yoursite.com/blog/tags/%E9%9A%8F%E6%83%B3/"/>
     
-      <category term="程序员常用工具" scheme="http://yoursite.com/tags/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+      <category term="程序员常用工具" scheme="http://yoursite.com/blog/tags/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
