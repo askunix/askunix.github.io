@@ -3,6 +3,52 @@
 
 
     
+  <url>
+    <loc>http://askunix.github.io/2018/05/22/%E5%9F%BA%E4%BA%8EUDP%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%9B%9E%E6%98%BE%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2018-07-31T11:42:49.605Z</lastmod>
+    <data>
+        <display>
+        <title>UDP协议实现服务器-客户端通信</title>
+        <pubTime>2018-05-21T17:14:30.000Z</pubTime>
+        
+        <tag>计算机网络</tag>
+         
+        <tag>UDP协议</tag>
+         
+         
+           
+             
+              <breadCrumb title="SO Kernal" url="http://askunix.github.io/categories/SO-Kernal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://askunix.github.io/2018/06/15/TCP%E5%BB%BA%E7%AB%8B%E5%92%8C%E6%96%AD%E5%BC%80%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%A8%8B%EF%BC%88%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B&%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%EF%BC%89/</loc>
+    <lastmod>2018-07-31T11:42:21.833Z</lastmod>
+    <data>
+        <display>
+        <title>TCP建立连接和关闭关闭连接详解（三次握手&四次挥手&面试问题）</title>
+        <pubTime>2018-06-15T00:25:40.000Z</pubTime>
+        
+        <tag>ACK机制</tag>
+         
+        <tag>TCP连接过程</tag>
+         
+        <tag>三次握手四次挥手</tag>
+         
+         
+           
+             
+              <breadCrumb title="SO Kernals" url="http://askunix.github.io/categories/SO-Kernals/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://askunix.github.io/2018/07/29/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/</loc>
@@ -133,52 +179,6 @@
         <tag>拥塞控制</tag>
          
         <tag>流量控制</tag>
-         
-         
-           
-             
-              <breadCrumb title="SO Kernal" url="http://askunix.github.io/categories/SO-Kernal/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://askunix.github.io/2018/06/15/TCP%E5%BB%BA%E7%AB%8B%E5%92%8C%E6%96%AD%E5%BC%80%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%A8%8B%EF%BC%88%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B&%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%EF%BC%89/</loc>
-    <lastmod>2018-07-31T11:01:36.475Z</lastmod>
-    <data>
-        <display>
-        <title>TCP连接的建立和关闭过程及相关面试问题详解（三次握手&四次挥手&面试问题）</title>
-        <pubTime>2018-06-15T00:25:40.000Z</pubTime>
-        
-        <tag>ACK机制</tag>
-         
-        <tag>TCP连接过程</tag>
-         
-        <tag>三次握手四次挥手</tag>
-         
-         
-           
-             
-              <breadCrumb title="SO Kernals" url="http://askunix.github.io/categories/SO-Kernals/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://askunix.github.io/2018/05/22/%E5%9F%BA%E4%BA%8EUDP%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%9B%9E%E6%98%BE%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    <lastmod>2018-07-31T11:01:15.102Z</lastmod>
-    <data>
-        <display>
-        <title>UDP协议实现服务器-客户端通信</title>
-        <pubTime>2018-05-21T17:14:30.000Z</pubTime>
-        
-        <tag>计算机网络</tag>
-         
-        <tag>UDP协议</tag>
          
          
            
