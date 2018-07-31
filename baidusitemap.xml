@@ -3,6 +3,30 @@
 
 
     
+  <url>
+    <loc>http://askunix.github.io/2018/06/15/TCP%E5%BB%BA%E7%AB%8B%E5%92%8C%E6%96%AD%E5%BC%80%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%A8%8B%EF%BC%88%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B&%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%EF%BC%89/</loc>
+    <lastmod>2018-07-31T13:03:21.527Z</lastmod>
+    <data>
+        <display>
+        <title>TCP建立连接和关闭连接详解（三次握手&四次挥手&面试问题）</title>
+        <pubTime>2018-06-15T00:25:40.000Z</pubTime>
+        
+        <tag>ACK机制</tag>
+         
+        <tag>TCP连接过程</tag>
+         
+        <tag>三次握手四次挥手</tag>
+         
+         
+           
+             
+              <breadCrumb title="SO Kernals" url="http://askunix.github.io/categories/SO-Kernals/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
     
   <url>
@@ -21,30 +45,6 @@
            
              
               <breadCrumb title="SO Kernal" url="http://askunix.github.io/categories/SO-Kernal/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://askunix.github.io/2018/06/15/TCP%E5%BB%BA%E7%AB%8B%E5%92%8C%E6%96%AD%E5%BC%80%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%A8%8B%EF%BC%88%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B&%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%EF%BC%89/</loc>
-    <lastmod>2018-07-31T11:42:21.833Z</lastmod>
-    <data>
-        <display>
-        <title>TCP建立连接和关闭关闭连接详解（三次握手&四次挥手&面试问题）</title>
-        <pubTime>2018-06-15T00:25:40.000Z</pubTime>
-        
-        <tag>ACK机制</tag>
-         
-        <tag>TCP连接过程</tag>
-         
-        <tag>三次握手四次挥手</tag>
-         
-         
-           
-             
-              <breadCrumb title="SO Kernals" url="http://askunix.github.io/categories/SO-Kernals/"/>
           
         </display>
     </data>
