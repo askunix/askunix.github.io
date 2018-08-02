@@ -8,14 +8,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://askunix.github.io">
-  <title>TCP建立连接和关闭连接详解（三次握手&amp;四次挥手&amp;面试问题） | 懒惰行动得如此缓慢，贫穷很快就能超过它。 &lt;br&gt;——富兰克林思维改变生活</title>
+  <title>TCP建立连接和关闭连接详解（三次握手&amp;四次挥手&amp;面试问题） | 懒惰行动得如此缓慢，贫穷很快就能超过它。——富兰克林</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。 如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解">
 <meta name="keywords" content="ACK机制,TCP连接过程,三次握手四次挥手">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TCP建立连接和关闭连接详解（三次握手&amp;四次挥手&amp;面试问题）">
 <meta property="og:url" content="http://askunix.github.io/2018/06/15/TCP建立和断开连接过程（三次握手&四次挥手）/index.html">
-<meta property="og:site_name" content="懒惰行动得如此缓慢，贫穷很快就能超过它。 &lt;br&gt;——富兰克林思维改变生活">
+<meta property="og:site_name" content="懒惰行动得如此缓慢，贫穷很快就能超过它。——富兰克林">
 <meta property="og:description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。 如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/001.png">
@@ -26,7 +26,7 @@
 <meta name="twitter:description" content="写在前面 三次握手、四次挥手问题是面试中一定会问到的，包括在《高质量C/C++编程》一书中也有类似的习题。这篇blog就TCP连接的建立和关闭过程及相关面试问题做一个详解，如有错误，望指正。 如果对TCP还不了解，可以先阅读这篇文章：      TCP固定头部结构详解">
 <meta name="twitter:image" content="http://p9ff104hp.bkt.clouddn.com/001.png">
   
-    <link rel="alternative" href="/atom.xml" title="懒惰行动得如此缓慢，贫穷很快就能超过它。 &lt;br&gt;——富兰克林思维改变生活" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="懒惰行动得如此缓慢，贫穷很快就能超过它。——富兰克林" type="application/atom+xml">
   
   
     <link rel="icon" href="img/favicon.ico.ico">
