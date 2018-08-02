@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【Linux基础命令】你用过哪些Linux常见命令？]]></title>
+    <url>%2F2018%2F08%2F02%2FLinux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[写在前面： ① 文件目录操作类的命令，比如：cd、ls、cp、rm、find、grep、zip、tar、yum、less。 ② 系统权限操作命令，比如：chmod 、chown 、sudo等。 ③ 操作系统级命令，比如：shutdown、uname 、top、du、df、losf、netstat等。 文件目录操作类的命令：cd（1）cd /home 进入 ‘/ home’ 目录’ （2）cd .. 返回上一级目录 （3）cd ../.. 返回上两级目录 （4）cd ~user1 进入个人的主目录 （5）cd - 返回上次所在的目录 ls（1）ls 查看目录中的文件 （2）ls -F 查看目录中的文件 （3）ls -l 显示文件和目录的详细资料 （4）ls -a 显示隐藏文件 （5）ls [0-9] 显示包含数字的文件名和目录名 cp（1）cp file1 file2 复制一个文件 （2）cp dir/* . 复制一个目录下的所有文件到当前工作目录 rm（1）rm -f file1 删除一个叫做 ‘file1’ 的文件’ （2）rmdir dir1 删除一个叫做 ‘dir1’ 的目录’ （3）rm -rf dir1 删除一个叫做 ‘dir1’ 的目录并同时删除其内容 （4）rm -rf dir1 dir2 同时删除两个目录及它们的内容 find、grep这两个命令我早其他博客总结过：Linux下的查找（grep &amp; find） zip（1）zip file1.zip file1 创建一个zip格式的压缩包 （2）zip -r file1.zip file1 file2 dir1 将几个文件和目录同时压缩成一个zip格式的压缩包 （3）unzip file1.zip 解压一个zip格式压缩包 tar（1）tar -cvf archive.tar file1 创建一个非压缩的 tarball （2）tar -cvf archive.tar file1 file2 dir1 创建一个包含了 ‘file1’, ‘file2’ 以及 ‘dir1’的档案文件 （3）tar -tf archive.tar 显示一个包中的内容 （4）tar -xvf archive.tar -C /tmp 将压缩包释放到 /tmp目录下 （5）tar -cvfz archive.tar.gz dir1 创建一个gzip格式的压缩包 （6）tar -xvfz archive.tar.gz 解压一个gzip格式的压缩包 yum（1）yum install package_name 下载并安装一个rpm包 （2）yum list 列出当前系统中安装的所有包 （3）yum update package_name 更新一个rpm包 （4）yum remove package_name 删除一个rpm包 （5）yum update package_name.rpm 更新当前系统中所有安装的rpm包 less（1）less file1 类似于 ‘more’ 命令，但是它允许在文件中和正向操作一样的反向操作 （2）head -2 file1 查看一个文件的前两行 （3）tail -2 file1 查看一个文件的最后两行 （4）cat file1 从第一个字节开始正向查看文件的内容 （5）tac file1 从最后一行开始反向查看一个文件的内容 （6）more file1 查看一个长文件的内容 统权限操作命令chmod 改变文件权限命令 （1）Chmod u+w filename 表示给文件所有者添加写权限 （2）Chmod u-w filename 表示删除文件所有者的写权限 （3）Chmod u=rwx filename 表示设置文件所有者的权限为可读，可写，可执行 （4）chmod u+x,g+w,o+w test.txt 给所有者添加执行的权限，给所有组和其它人添加写权限 chown 改变文件拥有者：chown命令 （1）chown user1 test.txt 比如要修改文件test.txt的拥有者为user1 （2）chown :user1 test.txt 要修改文件test.txt的拥有组为user1 （3）chown user1:user1 test.txt 要同时修改拥有者和拥有组 sudo Linux sudo命令以系统管理者的身份执行指令，也就是说，经由 sudo 所执行的指令就好像是 root 亲自执行。使用权限：在 /etc/sudoers 中有出现的使用者。 （1）-V 显示版本编号 （2）-h 会显示版本编号及指令的使用方式说明 （3）-l 显示出自己（执行 sudo 的使用者）的权限 操作系统级命令shutdown（1）*shutdown -h now 关闭系统 （2）shutdown -c 取消按预定时间关闭系统 （3）shutdown -r now 重启 （4）reboot 重启 （5）logout 注销 uname（1）uname -m 显示机器的处理器架构 （2）uname -r 显示正在使用的内核版本 top这两个命令我早其他博客总结过：Linux基础命令（三）之top详解 du、 df博客总结过：Linux基础命令（二）之du、df详解 losf（1）losf -i:（端口号） losf -i:8080 → 查看这个端口号有哪些进程在访问 netstat（1）netstat -a ：列出所有端口（包括监听和未监听的） （2）netstat -l ：列出所有处于监听状态的socket（只显示监听端口） （3）netstat -t：仅显示TCP相关选项 （4）netstat -u：仅显示UDP相关选项 （5）netstat -r：显示路由信息，路由表]]></content>
+      <categories>
+        <category>工具操作</category>
+      </categories>
+      <tags>
+        <tag>Linux命令</tag>
+        <tag>Centos下命令</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[成长是从认识自己的无知开始的]]></title>
     <url>%2F2018%2F08%2F02%2F%E6%88%90%E9%95%BF%E6%98%AF%E4%BB%8E%E8%AE%A4%E8%AF%86%E8%87%AA%E5%B7%B1%E7%9A%84%E6%97%A0%E7%9F%A5%E5%BC%80%E5%A7%8B%E7%9A%84%2F</url>
     <content type="text"><![CDATA[写在前面 毒鸡汤奉上。 操作环境：Vim编辑器。 敬请期待]]></content>
@@ -31,8 +43,8 @@
         <category>编程之美</category>
       </categories>
       <tags>
-        <tag>插入排序</tag>
         <tag>数据结构</tag>
+        <tag>插入排序</tag>
       </tags>
   </entry>
   <entry>
