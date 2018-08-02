@@ -20,8 +20,8 @@
         <category>编程之美</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
         <tag>插入排序</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -99,6 +99,18 @@
       <tags>
         <tag>计算机网络</tag>
         <tag>UDP协议</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo + GitHub + Blog【版本：小猪佩奇】]]></title>
+    <url>%2F2018%2F05%2F20%2FHexo%2BGitHub%20Blog%2F</url>
+    <content type="text"><![CDATA[写在前面 利用周末时间搭建了Hexo + github + 个性化域名博客。 通过不断地测试和完善，实现了常用功能以及基本的页面美化。 问题概况 在搭建过程中遇到了很多棘手的问题，在中途因为没有测试，还崩溃过，只能归零，从头再来。 非常感谢众多大神的博客，给了我很多帮助，推荐几个程序员技术交流网站/社区：知乎、简书、CSDN、掘金、牛客、GitHub。 因为有了第一次的经验和教训，所以第二次从环境搭建到站点/主题配置就一气呵成了。 我的博客后期用来管理优质文章、自己写的小项目、分享我喜欢的图片、音乐歌单、笔记等等，欢迎读者收藏。 工具推荐1、Atom 2、Sublime Text 3 3、NotePad ++ 4、冰点文库下载器 5、LastActivity View 6、Xshell 7、Xftp 6 8、Mind Master 9、Fiddler 10、VC++ 6.0 MSDN 11、Typora]]></content>
+      <categories>
+        <category>工具操作</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
 </search>

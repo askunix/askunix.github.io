@@ -64,9 +64,9 @@
       <category term="编程之美" scheme="http://askunix.github.io/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
     
     
-      <category term="数据结构" scheme="http://askunix.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="插入排序" scheme="http://askunix.github.io/tags/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"/>
+    
+      <category term="数据结构" scheme="http://askunix.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -234,6 +234,32 @@
       <category term="计算机网络" scheme="http://askunix.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
       <category term="UDP协议" scheme="http://askunix.github.io/tags/UDP%E5%8D%8F%E8%AE%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo + GitHub + Blog【版本：小猪佩奇】</title>
+    <link href="http://askunix.github.io/2018/05/20/Hexo+GitHub%20Blog/"/>
+    <id>http://askunix.github.io/2018/05/20/Hexo+GitHub Blog/</id>
+    <published>2018-05-20T08:30:11.534Z</published>
+    <updated>2018-08-02T14:10:23.607Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><ul><li>利用周末时间搭建了Hexo + github + 个性化域名博客。</li><li>通过不断地测试和完善，实现了常用功能以及基本的页面美化。<a id="more"></a></li></ul><p><img src="http://p9ff104hp.bkt.clouddn.com/13.jpg" alt="图片加载失败"></p><h4 id="问题概况"><a href="#问题概况" class="headerlink" title="问题概况"></a>问题概况</h4><ul><li><p>在搭建过程中遇到了很多棘手的问题，在中途因为没有测试，还崩溃过，只能归零，从头再来。</p></li><li><p>非常感谢众多大神的博客，给了我很多帮助，推荐几个程序员技术交流网站/社区：知乎、简书、CSDN、掘金、牛客、GitHub。</p></li><li><p>因为有了第一次的经验和教训，所以第二次从环境搭建到站点/主题配置就一气呵成了。</p></li><li><p>我的博客后期用来管理优质文章、自己写的小项目、分享我喜欢的图片、音乐歌单、笔记等等，欢迎读者收藏。</p></li></ul><h4 id="工具推荐"><a href="#工具推荐" class="headerlink" title="工具推荐"></a>工具推荐</h4><p>1、<code>Atom</code></p><p><img src="http://p9ff104hp.bkt.clouddn.com/atom.png" alt="图片加载失败"></p><p>2、<code>Sublime Text 3</code></p><p><img src="http://p9ff104hp.bkt.clouddn.com/Sublime%20Text.png" alt="图片加载失败"></p><p>3、<code>NotePad ++</code></p><p><img src="http://p9ff104hp.bkt.clouddn.com/Notepad%20++.png" alt="图片加载失败"></p><p>4、<code>冰点文库下载器</code></p><p><img src="http://p9ff104hp.bkt.clouddn.com/%E5%86%B0%E7%82%B9%E6%96%87%E5%BA%93.png" alt="图片加载失败"></p><p>5、<code>LastActivity View</code></p><p><img src="http://p9ff104hp.bkt.clouddn.com/LastActivit.png" alt="图片加载失败"></p><p>6、<code>Xshell</code></p><p><img src="http://p9ff104hp.bkt.clouddn.com/xshell.png" alt="图片加载失败"></p><p>7、<code>Xftp 6</code></p><p><img src="http://p9ff104hp.bkt.clouddn.com/xftp.png" alt="图片加载失败"></p><p>8、<code>Mind Master</code></p><p><img src="http://p9ff104hp.bkt.clouddn.com/mindMaster.png" alt="图片加载失败"></p><p>9、<code>Fiddler</code></p><p><img src="http://p9ff104hp.bkt.clouddn.com/fiddler.png" alt="图片加载失败"></p><p>10、<code>VC++ 6.0 MSDN</code></p><p><img src="http://p9ff104hp.bkt.clouddn.com/MSDN.png" alt="图片加载失败"></p><p>11、<code>Typora</code></p><p><img src="http://p9ff104hp.bkt.clouddn.com/Typora.png" alt="图片加载失败"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;利用周末时间搭建了Hexo + github + 个性化域名博客。&lt;/li&gt;
+&lt;li&gt;通过不断地测试和完善，实现了常用功能以及基本的页面美化。
+    
+    </summary>
+    
+      <category term="工具操作" scheme="http://askunix.github.io/categories/%E5%B7%A5%E5%85%B7%E6%93%8D%E4%BD%9C/"/>
+    
+    
+      <category term="Git" scheme="http://askunix.github.io/tags/Git/"/>
+    
+      <category term="随笔" scheme="http://askunix.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
