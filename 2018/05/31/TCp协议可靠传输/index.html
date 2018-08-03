@@ -11,7 +11,7 @@
   <title>保证TCP协议的可靠传输 | Askunix&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="写在前面 TCP协议在网络传输中保证了其可靠性，本篇文章对TCP协议可靠传输机制做了详细介绍。 介绍：（ACK机制&amp;amp;滑动窗口&amp;amp;拥塞控制&amp;amp;流量控制）。">
-<meta name="keywords" content="TCP协议,ACK机制,滑动窗口,拥塞控制,流量控制">
+<meta name="keywords" content="ACK机制,TCP协议,滑动窗口,拥塞控制,流量控制">
 <meta property="og:type" content="article">
 <meta property="og:title" content="保证TCP协议的可靠传输">
 <meta property="og:url" content="http://askunix.github.io/2018/05/31/TCp协议可靠传输/index.html">
@@ -60,6 +60,8 @@
 		<hgroup>
 		  <h1 class="header-author"><a href="/">何进鸿</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">谋无主则困 事无备则废</p>
 		
 
 		<nav class="header-menu">
@@ -122,6 +124,8 @@
 			<hgroup>
 			  <h1 class="header-author js-header-author">何进鸿</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>谋无主则困 事无备则废<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -313,6 +317,7 @@
 
       
 
+	
       
         <div class="page-reward">
           <a href="javascript:;" class="page-reward-btn tooltip-top">
@@ -349,11 +354,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">TCP协议</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ACK机制</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ACK机制</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">TCP协议</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -506,6 +511,15 @@
   
 
 
+
+
+
+
+
+
+
+
+
           </div>
         </div>
       </div>
@@ -613,14 +627,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">技术</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">C语言版通讯录</a>
               </li>
              
@@ -637,11 +643,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">TCP协议</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">技术</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">ACK机制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">TCP连接过程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">三次握手四次挥手</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">TCP协议</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -657,18 +679,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TCP连接过程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">三次握手四次挥手</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">链表面试题</a>
               </li>
              
@@ -678,6 +688,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">无头单链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -693,11 +715,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color4">长连接</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
+                <a href="javascript:void(0)" class="js-tag color4">短连接</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -706,14 +728,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">纯虚函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">长连接</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">短连接</a>
               </li>
             
             <div class="clearfix"></div>
