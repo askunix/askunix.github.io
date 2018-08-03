@@ -8,23 +8,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://askunix.github.io">
-  <title>C语言版通讯录 | Askunix&#39;s Blog</title>
+  <title>Tag: 纯虚函数 | Askunix&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写在前面 C语言通讯录可以用来存储1000个人的信息。 每个人的信息包括姓名、年龄、性别、电话、住址。 实现基本的增、删、查、改、排序、打印、清空基本功能。">
-<meta name="keywords" content="C语言版通讯录,结构体存储通讯录">
-<meta property="og:type" content="article">
-<meta property="og:title" content="C语言版通讯录">
-<meta property="og:url" content="http://askunix.github.io/2018/06/17/C语言实现一般通讯录/index.html">
+  <meta name="description" content="贫穷总会超过懒惰">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Askunix&#39;s Blog">
+<meta property="og:url" content="http://askunix.github.io/tags/纯虚函数/index.html">
 <meta property="og:site_name" content="Askunix&#39;s Blog">
-<meta property="og:description" content="写在前面 C语言通讯录可以用来存储1000个人的信息。 每个人的信息包括姓名、年龄、性别、电话、住址。 实现基本的增、删、查、改、排序、打印、清空基本功能。">
+<meta property="og:description" content="贫穷总会超过懒惰">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/44.png">
-<meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/777777.png">
-<meta property="og:updated_time" content="2018-07-31T11:02:22.491Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C语言版通讯录">
-<meta name="twitter:description" content="写在前面 C语言通讯录可以用来存储1000个人的信息。 每个人的信息包括姓名、年龄、性别、电话、住址。 实现基本的增、删、查、改、排序、打印、清空基本功能。">
-<meta name="twitter:image" content="http://p9ff104hp.bkt.clouddn.com/44.png">
+<meta name="twitter:title" content="Askunix&#39;s Blog">
+<meta name="twitter:description" content="贫穷总会超过懒惰">
   
     <link rel="alternative" href="/atom.xml" title="Askunix&#39;s Blog" type="application/atom+xml">
   
@@ -172,231 +167,75 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-C语言实现一般通讯录" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      C语言版通讯录
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/08/03/虚函数与纯虚函数/" class="archive-article-date">
+  	<time datetime="2018-08-03T15:38:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-03</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/08/03/虚函数与纯虚函数/">【回炉重造】C++虚函数和纯虚函数</a>
     </h1>
   
 
-        
-        <a href="/2018/06/17/C语言实现一般通讯录/" class="archive-article-date">
-  	<time datetime="2018-06-17T07:09:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><ul>
-<li>C语言通讯录可以用来存储1000个人的信息。</li>
-<li>每个人的信息包括姓名、年龄、性别、电话、住址。</li>
-<li>实现基本的增、删、查、改、排序、打印、清空基本功能。<a id="more"></a>
-</li>
-</ul>
-<p><img src="http://p9ff104hp.bkt.clouddn.com/44.png" alt="图片加载失败"></p>
-<h4 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析:"></a>思路分析:</h4><ul>
-<li><p>首先我们可以分三个模块来解决这个问题，第一个模块我们需要一个头文件，这个头文件里可以包含一些相应信息，当实现文件和测试文件包含自己定义的头文件时便可以获得一些相关的信息。所以头文件里应该包括一个结构体，这个结构体里应包含姓名，性别，年龄，电话，住址。同时还可以定义一个结构体，这个结构体里包含通讯录，同时通讯录里人员的计数变量，将通讯录的地址传到别的地方便可以实现对它遍历或者其他操作。</p>
-</li>
-<li><p>第二个模块便是我们的测试函数，测试函数便可以实现我们的菜单打印，同时由我们接收不同的值便可以实现不同的操作，就是相应的方法的实现，这里很明显可以通过一个switch语句来控制功能选择，用do-while语句来控制重复选择的循环部分。</p>
-</li>
-</ul>
-<ul>
-<li>第三个模块便是我们的方法实现的函数，将模块2里定义的类型为通讯录的地址传到各个方法里，这样便可以实现对通讯录的操作。</li>
-</ul>
-<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><h5 id="头文件：-lt-contect-h-gt"><a href="#头文件：-lt-contect-h-gt" class="headerlink" title="头文件： &lt;contect.h&gt;"></a>头文件： <code>&lt;contect.h&gt;</code></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;Windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NAME_MAX 20</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TEL_MAX 12</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SEX_MAX 4</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 1000</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">enum</span>&#123; Exit, Add, Del, Search, Modify, Empty, Sort, Show&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Stu</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> Name[NAME_MAX];</span><br><span class="line">	<span class="keyword">int</span> Age;</span><br><span class="line">	<span class="keyword">char</span> Tel[TEL_MAX];</span><br><span class="line">	<span class="keyword">char</span> Sex[SEX_MAX];</span><br><span class="line">	<span class="keyword">char</span> Address[<span class="number">50</span>];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Stu</span> <span class="title">Stu</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Contact</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	Stu Con[MAX];       <span class="comment">//容量</span></span><br><span class="line">	<span class="keyword">int</span> sz;     <span class="comment">//计数</span></span><br><span class="line">&#125;Contact, *pContact;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//函数声明</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitContact</span><span class="params">(pContact pCon)</span></span>;  <span class="comment">//初始化</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">AddContact</span><span class="params">(pContact pCon)</span></span>;   <span class="comment">//新建</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ShowContact</span><span class="params">(pContact pCon)</span></span>;  <span class="comment">//打印</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DelContact</span><span class="params">(pContact pCon)</span></span>;   <span class="comment">//删除</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SearchContact</span><span class="params">(pContact pCon)</span></span>;   <span class="comment">//查找</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ModifyContact</span><span class="params">(pContact pCon)</span></span>;    <span class="comment">//修改</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EmptyContact</span><span class="params">(pContact pCon)</span></span>;    <span class="comment">//清空</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SortContact</span><span class="params">(pContact pCon)</span></span>;    <span class="comment">//排序</span></span><br></pre></td></tr></table></figure>
-<h5 id="函数实现：-contect-cpp"><a href="#函数实现：-contect-cpp" class="headerlink" title="函数实现： contect.cpp"></a>函数实现： <code>contect.cpp</code></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">"contect.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitContact</span><span class="params">(pContact pCon)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	pCon-&gt;sz = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">memset</span>(pCon-&gt;Con, <span class="number">0</span>, MAX * <span class="keyword">sizeof</span>(Stu));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">AddContact</span><span class="params">(pContact pCon)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"请输入联系人姓名："</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; pCon-&gt;Con[pCon-&gt;sz].Name;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入联系人年龄："</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; pCon-&gt;Con[pCon-&gt;sz].Age;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入联系人电话："</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; pCon-&gt;Con[pCon-&gt;sz].Tel;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入联系人性别："</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; pCon-&gt;Con[pCon-&gt;sz].Sex;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入联系人地址："</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; pCon-&gt;Con[pCon-&gt;sz].Address;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"═════联系人 "</span> &lt;&lt; pCon-&gt;Con[pCon-&gt;sz].Name &lt;&lt; <span class="string">" 的信息保存成功════"</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	pCon-&gt;sz++;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ShowContact</span><span class="params">(pContact pCon)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"╔═════════════════════════════════════════════════════════════╗"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%3s\t%6s\t%2s%16s%8s%20s\n"</span>,<span class="string">"║序号"</span>,<span class="string">"姓名"</span>,<span class="string">"年龄"</span>,<span class="string">"电话"</span>,<span class="string">"性别"</span>,<span class="string">"地址║"</span>);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; pCon-&gt;sz; i++)</span><br><span class="line">		&#123;</span><br><span class="line"></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%3d\t%6s\t%2d%16s%8s%20s\n"</span>,</span><br><span class="line">				i + <span class="number">1</span>,</span><br><span class="line">				pCon-&gt;Con[i].Name,</span><br><span class="line">				pCon-&gt;Con[i].Age,</span><br><span class="line">				pCon-&gt;Con[i].Tel,</span><br><span class="line">				pCon-&gt;Con[i].Sex,</span><br><span class="line">				pCon-&gt;Con[i].Address);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"╚═════════════════════════════════════════════════════════════╝"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"温馨提示：输出完成！！！"</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">FindInContact</span><span class="params">(pContact pCon, <span class="keyword">char</span> *ch)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; pCon-&gt;sz; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">strcmp</span>(pCon-&gt;Con[i].Name,ch) == <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">return</span> i;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DelContact</span><span class="params">(pContact pCon)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> ch[<span class="number">20</span>];</span><br><span class="line">	ShowContact(pCon);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入上面通讯录中要删除联系人的姓名："</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>, &amp;ch);</span><br><span class="line">	<span class="keyword">int</span> NUM = FindInContact(pCon, ch);</span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">NULL</span> == <span class="number">-1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"通讯录中没有该联系人！！！"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (NUM &lt;= pCon-&gt;sz &amp;&amp; NUM != <span class="number">-1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = NUM; j &lt;= pCon-&gt;sz<span class="number">-1</span>; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			pCon-&gt;sz--;</span><br><span class="line">			pCon-&gt;Con[j] = pCon-&gt;Con[j + <span class="number">1</span>];</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"删除成功！！！\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SearchContact</span><span class="params">(pContact pCon)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> ch[<span class="number">20</span>];</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"请输出你要查找联系人的姓名："</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>, &amp;ch);</span><br><span class="line">	<span class="keyword">int</span> NUM = FindInContact(pCon, ch);</span><br><span class="line">	<span class="keyword">if</span> (NUM != <span class="number">-1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"╔═════════════════════════════════════════════════════════════╗"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%3s\t%6s\t%2s%16s%8s%20s\n"</span>, <span class="string">"║序号"</span>, <span class="string">"姓名"</span>, <span class="string">"年龄"</span>, <span class="string">"电话"</span>, <span class="string">"性别"</span>, <span class="string">"地址║"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%3d\t%6s\t%2d%16s%8s%20s\n"</span>,</span><br><span class="line">			NUM + <span class="number">1</span>,</span><br><span class="line">			pCon-&gt;Con[NUM].Name,</span><br><span class="line">			pCon-&gt;Con[NUM].Age,</span><br><span class="line">			pCon-&gt;Con[NUM].Tel,</span><br><span class="line">			pCon-&gt;Con[NUM].Sex,</span><br><span class="line">			pCon-&gt;Con[NUM].Address);</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"╚═════════════════════════════════════════════════════════════╝"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"你要找的联系人不存在\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ModifyContact</span><span class="params">(pContact pCon)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> ch[NAME_MAX];</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"请输入要修改的联系人的姓名："</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>, &amp;ch);</span><br><span class="line">	<span class="keyword">int</span> NUM = FindInContact(pCon, ch);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (NUM != <span class="number">-1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"╔═════════════════════════════════════════════════════════════╗"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%3s\t%6s\t%2s%16s%8s%20s\n"</span>, <span class="string">"║序号"</span>, <span class="string">"姓名"</span>, <span class="string">"年龄"</span>, <span class="string">"电话"</span>, <span class="string">"性别"</span>, <span class="string">"地址║"</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%3d\t%6s\t%2d%16s%8s%20s\n"</span>,</span><br><span class="line">			NUM,</span><br><span class="line">			pCon-&gt;Con[NUM].Name,</span><br><span class="line">			pCon-&gt;Con[NUM].Age,</span><br><span class="line">			pCon-&gt;Con[NUM].Tel,</span><br><span class="line">			pCon-&gt;Con[NUM].Sex,</span><br><span class="line">			pCon-&gt;Con[NUM].Address);</span><br><span class="line"></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"╚═════════════════════════════════════════════════════════════╝"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"请把姓名修改成："</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%s"</span>, pCon-&gt;Con[NUM].Name);</span><br><span class="line"></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"请把年龄修改成："</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;pCon-&gt;Con[NUM].Age);</span><br><span class="line"></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"请把电话修改成："</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%s"</span>, pCon-&gt;Con[NUM].Tel);</span><br><span class="line"></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"请把性别修改成："</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%s"</span>, pCon-&gt;Con[NUM].Sex);</span><br><span class="line"></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"请把地址修改成："</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%s"</span>, pCon-&gt;Con[NUM].Address);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EmptyContact</span><span class="params">(pContact pCon)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	pCon-&gt;sz = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"清空成功！！！\n\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SortContact</span><span class="params">(pContact pCon)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; pCon-&gt;sz; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; pCon-&gt;sz-i<span class="number">-1</span>; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (<span class="built_in">strcmp</span>(pCon-&gt;Con[j].Name, pCon-&gt;Con[j + <span class="number">1</span>].Name)&gt;<span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				Stu temp;</span><br><span class="line">				temp = pCon-&gt;Con[j];</span><br><span class="line">				pCon-&gt;Con[j] = pCon-&gt;Con[j + <span class="number">1</span>];</span><br><span class="line">				pCon-&gt;Con[j + <span class="number">1</span>] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="测试函数：-test-cpp"><a href="#测试函数：-test-cpp" class="headerlink" title="测试函数： test.cpp"></a>测试函数： <code>test.cpp</code></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">"contect.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">menu</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"╔═══════════════════════════════════════════════════╗"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"║═══════════════════  通讯录  ══════════════════════║"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"║═══                                             ═══║"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"║═══           1.新建           2.删除           ═══║"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"║═══           3.查找           4.修改           ═══║"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"║═══           5.清空           6.排序           ═══║"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"║═══           7.打印           0.退出           ═══║"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"║═══                                             ═══║"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"╚═══════════════════════════════════════════════════╝"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	system(<span class="string">"color c"</span>); <span class="comment">//改变背景</span></span><br><span class="line">	Contact my_con;</span><br><span class="line">	InitContact(&amp;my_con);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> input = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">	&#123;</span><br><span class="line">		menu();</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"请选择："</span>;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; input;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">switch</span> (input)</span><br><span class="line">		&#123;</span><br><span class="line">		<span class="keyword">case</span> Exit:</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">case</span> Add:</span><br><span class="line">			AddContact(&amp;my_con);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">case</span> Del:</span><br><span class="line">			DelContact(&amp;my_con);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">case</span> Search:</span><br><span class="line">			SearchContact(&amp;my_con);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">case</span> Modify:</span><br><span class="line">			ModifyContact(&amp;my_con);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">case</span> Empty:</span><br><span class="line">			EmptyContact(&amp;my_con);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">case</span> Sort:</span><br><span class="line">			SortContact(&amp;my_con);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">case</span> Show:</span><br><span class="line">			ShowContact(&amp;my_con);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"选择错误：-&gt;!!!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">while</span> (input);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	test();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h5><p><img src="http://p9ff104hp.bkt.clouddn.com/777777.png" alt="图片加载失败"></p>
-<h4 id="问题思考"><a href="#问题思考" class="headerlink" title="问题思考"></a>问题思考</h4><p>1、改写成链表存储，不同存储结构的区别？</p>
-<p>2、动态版通讯录、文件版通讯录设计？</p>
-<p>3、编写大型通讯录系统，将通讯录数据存储在数据库中？</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢大佬请我吃糖<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/money.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">C语言版通讯录</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">虚函数</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">结构体存储通讯录</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">纯虚函数</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/小项目//" class="article-tag-list-link color4">小项目</a>
+        			<a href="/categories/编程之美//" class="article-tag-list-link color5">编程之美</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://askunix.github.io/2018/06/17/C语言实现一般通讯录/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/06/21/【编程之美】链表面试题汇总版/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          【编程之美】链表面试题汇总版
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/06/15/TCP建立和断开连接过程（三次握手&四次挥手）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">TCP建立连接和关闭连接详解（三次握手&amp;四次挥手&amp;面试问题）</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#写在前面"><span class="toc-number">1.</span> <span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#思路分析"><span class="toc-number">2.</span> <span class="toc-text">思路分析:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码实现"><span class="toc-number">3.</span> <span class="toc-text">代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#头文件：-lt-contect-h-gt"><span class="toc-number">3.1.</span> <span class="toc-text">头文件： &lt;contect.h&gt;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#函数实现：-contect-cpp"><span class="toc-number">3.2.</span> <span class="toc-text">函数实现： contect.cpp</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试函数：-test-cpp"><span class="toc-number">3.3.</span> <span class="toc-text">测试函数： test.cpp</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#输出"><span class="toc-number">3.4.</span> <span class="toc-text">输出</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#问题思考"><span class="toc-number">4.</span> <span class="toc-text">问题思考</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -429,9 +268,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
