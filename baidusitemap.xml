@@ -3,6 +3,7 @@
 
 
     
+    
   <url>
     <loc>http://askunix.github.io/2018/08/05/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</loc>
     <lastmod>2018-08-05T14:41:31.391Z</lastmod>
@@ -256,9 +257,9 @@
         <title>保证TCP协议的可靠传输</title>
         <pubTime>2018-05-31T14:34:00.000Z</pubTime>
         
-        <tag>TCP协议</tag>
-         
         <tag>ACK机制</tag>
+         
+        <tag>TCP协议</tag>
          
         <tag>滑动窗口</tag>
          
@@ -297,7 +298,6 @@
     </data>
     </url>
 
-    
     
     
     

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://askunix.github.io/photo/index.html</loc>
+    
+    <lastmod>2018-08-05T14:56:57.427Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://askunix.github.io/2018/08/05/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</loc>
     
     <lastmod>2018-08-05T14:41:31.391Z</lastmod>
@@ -103,13 +110,6 @@
     <loc>http://askunix.github.io/about/index.html</loc>
     
     <lastmod>2018-07-09T07:23:03.129Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://askunix.github.io/photo/index.html</loc>
-    
-    <lastmod>2018-07-09T06:58:41.958Z</lastmod>
     
   </url>
   
