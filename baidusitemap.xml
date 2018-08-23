@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://askunix.github.io/2018/08/20/file_compress/</loc>
-    <lastmod>2018-08-23T04:33:58.108Z</lastmod>
+    <lastmod>2018-08-23T05:51:09.738Z</lastmod>
     <data>
         <display>
         <title>文件压缩（基于Huffman树实现无损压缩）</title>

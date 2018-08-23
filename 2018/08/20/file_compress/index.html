@@ -10,18 +10,18 @@
   <link rel="dns-prefetch" href="http://askunix.github.io">
   <title>文件压缩（基于Huffman树实现无损压缩） | Askunix&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写在前面 项目采用Huffman编码的方式进行文件压缩与解压缩。主要原理是通过Huffman编码来表示字符，出现次数多的编码短，出现次数少的编码长，这样整体而言，所需要的bit位是减少的，就实现了文件压缩功能。 读取文件中的字符出现次数，构建Huffman树，然后解析这个字符的每一位，遇到一个叶子结点，就代表还原了一个字符，这时就将这个字符写到解压缩文件里。 3、注意当大部分字符出现的频率都差不多">
+  <meta name="description" content="写在前面 项目采用Huffman编码的方式进行文件压缩与解压缩。主要原理是通过Huffman编码来表示字符，出现次数多的编码短，出现次数少的编码长，这样整体而言，所需要的bit位是减少的，就实现了文件压缩功能。 读取文件中的字符出现次数，构建Huffman树，然后解析这个字符的每一位，遇到一个叶子结点，就代表还原了一个字符，这时就将这个字符写到解压缩文件里。 注意当大部分字符出现的频率都差不多时，">
 <meta name="keywords" content="文件压缩,Huffman树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="文件压缩（基于Huffman树实现无损压缩）">
 <meta property="og:url" content="http://askunix.github.io/2018/08/20/file_compress/index.html">
 <meta property="og:site_name" content="Askunix&#39;s Blog">
-<meta property="og:description" content="写在前面 项目采用Huffman编码的方式进行文件压缩与解压缩。主要原理是通过Huffman编码来表示字符，出现次数多的编码短，出现次数少的编码长，这样整体而言，所需要的bit位是减少的，就实现了文件压缩功能。 读取文件中的字符出现次数，构建Huffman树，然后解析这个字符的每一位，遇到一个叶子结点，就代表还原了一个字符，这时就将这个字符写到解压缩文件里。 3、注意当大部分字符出现的频率都差不多">
+<meta property="og:description" content="写在前面 项目采用Huffman编码的方式进行文件压缩与解压缩。主要原理是通过Huffman编码来表示字符，出现次数多的编码短，出现次数少的编码长，这样整体而言，所需要的bit位是减少的，就实现了文件压缩功能。 读取文件中的字符出现次数，构建Huffman树，然后解析这个字符的每一位，遇到一个叶子结点，就代表还原了一个字符，这时就将这个字符写到解压缩文件里。 注意当大部分字符出现的频率都差不多时，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-23T04:33:58.108Z">
+<meta property="og:updated_time" content="2018-08-23T05:51:09.738Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文件压缩（基于Huffman树实现无损压缩）">
-<meta name="twitter:description" content="写在前面 项目采用Huffman编码的方式进行文件压缩与解压缩。主要原理是通过Huffman编码来表示字符，出现次数多的编码短，出现次数少的编码长，这样整体而言，所需要的bit位是减少的，就实现了文件压缩功能。 读取文件中的字符出现次数，构建Huffman树，然后解析这个字符的每一位，遇到一个叶子结点，就代表还原了一个字符，这时就将这个字符写到解压缩文件里。 3、注意当大部分字符出现的频率都差不多">
+<meta name="twitter:description" content="写在前面 项目采用Huffman编码的方式进行文件压缩与解压缩。主要原理是通过Huffman编码来表示字符，出现次数多的编码短，出现次数少的编码长，这样整体而言，所需要的bit位是减少的，就实现了文件压缩功能。 读取文件中的字符出现次数，构建Huffman树，然后解析这个字符的每一位，遇到一个叶子结点，就代表还原了一个字符，这时就将这个字符写到解压缩文件里。 注意当大部分字符出现的频率都差不多时，">
   
     <link rel="alternative" href="/atom.xml" title="Askunix&#39;s Blog" type="application/atom+xml">
   
@@ -196,16 +196,20 @@
         <h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><ul>
 <li>项目采用Huffman编码的方式进行文件压缩与解压缩。主要原理是通过Huffman编码来表示字符，出现次数多的编码短，出现次数少的编码长，这样整体而言，所需要的bit位是减少的，就实现了文件压缩功能。</li>
 <li>读取文件中的字符出现次数，构建Huffman树，然后解析这个字符的每一位，遇到一个叶子结点，就代表还原了一个字符，这时就将这个字符写到解压缩文件里。</li>
-<li>3、注意当大部分字符出现的频率都差不多时，Huffman压缩的效率比较低。<a id="more"></a>
+<li>注意当大部分字符出现的频率都差不多时，Huffman压缩的效率比较低。<a id="more"></a>
 </li>
 </ul>
+<h2 id="项目源码"><a href="#项目源码" class="headerlink" title="项目源码"></a>项目源码</h2><p>待更新</p>
 <h2 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h2><p>  输入：文本文件(压缩文件)</p>
 <p>  输出：压缩文件/解压文件(文本文件)  (压缩时间)</p>
 <p>  知识点：堆、霍夫曼树、二叉树遍历、存储数据结构设计、文件流操作、字符汉字编码方式、二进制文件读写、优先级队列。</p>
 <h2 id="模块及框架设计"><a href="#模块及框架设计" class="headerlink" title="模块及框架设计"></a>模块及框架设计</h2><p>主要模块：</p>
-<p>1、压缩模块<br>2、解压模块</p>
+<p>1、压缩模块</p>
+<p>2、解压模块</p>
 <p>辅助模块：</p>
-<p>1、字符识别及权重获取<br>2、Huffman树构造<br>3、获取huffman编码</p>
+<p>1、字符识别及权重获取</p>
+<p>2、Huffman树构造</p>
+<p>3、获取huffman编码</p>
 <h2 id="压缩步骤"><a href="#压缩步骤" class="headerlink" title="压缩步骤"></a>压缩步骤</h2><p>1、统计字符出现的次数</p>
 <p>因为文件底层都是有256个字符存储的，所以使用一个256的数组来统计字符出现的次数。在项目中，使用了一个结构体，将次数、字符、huffman编码对应起来。因为不管是文件、图片、音频、视频。他们的底层都是以字符形式存储的，读取的时候就按照字符格式读取。</p>
 <p>2、构建huffman树</p>
@@ -218,6 +222,64 @@
 <p>2、构建huffman树<br>构建Huffman树和压缩时的构建是一样的。</p>
 <p>3、解压</p>
 <p>首先在压缩文件中读取一个字符，然后解析这个字符的每一位，遇到一个叶子结点，就代表还原了一个字符，这时就将这个字符写到解压缩文件里。需要注意的是此时最后几位编码可能是自己补上去的，所以要用源文件中字符出现的次数来控制解压缩，根据Huffman性质可知，根节点权重就是字符出现的次数。</p>
+<h2 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h2><table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>文件大小</th>
+<th>压缩大小</th>
+<th>解压大小</th>
+<th>压缩率</th>
+<th>压缩时间</th>
+<th>解压时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>haha.txt</td>
+<td>7.12K</td>
+<td>4.32K</td>
+<td>7.12K</td>
+<td>60.7%</td>
+<td>11ms</td>
+<td>5ms</td>
+</tr>
+<tr>
+<td>人月神话.pdf</td>
+<td>2.54M</td>
+<td>2.11M</td>
+<td>2.54M</td>
+<td>83.7%</td>
+<td>5658ms</td>
+<td>2003ms</td>
+</tr>
+<tr>
+<td>月弯弯.mp4</td>
+<td>36.6M</td>
+<td>36.5M</td>
+<td>36.6M</td>
+<td>99.8%</td>
+<td>92480ms</td>
+<td>31753ms</td>
+</tr>
+<tr>
+<td>只要平凡.mp3</td>
+<td>9.38M</td>
+<td>9.37M</td>
+<td>9.38M</td>
+<td>99.9%</td>
+<td>24427ms</td>
+<td>9864ms</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>总结：</li>
+</ul>
+<p>1、Huffman压缩适用于字符出现次数差值较大，分布不平均的文件。</p>
+<p>2、对于文件二次压缩意义不大。</p>
+<p>3、不能压缩文件夹。</p>
+<p>4、从测试来看，能够处理大部分文件较好性能的压缩。</p>
 <h2 id="项目中遇到的问题"><a href="#项目中遇到的问题" class="headerlink" title="项目中遇到的问题"></a>项目中遇到的问题</h2><p>1、解压缩时解压不完全</p>
 <p>由于使用文本形式读取压缩文件，有可能提前遇到文件结束标志，所以要改为二进制形式读写。二进制形式是读取二进制编码。</p>
 <p>如果以文本形式读取的话，回车会被当成一个字符’\n’，而二进制形式则会认为它是两个字符即’\r’回车、’\n’换行；如果在文本形式中遇到0x1B的话，文本形式会认为这是文本结束符，而二进制模型则不会对它产生处理。</p>
@@ -227,7 +289,8 @@
 <p> 4、对文本文件最后一个字符的处理<br> 补位数：压缩，解压无错误</p>
 <h2 id="改进方法"><a href="#改进方法" class="headerlink" title="改进方法"></a>改进方法</h2><p>1、解压缩的时候有可能要解压缩文件的不是用huffman进行压缩的文件。所以再解压文件之前先判断是不是用huffman进行压缩的。</p>
 <p>2、不使用配置文件时如何解压<br>    可以将huffman树的信息写入到压缩文件中。</p>
-<p>##项目扩展<br>1、实现对文件夹的压缩<br>对文件夹进行压缩实际上还是对文件夹中的内容进行压缩，所以得到一个文件夹之后我们就一直向子文件夹中找，直到找到文件后进行压缩就可以了。<br>2、解压缩的时候要将文件夹还原出来。</p>
+<p>##项目扩展<br>1、实现对文件夹的压缩<br>对文件夹进行压缩实际上还是对文件夹中的内容进行压缩，所以得到一个文件夹之后我们就一直向子文件夹中找，直到找到文件后进行压缩就可以了。</p>
+<p>2、解压缩的时候要将文件夹还原出来。</p>
 <h2 id="踩过的坑"><a href="#踩过的坑" class="headerlink" title="踩过的坑"></a>踩过的坑</h2><p>1、使用ifstrem和ofsteam函数对文本进行输出输入操作时，最好写成以二进制方式，否则可能会出现读取到特殊符号而终止，导致解压缩不完全，二进制方式如下：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ifstream <span class="title">ifs</span><span class="params">(filename,ios::in|ios::binary)</span></span>;</span><br><span class="line"><span class="function">ofstream <span class="title">ofs</span><span class="params">(filename,ios::out|ios::binary)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>2、对字符进行直接定址确定自己在哈希表中的位置时，要注意使用(unsigend char)ch强转，因为哈希表的定义范围是0到255，而字符的大小是-127到128</p>
@@ -387,7 +450,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#写在前面"><span class="toc-number">1.</span> <span class="toc-text">写在前面</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#需求分析"><span class="toc-number"></span> <span class="toc-text">需求分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模块及框架设计"><span class="toc-number"></span> <span class="toc-text">模块及框架设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#压缩步骤"><span class="toc-number"></span> <span class="toc-text">压缩步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解压缩步骤"><span class="toc-number"></span> <span class="toc-text">解压缩步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目中遇到的问题"><span class="toc-number"></span> <span class="toc-text">项目中遇到的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#改进方法"><span class="toc-number"></span> <span class="toc-text">改进方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#踩过的坑"><span class="toc-number"></span> <span class="toc-text">踩过的坑</span></a>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#写在前面"><span class="toc-number">1.</span> <span class="toc-text">写在前面</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目源码"><span class="toc-number"></span> <span class="toc-text">项目源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#需求分析"><span class="toc-number"></span> <span class="toc-text">需求分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模块及框架设计"><span class="toc-number"></span> <span class="toc-text">模块及框架设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#压缩步骤"><span class="toc-number"></span> <span class="toc-text">压缩步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解压缩步骤"><span class="toc-number"></span> <span class="toc-text">解压缩步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能分析"><span class="toc-number"></span> <span class="toc-text">性能分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目中遇到的问题"><span class="toc-number"></span> <span class="toc-text">项目中遇到的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#改进方法"><span class="toc-number"></span> <span class="toc-text">改进方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#踩过的坑"><span class="toc-number"></span> <span class="toc-text">踩过的坑</span></a>
                     </div>
                 </span>
             </div>
@@ -533,11 +596,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color5">文件压缩</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">技术</a>
+                <a href="javascript:void(0)" class="js-tag color4">Huffman树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -546,6 +609,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Centos下命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">技术</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -577,14 +648,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件压缩</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Huffman树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">链表面试题</a>
               </li>
              
@@ -597,11 +660,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">UDP协议</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -613,11 +672,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">UDP协议</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">长连接</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">短连接</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -634,14 +705,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">纯虚函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">长连接</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">短连接</a>
               </li>
             
             <div class="clearfix"></div>
