@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://askunix.github.io/2018/08/23/hash/</loc>
+    <lastmod>2018-08-24T03:47:10.697Z</lastmod>
+    <data>
+        <display>
+        <title>Hash函数与哈希冲突</title>
+        <pubTime>2018-08-23T15:38:51.000Z</pubTime>
+        
+        <tag>Hash冲突</tag>
+         
+        <tag>Hash函数</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程之美" url="http://askunix.github.io/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://askunix.github.io/2018/08/20/file_compress/</loc>
     <lastmod>2018-08-23T05:51:09.738Z</lastmod>
     <data>
@@ -211,9 +233,9 @@
         <title>【排序算法】直接插入排序 & 折半插入排序（二分法插入排序）</title>
         <pubTime>2018-07-29T15:38:51.000Z</pubTime>
         
-        <tag>数据结构</tag>
-         
         <tag>插入排序</tag>
+         
+        <tag>数据结构</tag>
          
          
            

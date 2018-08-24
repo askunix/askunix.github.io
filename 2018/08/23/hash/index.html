@@ -8,18 +8,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://askunix.github.io">
-  <title>Tag: 智能指针 | Askunix&#39;s Blog</title>
+  <title>Hash函数与哈希冲突 | Askunix&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="贫穷总会超过懒惰">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Askunix&#39;s Blog">
-<meta property="og:url" content="http://askunix.github.io/tags/智能指针/index.html">
+  <meta name="description" content="写在前面 散列的概念属于查找，它不以关键字的比较为基本操作，采用直接寻址技术。在理想情况下，查找的期望时间为O(1)。 hash函数就是把任意长的输入字符串变化成固定长的输出字符串的一种函数。输出字符串的长度称为hash函数的位数。 散列（Hashing）通过散列函数将要检索的项与索引（散列，散列值）关联起来，生成一种便于搜索的数据结构（散列表）。">
+<meta name="keywords" content="Hash冲突,Hash函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hash函数与哈希冲突">
+<meta property="og:url" content="http://askunix.github.io/2018/08/23/hash/index.html">
 <meta property="og:site_name" content="Askunix&#39;s Blog">
-<meta property="og:description" content="贫穷总会超过懒惰">
+<meta property="og:description" content="写在前面 散列的概念属于查找，它不以关键字的比较为基本操作，采用直接寻址技术。在理想情况下，查找的期望时间为O(1)。 hash函数就是把任意长的输入字符串变化成固定长的输出字符串的一种函数。输出字符串的长度称为hash函数的位数。 散列（Hashing）通过散列函数将要检索的项与索引（散列，散列值）关联起来，生成一种便于搜索的数据结构（散列表）。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/555.jpg">
+<meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/22222222222.jpg">
+<meta property="og:updated_time" content="2018-08-24T03:47:10.697Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Askunix&#39;s Blog">
-<meta name="twitter:description" content="贫穷总会超过懒惰">
+<meta name="twitter:title" content="Hash函数与哈希冲突">
+<meta name="twitter:description" content="写在前面 散列的概念属于查找，它不以关键字的比较为基本操作，采用直接寻址技术。在理想情况下，查找的期望时间为O(1)。 hash函数就是把任意长的输入字符串变化成固定长的输出字符串的一种函数。输出字符串的长度称为hash函数的位数。 散列（Hashing）通过散列函数将要检索的项与索引（散列，散列值）关联起来，生成一种便于搜索的数据结构（散列表）。">
+<meta name="twitter:image" content="http://p9ff104hp.bkt.clouddn.com/555.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Askunix&#39;s Blog" type="application/atom+xml">
   
@@ -171,52 +176,161 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-hash" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/05/智能指针/" class="archive-article-date">
-  	<time datetime="2018-08-05T15:38:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/05/智能指针/">揭开智能指针底层面纱</a>
+    <h1 class="article-title" itemprop="name">
+      Hash函数与哈希冲突
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/08/23/hash/" class="archive-article-date">
+  	<time datetime="2018-08-23T15:38:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><ul>
+<li>散列的概念属于查找，它不以关键字的比较为基本操作，采用直接寻址技术。在理想情况下，查找的期望时间为O(1)。</li>
+<li>hash函数就是把任意长的输入字符串变化成固定长的输出字符串的一种函数。输出字符串的长度称为hash函数的位数。</li>
+<li>散列（Hashing）通过散列函数将要检索的项与索引（散列，散列值）关联起来，生成一种便于搜索的数据结构（散列表）。<a id="more"></a>
+</li>
+</ul>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>目前应用最为广泛的hash函数是SHA-1和MD5，大多是128位和更长。hash函数在现实生活中应用十分广泛。很多下载网站都提供下载文件的MD5码校验，可以用来判别文件是否完整，在一些BitTorrent下载中，软件将通过计算MD5检验下载到的文件片段的完整性，etc。</p>
+<h4 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h4><p>（1）确定性：哈希的散列值不同，那么哈希的原始输入也就不同。</p>
+<p>（2）不确定性：同一个散列值很有可能对应多个不同的原始输入。称为“哈希碰撞”。</p>
+<h3 id="哈希冲突"><a href="#哈希冲突" class="headerlink" title="哈希冲突"></a>哈希冲突</h3><p>哈希冲突是不可避免的，因为键的数目总是比索引的数目多，不管是多么高明的算法都不可能解决这个问题。就算键的数目比索引的数目少，必有一个输出串对应多个输入串，冲突还是会发生。</p>
+<h3 id="哈希函数构造准则"><a href="#哈希函数构造准则" class="headerlink" title="哈希函数构造准则"></a>哈希函数构造准则</h3><p>hash函数的构造准则：简单、均匀。</p>
+<p>（1）散列函数的计算简单，快速；</p>
+<p>（2）散列函数能将关键字集合K均匀地分布在地址集{0,1，…，m-1}上，使冲突最小。</p>
+<h3 id="哈希优缺点"><a href="#哈希优缺点" class="headerlink" title="哈希优缺点"></a>哈希优缺点</h3><ul>
+<li>优点:(查找速度快)</li>
+</ul>
+<p>哈希表是种数据结构，它可以提供快速的插入操作和查找操作。第一次接触哈希表时，它的优点多得让人难以置信。不论哈希表中有多少数据，插入和删除（有时包括侧除）只需要接近常量的时间即0(1）的时间级。实际上，这只需要几条机器指令。</p>
+<p>对哈希表的使用者一一人来说，这是一瞬间的事。哈希表运算得非常快，在计算机程序中，如果需要在一秒种内查找上千条记录通常使用哈希表（例如拼写检查器)哈希表的速度明显比树快，树的操作通常需要O(N)的时间级。哈希表不仅速度快，编程实现也相对容易。</p>
+<ul>
+<li>缺点：（空间大）</li>
+</ul>
+<p>哈希表也有一些缺点它是基于数组的，数组创建后难于扩展某些哈希表被基本填满时，性能下降得非常严重，所以程序虽必须要清楚表中将要存储多少数据（或者准备好定期地把数据转移到更大的哈希表中，这是个费时的过程）。</p>
+<p>而且，也没有一种简便的方法可以以任何一种顺序〔例如从小到大〕遍历表中数据项。如果需要这种能力，就只能选择其他数据结构。</p>
+<p>然而如果不需要有序遍历数据，井且可以提前预测数据量的大小。那么哈希表在速度和易用性方面是无与伦比的。</p>
+<h3 id="哈希函数的构造方法"><a href="#哈希函数的构造方法" class="headerlink" title="哈希函数的构造方法"></a>哈希函数的构造方法</h3><h4 id="（1）直接定址法："><a href="#（1）直接定址法：" class="headerlink" title="（1）直接定址法："></a>（1）直接定址法：</h4><p>取关键字或关键字的某个线性函数值为哈希地址：<code>H(key) = key 或 H(key) = a·key + b</code><br>其中a和b为常数，这种哈希函数叫做自身函数。</p>
+<p>注意：由于直接定址所得地址集合和关键字集合的大小相同。因此，对于不同的关键字不会发生冲突。但实际中能使用这种哈希函数的情况很少。</p>
+<p>####（2）相乘取整法：</p>
+<p>首先用关键字key乘上某个常数A(0 &lt; A &lt; 1)，并抽取出key.A的小数部分；然后用m乘以该小数后取整。</p>
+<p>注意：该方法最大的优点是m的选取比除余法要求更低。比如，完全可选择它是2的整数次幂。虽然该方法对任何A的值都适用，但对某些值效果会更好。Knuth建议选取  0.61803……。</p>
+<p>####（3）平方取中法：</p>
+<p>取关键字平方后的中间几位为哈希地址。</p>
+<p>通过平方扩大差别，另外中间几位与乘数的每一位相关，由此产生的散列地址较为均匀。这是一种较常用的构造哈希函数的方法。</p>
+<blockquote>
+<p>将一组关键字(0100，0110，1010，1001，0111)<br>平方后得(0010000，0012100，1020100，1002001，0012321)<br>若取表长为1000，则可取中间的三位数作为散列地址集：(100，121，201，020，123)。</p>
+</blockquote>
+<p>####（4）除留余数法：</p>
+<p>取关键字被数p除后所得余数为哈希地址：<code>H(key) = key MOD p (p ≤ m)</code>。</p>
+<p>注意：这是一种最简单，也最常用的构造哈希函数的方法。它不仅可以对关键字直接取模(MOD)，也可在折迭、平方取中等运算之后取模。值得注意的是，在使用除留余数法时，对p的选择很重要。一般情况下可以选p为质数或不包含小于20的质因素的合数。</p>
+<h4 id="（5）随机数法："><a href="#（5）随机数法：" class="headerlink" title="（5）随机数法："></a>（5）随机数法：</h4><p>选择一个随机函数，取关键字的随机函数值为它的哈希地址，即 <code>H(key) = random (key)</code>，其中random为随机函数。通常，当关键字长度不等时采用此法构造哈希函数较恰当。</p>
+<h3 id="哈希冲突解决方法"><a href="#哈希冲突解决方法" class="headerlink" title="哈希冲突解决方法"></a>哈希冲突解决方法</h3><center><br><br><img src="http://p9ff104hp.bkt.clouddn.com/555.jpg" alt="这里写图片描述"><br><br><br>散列表的负载因子 α = 填入表中的元素个数 / 散列表的长度。<br><br>对于开放定址法，负载因子应严格控制在 0.7 ~ 0.8 以下。超过0.8，查表时的CPU缓存会按照指数曲线上升。<br><br><br></center>
+
+<p>####（1）开放定址法：</p>
+<p> 就是在发生冲突后，通过某种探测技术，去依次探查其他单元，直到探查到不冲突为止，将元素添加进去。</p>
+<p>假如是在index的位置发生哈希冲突，那么通常有一下几种探测方式：</p>
+<ul>
+<li><p>线性探测法（线性探测再散列）</p>
+<p>向后依次探测index+1，index+2…位置，看是否冲突，直到不冲突为止，将元素添加进去。</p>
+</li>
+</ul>
+<blockquote>
+<p>线性探测容易出现数据“堆积”，即寻找关键码位置时需要许多次比较，导致搜索时间增加。怎么解决：二次探测、双散列法。</p>
+</blockquote>
+<ul>
+<li><p>平方探测法（二次探测）</p>
+<p>不探测index的后一个位置，而是探测2^i位置，比如探测2^0位置上时发生冲突，接着探测2^1位置，依此类推，直至冲突解决。</p>
+</li>
+</ul>
+<blockquote>
+<p>研究表明表的长度为质数，且负载因子不超过0.5时，新的表项一定能够插入。而且任何一个位置都不会被探测两次。</p>
+</blockquote>
+<p>注意：</p>
+<p>（1）用开放定址法建立散列表时，建表前须将表中所有单元(更严格地说，是指单元中存储的关键字)置空。</p>
+<p>（2）两种探测方法的优缺点。</p>
+<blockquote>
+<p>线性探测法虽然在哈希表未满的情况下，总能保证找到不冲突的地址，但是容易发生二次哈希冲突的现象。比如在处理若干次次哈希冲突后k,k+1,k+2位置上的都存储了数据，那下一次存储地址在k,k+1,k+2,k+3位置的数据都将存在k+3位置上，这就产生了二次冲突。<br><br></p>
+</blockquote>
+<blockquote>
+<p>这里引入一个新的概念，堆积现象是指用线性探测法处理哈希冲突时，k,k+1,k+2位置已存有数据，下一个数据请求地址如果是k,k+1,k+2,k+3的话，那么这四个数据都会要求填入k+3的位置。<br><br></p>
+</blockquote>
+<blockquote>
+<p>平方探测法可以减少堆积现象的发生，但是前提是哈希表的总容量要是素数4n+3才可以。</p>
+</blockquote>
+<h4 id="（2）链地址法（开散列法）"><a href="#（2）链地址法（开散列法）" class="headerlink" title="（2）链地址法（开散列法）"></a>（2）链地址法（开散列法）</h4><p>基本思想：</p>
+<p>链表法就是在发生冲突的地址处，挂一个单向链表，然后所有在该位置冲突的数据，都插入这个链表中。插入数据的方式有多种，可以从链表的尾部向头部依次插入数据，也可以从头部向尾部依次插入数据，也可以依据某种规则在链表的中间插入数据，总之保证链表中的数据的有序性。Java的HashMap类就是采取链表法的处理方案。</p>
+<p>例：已知一组关键字为(19，14，23，01，68，20，84，27，55，11，10，79)，则按哈希函数 H(key) = key MOD13 和链地址法处理冲突构造所得的哈希表为：</p>
+<center><br><br><img src="http://p9ff104hp.bkt.clouddn.com/22222222222.jpg" alt="这里写图片描述"><br><br></center>
+
+<h4 id="（3）再哈希法：（双散列法）"><a href="#（3）再哈希法：（双散列法）" class="headerlink" title="（3）再哈希法：（双散列法）"></a>（3）再哈希法：（双散列法）</h4><p> 在发生哈希冲突后，使用另外一个哈希算法产生一个新的地址，直到不发生冲突为止。这个应该很好理解。</p>
+<p>再哈希法可以有效的避免堆积现象，但是缺点是不能增加了计算时间和哈希算法的数量，而且不能保证在哈希表未满的情况下，总能找到不冲突的地址。</p>
+<h4 id="（4）建立一个公共溢出区："><a href="#（4）建立一个公共溢出区：" class="headerlink" title="（4）建立一个公共溢出区："></a>（4）建立一个公共溢出区：</h4><p> 建立一个基本表，基本表的大小等于哈希表的大小。建立一个溢出表，所有哈希地址的第一个记录都存在基本表中，所有发生冲突的数据，不管哈希算法得到的地址是什么，都放入溢出表中。</p>
+<p>但是有一个缺点就是，必须事先知道哈希表的可能大小，而且溢出表里的数据不能太多，否则影响溢出表的查询效率。实际上就是要尽量减少冲突。</p>
+<h3 id="MD5加密算法"><a href="#MD5加密算法" class="headerlink" title="MD5加密算法"></a>MD5加密算法</h3><p>MD5是一个安全的散列算法，输入两个不同的明文不会得到相同的输出值，根据输出值，不能得到原始的明文，即其过程不可逆；所以要解密MD5没有现成的算法，只能用穷举法，把可能出现的明文，用MD5算法散列之后，把得到的散列值和原始的数据形成一个一对一的映射表，通过比在表中比破解密码的MD5算法散列值，通过匹配从映射表中找出破解密码所对应的原始明文。</p>
+<h3 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h3><p>哈希表一旦发生冲突，其性能就会显著下降。因此建立哈希表时必须规避哈希冲突的产生，大多数哈希表的实现都是：第一步，是通过哈希算法将key值转换一个整数以确定数据的存储位置；第二步，检查是否发生哈希冲突，以及确定发生冲突后的处理方案。</p>
+<center><br><br>┆ 凉 ┆ 暖 ┆ 降 ┆ 等 ┆ 幸 ┆ 我 ┆ 我 ┆ 里 ┆ 将 ┆ 　 ┆ 可 ┆ 有 ┆ 谦 ┆ 戮 ┆ 那 ┆ 　 ┆ 大 ┆ 　 ┆ 始 ┆ 然 ┆<br><br>┆ 薄 ┆ 一 ┆ 临 ┆ 你 ┆ 的 ┆ 还 ┆ 没 ┆ 　 ┆ 来 ┆ 　 ┆ 是 ┆ 来 ┆ 逊 ┆ 没 ┆ 些 ┆ 　 ┆ 雁 ┆ 　 ┆ 终 ┆ 而 ┆<br><br>┆ 　 ┆ 暖 ┆ 　 ┆ 如 ┆ 地 ┆ 站 ┆ 有 ┆ 　 ┆ 也 ┆ 　 ┆ 我 ┆ 　 ┆ 的 ┆ 有 ┆ 精 ┆ 　 ┆ 也 ┆ 　 ┆ 没 ┆ 你 ┆<br><br>┆ 　 ┆ 这 ┆ 　 ┆ 试 ┆ 方 ┆ 在 ┆ 逃 ┆ 　 ┆ 会 ┆ 　 ┆ 在 ┆ 　 ┆ 清 ┆ 来 ┆ 准 ┆ 　 ┆ 没 ┆ 　 ┆ 有 ┆ 没 ┆<br><br>┆ 　 ┆ 生 ┆ 　 ┆ 探 ┆ 　 ┆ 最 ┆ 避 ┆ 　 ┆ 在 ┆ 　 ┆ 这 ┆ 　 ┆ 晨 ┆ 　 ┆ 的 ┆ 　 ┆ 有 ┆ 　 ┆ 来 ┆ 有 ┆<br><br>┆ 　 ┆ 之 ┆ 　 ┆ 般 ┆ 　 ┆ 不 ┆ 　 ┆ 　 ┆ 这 ┆ 　 ┆ 里 ┆ 　 ┆ 没 ┆ 　 ┆ 杀 ┆ 　 ┆ 来 ┆ 　 ┆ 　 ┆ 来 ┆<br><br><br></center>
+
+      
+
+	
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢大佬请我吃糖<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/money.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">智能指针</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hash冲突</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">底层原理</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hash函数</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -229,17 +343,126 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://askunix.github.io/2018/08/23/hash/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/08/20/file_compress/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">文件压缩（基于Huffman树实现无损压缩）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#写在前面"><span class="toc-number">1.</span> <span class="toc-text">写在前面</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用"><span class="toc-number"></span> <span class="toc-text">应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#性质"><span class="toc-number">1.</span> <span class="toc-text">性质</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#哈希冲突"><span class="toc-number"></span> <span class="toc-text">哈希冲突</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#哈希函数构造准则"><span class="toc-number"></span> <span class="toc-text">哈希函数构造准则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#哈希优缺点"><span class="toc-number"></span> <span class="toc-text">哈希优缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#哈希函数的构造方法"><span class="toc-number"></span> <span class="toc-text">哈希函数的构造方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）直接定址法："><span class="toc-number">1.</span> <span class="toc-text">（1）直接定址法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（5）随机数法："><span class="toc-number">2.</span> <span class="toc-text">（5）随机数法：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#哈希冲突解决方法"><span class="toc-number"></span> <span class="toc-text">哈希冲突解决方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（2）链地址法（开散列法）"><span class="toc-number">1.</span> <span class="toc-text">（2）链地址法（开散列法）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（3）再哈希法：（双散列法）"><span class="toc-number">2.</span> <span class="toc-text">（3）再哈希法：（双散列法）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（4）建立一个公共溢出区："><span class="toc-number">3.</span> <span class="toc-text">（4）建立一个公共溢出区：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MD5加密算法"><span class="toc-number"></span> <span class="toc-text">MD5加密算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结束语"><span class="toc-number"></span> <span class="toc-text">结束语</span></a>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -272,9 +495,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
