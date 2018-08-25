@@ -20,7 +20,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/555.jpg">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/22222222222.jpg">
-<meta property="og:updated_time" content="2018-08-24T03:47:10.697Z">
+<meta property="og:updated_time" content="2018-08-24T03:53:24.652Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hash函数与哈希冲突">
 <meta name="twitter:description" content="写在前面 散列的概念属于查找，它不以关键字的比较为基本操作，采用直接寻址技术。在理想情况下，查找的期望时间为O(1)。 hash函数就是把任意长的输入字符串变化成固定长的输出字符串的一种函数。输出字符串的长度称为hash函数的位数。 散列（Hashing）通过散列函数将要检索的项与索引（散列，散列值）关联起来，生成一种便于搜索的数据结构（散列表）。">
@@ -235,8 +235,12 @@
 <p>取关键字被数p除后所得余数为哈希地址：<code>H(key) = key MOD p (p ≤ m)</code>。</p>
 <p>注意：这是一种最简单，也最常用的构造哈希函数的方法。它不仅可以对关键字直接取模(MOD)，也可在折迭、平方取中等运算之后取模。值得注意的是，在使用除留余数法时，对p的选择很重要。一般情况下可以选p为质数或不包含小于20的质因素的合数。</p>
 <h4 id="（5）随机数法："><a href="#（5）随机数法：" class="headerlink" title="（5）随机数法："></a>（5）随机数法：</h4><p>选择一个随机函数，取关键字的随机函数值为它的哈希地址，即 <code>H(key) = random (key)</code>，其中random为随机函数。通常，当关键字长度不等时采用此法构造哈希函数较恰当。</p>
-<h3 id="哈希冲突解决方法"><a href="#哈希冲突解决方法" class="headerlink" title="哈希冲突解决方法"></a>哈希冲突解决方法</h3><center><br><br><img src="http://p9ff104hp.bkt.clouddn.com/555.jpg" alt="这里写图片描述"><br><br><br>散列表的负载因子 α = 填入表中的元素个数 / 散列表的长度。<br><br>对于开放定址法，负载因子应严格控制在 0.7 ~ 0.8 以下。超过0.8，查表时的CPU缓存会按照指数曲线上升。<br><br><br></center>
+<h3 id="哈希冲突解决方法"><a href="#哈希冲突解决方法" class="headerlink" title="哈希冲突解决方法"></a>哈希冲突解决方法</h3><center><br><br><img src="http://p9ff104hp.bkt.clouddn.com/555.jpg" alt="这里写图片描述"><br><br></center>
 
+
+
+<p>散列表的负载因子 α = 填入表中的元素个数 / 散列表的长度。</p>
+<p>对于开放定址法，负载因子应严格控制在 0.7 ~ 0.8 以下。超过0.8，查表时的CPU缓存会按照指数曲线上升。</p>
 <p>####（1）开放定址法：</p>
 <p> 就是在发生冲突后，通过某种探测技术，去依次探查其他单元，直到探查到不冲突为止，将元素添加进去。</p>
 <p>假如是在index的位置发生哈希冲突，那么通常有一下几种探测方式：</p>
@@ -572,11 +576,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">C语言版通讯录</a>
+                <a href="javascript:void(0)" class="js-tag color3">Linux命令</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">结构体存储通讯录</a>
+                <a href="javascript:void(0)" class="js-tag color5">Centos下命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -588,19 +592,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Linux命令</a>
+                <a href="javascript:void(0)" class="js-tag color3">C语言版通讯录</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Centos下命令</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hash冲突</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hash函数</a>
+                <a href="javascript:void(0)" class="js-tag color4">结构体存储通讯录</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -640,7 +636,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">链表面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程之美</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">无头单链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Hash冲突</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Hash函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">UDP协议</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -656,26 +680,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">UDP协议</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">链表面试题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">编程之美</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">无头单链表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">智能指针</a>
               </li>
              
@@ -684,19 +688,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">纯虚函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">长连接</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">短连接</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">纯虚函数</a>
               </li>
             
             <div class="clearfix"></div>
