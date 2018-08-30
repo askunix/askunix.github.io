@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://askunix.github.io/2018/08/30/connect_mysql/</loc>
+    <lastmod>2018-08-30T05:00:32.527Z</lastmod>
+    <data>
+        <display>
+        <title>MySQL数据库的连接和使用</title>
+        <pubTime>2018-08-30T09:49:33.000Z</pubTime>
+        
+        <tag>MySQL连接</tag>
+         
+        <tag>MySQL表查询</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程之美" url="http://askunix.github.io/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://askunix.github.io/2018/08/25/web/</loc>
     <lastmod>2018-08-29T08:35:25.501Z</lastmod>
     <data>
@@ -323,9 +345,9 @@
         <title>保证TCP协议的可靠传输</title>
         <pubTime>2018-05-31T14:34:00.000Z</pubTime>
         
-        <tag>TCP协议</tag>
-         
         <tag>ACK机制</tag>
+         
+        <tag>TCP协议</tag>
          
         <tag>滑动窗口</tag>
          

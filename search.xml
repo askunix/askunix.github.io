@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MySQL数据库的连接和使用]]></title>
+    <url>%2F2018%2F08%2F30%2Fconnect_mysql%2F</url>
+    <content type="text"><![CDATA[写在前面 Centos 7.4下连接本地数据库方法以及操作步骤 数据库表内容的打印 操作步骤1、首先安装了完整的MySQL数据库，和数据库C语言操作的相应API 2、接下来数据库的查找就是把数据表中的内容都找出来 MySQL API使用的一般思路： 1、连接到数据库； 2、拼装SQL语句； 3、把SQL语句发送到服务器； 4、读取并遍历服务器返回的结果； 5、断开连接。 具体操作12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091#include&lt;stdio.h&gt;#include&lt;mysql/mysql.h&gt;#include"cgi-base.h"int main()&#123;/////////// cgi-base.h ////////////////////////// char buf[1024 * 4] = &#123;0&#125;;// if(GetQueryString(buf) &lt; 0)// &#123;// fprintf(stderr, "GetQueryString failes\n");// return 1;// &#125;/////////////////////////////////////////////// ////////////////////////////////////////////// //接下来就要进行数据库的查找 //直接把一个数据库表中的所有数据都查出来 //mysql api 使用的一般思路 //1、连接到数据库 //2、拼装sql语句 //3、把sql语句发送到服务器 //4、读取并遍历服务器返回的结果 //5、断开连接 ///////////////////////////////////////////// //1、连接到数据库 MYSQL* connect_fd = mysql_init(NULL); MYSQL* ret = mysql_real_connect(connect_fd, "127.0.0.1", "root", "", "TestDB", 3306, NULL, 0);// 还回IP，就是机器自己//port 端口； 使用Unix方式连接；最后一个参数常常设置为0 if(ret == NULL) &#123; fprintf(stderr, "mysql connect failed\n"); return 1; &#125; fprintf(stderr, "mysql connect OK\n"); //2、拼装sql语句 const char* sql = "select *from TestTable"; //3、把sql语句发送到服务器 int temp = mysql_query(connect_fd, sql); if(temp &lt; 0) &#123; fprintf(stderr, "mysql query failed\n"); return 1; &#125; //4、读取并遍历服务器返回的结果 MYSQL_RES* result = mysql_store_result(connect_fd); if(result == NULL) &#123; fprintf(stderr, "mysql store failes\n"); return 1; &#125; //读取内容 //获取到表有几行几列，获取到结果集合的表结构，获取到每个元素的具&gt;体值 int rows = mysql_num_rows(result); int fields = mysql_num_fields(result); MYSQL_FIELD* field = mysql_fetch_field(result); //获取表头信息 while(field != NULL) &#123; printf("%s\t", field-&gt;name); field = mysql_fetch_field(result); &#125; printf("br"); int i = 0; for(; i&lt;rows; ++i) &#123; MYSQL_ROW row = mysql_fetch_row(result); int j = 0; for(;j&lt;fields;++j) &#123; printf("%s\t", row[j]); &#125; printf("br"); &#125; printf("br"); //5、断开连接 mysql_close(connect_fd); return 0;&#125;]]></content>
+      <categories>
+        <category>编程之美</category>
+      </categories>
+      <tags>
+        <tag>MySQL连接</tag>
+        <tag>MySQL表查询</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[世界时间（基于HTTP服务器框架实现）]]></title>
     <url>%2F2018%2F08%2F25%2Fweb%2F</url>
     <content type="text"><![CDATA[基于HTTP服务器框架实现世界时间查看的功能，支持客户/服务器模式，客户只需传送请求方法和路径给服务器，服务器根据页面生成规则，将资源以HTML页面形式返回给客户端。 客户端发起请求，服务器创建多线程，读取并解析请求，服务器根据请求特征决定生成静态页面或者动态页面的响应，并能够进行差错处理，如果请求资源不存在，服务器打印日志。 世界时间查询页面的响应利用CGI技术，具有较好的解耦合特点，各地时间和北京时间的时差存放在MySQL数据库中。 使用WebBench对服务器进行压力测试。 详细特点1、设计思路清晰： 这是一个基于HTTP服务器框架的网站，实现了世界时间查看、加法计算的功能。每个功能都是一组CGI程序，这样设计，可以实现较好的解耦合，技术支持（HTTP框架）与具体业务无关。 2、简单快速： HTTP框架是基于TCP实现的，客户向服务器发起请求时，只需要发送方法名和路径。请求方法支持GET和POST方法，每种方法规定了客户与服务器联系的类型不同。由于HTTP协议比较简单，使得项目的程序规模不大，因此通信速度较快。 3、灵活： HTTP允许任意类型的数据对象传输，传输类型可以用Content-Type加以标记。 4、无连接： 限制每次连接只处理一个请求，服务器处理完客户端请求，并收到客户端的应答后，就断开连接。 5、无状态： 主要是因为HTTP协议是无状态的。协议对事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，就必须要重传。缺点就是：可能导致每次连接传送的数据量增大。 设计思路客户端/服务器之间数据传输 基本流程 1、服务器启动 2、进入事件循环 （1）创建线程：一个线程处理一个客户端。 （2）读取并解析请求：读取首行、Header、Body。 （3）根据读取的请求特征决定，按什么样的规则来生成响应页面。 如果是静态页面（GET请求无参数）：将服务器磁盘上的本地文件返回给浏览器。 如果是动态页面（GET请求，有query-string参数；POST请求）：调用对应的CGI程序，让CGI生成动态页面。 静态文件的不同类型处理： HTTP响应加一个Content-Type，告诉系统这是一个HTML，UTF-8编码格式。 注意使用POST这种方法传输数据时，HTTP在数据发送完后，并不会发送相应的数据传输完毕提示信息，所以HTTP服务器提供了另一个环境变量CONTENET_LENGTH,该环境变量记录了传输过来了多少个字节长度的数据（单位为字节），所以在编写CGI程序时，如果method为POST，就需要通过该变量来限定读取的数据的长度。 CGI模式 CGI是一种标准，规定动态页面生成的标准。 特点： 解耦合 根据不同的业务需求，实现一组CGI程序，放到某个具体目录中，请求如果触发了CGI的流程（动态页面：GET请求，带有query-string; POST请求）。 1、创建一对管道 创建一对管道，实现全双工通信，供父子进程间交换数据，读写操作。 2、创建子进程 对于父进程： （1）将请求相关的内容写到管道中； （2）尝试从管道中读取输出； （3）把结果写回到Socket里面，并回收子进程。 对于子进程： （1）设置环境变量（METHOD、QUERY-STRING、CONTENT-LENGTH）； （2）重定向：把标准输入、标准输出重定向到管道中，完成父子进程间通信； （3）子进程程序替换。 简单并发测试 页面URL 并发数 时间/sec pages/min bytes/sec 成功 失败 性能分析 主页：/index.html 100 15 2640 87429 660 0 主页：/index.html 100 1 4140 141905 69 0 主页：index.html 10000 2 0 0 0 0 fork failed 世界时间：/wordtime/index.html 100 15 1892 95729 473 0 世界时间：/wordtime/index.html 100 1 3179 159319 53 0 世界时间：/wordtime/index.html 1000 1 2819 154429 47 0 加法计算器：/cgi-bin/index.html 100 15 1400 103495 350 0 加法计算器：/cgi-bin/index.html 100 1 2039 161368 34 0 加法计算器/cgi-bin/index.html 1000 1 2280 162920 38 0 文件目录 问题1、运行cgi模式时，每次提交数据并进行submit后都会自动出现提醒下载的页面 原因：在响应报头中，将Content-Type中的”text”写成”test”。而浏览器对于不能识别或解析的实体，都会提醒用户下载。 2、本地环回测试ok，Linux下的浏览器测试也可以，但不能接外部的浏览器访问（没有设置桥接模式） 嗯~要是在外部浏览器测试的话千万别忘记关闭防火墙 项目截图]]></content>
@@ -165,8 +177,8 @@
         <category>SO Kernal</category>
       </categories>
       <tags>
-        <tag>TCP协议</tag>
         <tag>ACK机制</tag>
+        <tag>TCP协议</tag>
         <tag>滑动窗口</tag>
         <tag>拥塞控制</tag>
         <tag>流量控制</tag>
