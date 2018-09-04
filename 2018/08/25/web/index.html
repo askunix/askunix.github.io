@@ -23,7 +23,7 @@
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/001.jpg">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/002.jpg">
 <meta property="og:image" content="http://p9ff104hp.bkt.clouddn.com/003.jpg">
-<meta property="og:updated_time" content="2018-09-02T06:14:39.236Z">
+<meta property="og:updated_time" content="2018-09-04T15:38:06.006Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="世界时间（基于HTTP服务器框架实现）">
 <meta name="twitter:description" content="基于HTTP服务器框架实现世界时间查看的功能，支持客户/服务器模式，客户只需传送请求方法和路径给服务器，服务器根据页面生成规则，将资源以HTML页面形式返回给客户端。 客户端发起请求，服务器创建多线程，读取并解析请求，服务器根据请求特征决定生成静态页面或者动态页面的响应，并能够进行差错处理，如果请求资源不存在，服务器打印日志。 世界时间查询页面的响应利用CGI技术，具有较好的解耦合特点，各地时间">
@@ -250,8 +250,7 @@
 <p>（1）设置环境变量（METHOD、QUERY-STRING、CONTENT-LENGTH）；</p>
 <p>（2）重定向：把标准输入、标准输出重定向到管道中，完成父子进程间通信；</p>
 <p>（3）子进程程序替换。</p>
-<h3 id="简单并发测试"><a href="#简单并发测试" class="headerlink" title="简单并发测试"></a>简单并发测试</h3><p><br></p>
-<table>
+<h3 id="简单并发测试"><a href="#简单并发测试" class="headerlink" title="简单并发测试"></a>简单并发测试</h3><table>
 <thead>
 <tr>
 <th>页面URL</th>
@@ -364,7 +363,7 @@
 <p>原因：在响应报头中，将Content-Type中的”text”写成”test”。而浏览器对于不能识别或解析的实体，都会提醒用户下载。</p>
 <p>2、本地环回测试ok，Linux下的浏览器测试也可以，但不能接外部的浏览器访问（没有设置桥接模式）</p>
 <p>嗯~要是在外部浏览器测试的话千万别忘记关闭防火墙</p>
-<h3 id="项目展示"><a href="#项目展示" class="headerlink" title="项目展示"></a>项目展示</h3><center><br><br><br><br><br><h4> <a href="http://118.24.76.81:9090/" target="_blank" rel="noopener">http://118.24.76.81:9090/</a> </h4><br><br><br><br><br><img src="http://p9ff104hp.bkt.clouddn.com/001.jpg" alt=""><br><br><img src="http://p9ff104hp.bkt.clouddn.com/002.jpg" alt=""><br><br><img src="http://p9ff104hp.bkt.clouddn.com/003.jpg" alt=""><br><br></center>
+<h3 id="项目展示"><a href="#项目展示" class="headerlink" title="项目展示"></a>项目展示</h3><center><br><br><br><h4> <a href="http://118.24.76.81:9090/" target="_blank" rel="noopener">http://118.24.76.81:9090/</a> </h4><br><br><br><br><br><img src="http://p9ff104hp.bkt.clouddn.com/001.jpg" alt=""><br><br><img src="http://p9ff104hp.bkt.clouddn.com/002.jpg" alt=""><br><br><img src="http://p9ff104hp.bkt.clouddn.com/003.jpg" alt=""><br><br></center>
 
       
 
@@ -695,26 +694,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">C语言版通讯录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">结构体存储通讯录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ACK机制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">TCP连接过程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">三次握手四次挥手</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -723,15 +702,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Linux命令</a>
+                <a href="javascript:void(0)" class="js-tag color3">C语言版通讯录</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Centos下命令</a>
+                <a href="javascript:void(0)" class="js-tag color4">结构体存储通讯录</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">TCP协议</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ACK机制</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -747,6 +730,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">TCP连接过程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">三次握手四次挥手</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件压缩</a>
               </li>
              
@@ -755,11 +746,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MySQL连接</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MySQL表查询</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Linux命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Centos下命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">世界时间</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">HTTP协议</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Hash冲突</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Hash函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -775,11 +794,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MySQL连接</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MySQL表查询</a>
+                <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -791,35 +810,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hash冲突</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hash函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">长连接</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">短连接</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -836,6 +827,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">纯虚函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">长连接</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">短连接</a>
               </li>
             
             <div class="clearfix"></div>

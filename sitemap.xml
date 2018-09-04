@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://askunix.github.io/2018/08/20/file_compress/</loc>
+    
+    <lastmod>2018-09-04T15:38:10.247Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://askunix.github.io/2018/08/25/web/</loc>
     
-    <lastmod>2018-09-02T06:14:39.236Z</lastmod>
+    <lastmod>2018-09-04T15:38:06.006Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>http://askunix.github.io/2018/08/23/hash/</loc>
     
     <lastmod>2018-08-24T03:53:24.652Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://askunix.github.io/2018/08/20/file_compress/</loc>
-    
-    <lastmod>2018-08-23T05:51:09.738Z</lastmod>
     
   </url>
   
