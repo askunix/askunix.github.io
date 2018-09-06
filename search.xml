@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MySQL数据库的简单实现]]></title>
+    <url>%2F2018%2F09%2F01%2Fdatabase%2F</url>
+    <content type="text"><![CDATA[写在前面 所有应用软件中，数据库是最复杂的，MySQL的手册有3000多页。 B树 &amp; 数据库索引。 数据库以文本形式存储将所有要保存的数据，写入文本文件。这个文本文件就是数据库。 数据库原理二叉搜索树是一种效率非常高的数据结构，他有三个特点： （1）每个节点最多只有两个子树；（2）左子树节点值小于父节点值，右字树节点值大于父节点值；（3）n个节点中找目标值，需要log(n)次比较。 二叉搜索树不适合数据库，因为它的查找效率与层数相关。越处在下层的数据，就越需要多次比较。极端情况下，n个数据需要n次比较才能找到目标值。对于数据库来说，每进入一层就要从磁盘读取一次数据，这非常致命，因为硬盘的读取时间远远大于数据处理时间，数据库读取磁盘的次数越少越好。 B树是二叉树的改进，它的设计思想是，将数据尽量集中在一起，以便一次读取多个数据，减少磁盘操作次数。 B树的三个特点： （1）一个节点可以有多个值；（2）除非数据被填满，否则不会增加新的层；（3）子节点的值与父节点值有严格的对应关系；（父节点有n个值，就有n+1个子节点。 数据库索引数据库以B树格式存储，只解决了按照“主键”查找数据的问题。如果想查找其他字段，就需要建立索引。 索引就是以某个字段为关键字的B树文件。比如有一张学生表，包含学号、姓名两个字段。可以对姓名建立索引文件，该文件以B树格式对姓名进行存储，每个姓名后面是其在数据库中的存储位置。查找姓名时，先从索引中找到对应第几条记录，然后再从表格中读取。 这种索引查找方法，叫做“索引顺序存取方法”。 【看看大佬】（http://blog.codinglabs.org/articles/theory-of-mysql-index.html） MySQL数据库事务是指批量进行一系列数据库操作，只要有一部不成功，整个操作都不成功。所以需要有一个“操作日志”，以便失败时对操作进行回滚。 事务的特性： 事务有以下四个标准属性的缩写ACID，通常被称为： 原子性: 确保工作单元内的所有操作都成功完成，否则事务将被中止在故障点，和以前的操作将回滚到以前的状态。 一致性: 确保数据库正确地改变状态后，成功提交的事务。 隔离性: 使事务操作彼此独立的和透明的。 持久性: 确保提交的事务的结果或效果的系统出现故障的情况下仍然存在。 在MySQL中，事务开始使用COMMIT或ROLLBACK语句开始工作和结束。开始和结束语句的SQL命令之间形成了大量的事务。 悲观锁、乐观锁悲观锁：悲观锁（Pessimistic Lock），顾名思义，就是很悲观，每次去拿数据的时候都认为别人会修改，所以每次在拿数据的时候都会上锁，这样别人想拿这个数据就会block直到它拿到锁。 乐观锁：乐观锁（Optimistic Lock），顾名思义，就是很乐观，每次去拿数据的时候都认为别人不会修改，所以不会上锁，但是在提交更新的时候会判断一下在此期间别人有没有去更新这个数据。乐观锁适用于读多写少的应用场景，这样可以提高吞吐量。 乐观锁：假设不会发生并发冲突，只在提交操作时检查是否违反数据完整性。 参考http://blog.codinglabs.org/articles/theory-of-mysql-index.html]]></content>
+      <categories>
+        <category>编程之美</category>
+      </categories>
+      <tags>
+        <tag>MySQL原理</tag>
+        <tag>MySQL事务</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MySQL数据库的连接和使用]]></title>
     <url>%2F2018%2F08%2F30%2Fconnect_mysql%2F</url>
     <content type="text"><![CDATA[写在前面 Centos 7.4下连接本地数据库方法以及操作步骤 数据库表内容的打印 操作步骤1、首先安装了完整的MySQL数据库，和数据库C语言操作的相应API 2、接下来数据库的查找就是把数据表中的内容都找出来 MySQL API使用的一般思路： 1、连接到数据库； 2、拼装SQL语句； 3、把SQL语句发送到服务器； 4、读取并遍历服务器返回的结果； 5、断开连接。 具体操作12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091#include&lt;stdio.h&gt;#include&lt;mysql/mysql.h&gt;#include"cgi-base.h"int main()&#123;/////////// cgi-base.h ////////////////////////// char buf[1024 * 4] = &#123;0&#125;;// if(GetQueryString(buf) &lt; 0)// &#123;// fprintf(stderr, "GetQueryString failes\n");// return 1;// &#125;/////////////////////////////////////////////// ////////////////////////////////////////////// //接下来就要进行数据库的查找 //直接把一个数据库表中的所有数据都查出来 //mysql api 使用的一般思路 //1、连接到数据库 //2、拼装sql语句 //3、把sql语句发送到服务器 //4、读取并遍历服务器返回的结果 //5、断开连接 ///////////////////////////////////////////// //1、连接到数据库 MYSQL* connect_fd = mysql_init(NULL); MYSQL* ret = mysql_real_connect(connect_fd, "127.0.0.1", "root", "", "TestDB", 3306, NULL, 0);// 还回IP，就是机器自己//port 端口； 使用Unix方式连接；最后一个参数常常设置为0 if(ret == NULL) &#123; fprintf(stderr, "mysql connect failed\n"); return 1; &#125; fprintf(stderr, "mysql connect OK\n"); //2、拼装sql语句 const char* sql = "select *from TestTable"; //3、把sql语句发送到服务器 int temp = mysql_query(connect_fd, sql); if(temp &lt; 0) &#123; fprintf(stderr, "mysql query failed\n"); return 1; &#125; //4、读取并遍历服务器返回的结果 MYSQL_RES* result = mysql_store_result(connect_fd); if(result == NULL) &#123; fprintf(stderr, "mysql store failes\n"); return 1; &#125; //读取内容 //获取到表有几行几列，获取到结果集合的表结构，获取到每个元素的具&gt;体值 int rows = mysql_num_rows(result); int fields = mysql_num_fields(result); MYSQL_FIELD* field = mysql_fetch_field(result); //获取表头信息 while(field != NULL) &#123; printf("%s\t", field-&gt;name); field = mysql_fetch_field(result); &#125; printf("br"); int i = 0; for(; i&lt;rows; ++i) &#123; MYSQL_ROW row = mysql_fetch_row(result); int j = 0; for(;j&lt;fields;++j) &#123; printf("%s\t", row[j]); &#125; printf("br"); &#125; printf("br"); //5、断开连接 mysql_close(connect_fd); return 0;&#125;]]></content>
@@ -177,8 +189,8 @@
         <category>SO Kernal</category>
       </categories>
       <tags>
-        <tag>TCP协议</tag>
         <tag>ACK机制</tag>
+        <tag>TCP协议</tag>
         <tag>滑动窗口</tag>
         <tag>拥塞控制</tag>
         <tag>流量控制</tag>
